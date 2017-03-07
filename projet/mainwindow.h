@@ -1,22 +1,21 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef HEADER_FENPRINCIPALE
+#define HEADER_FENPRINCIPALE
 
-#include <QMainWindow>
+#include <QtWidgets>
 
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class FenPrincipale : public QMainWindow
 {
-    Q_OBJECT
+    public:
+    FenPrincipale();
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    private:
+        void defineAction();
+        void defineMenu();
+        QAction *bye;
+        QAction *copy;
+        QMenu *menuFichier;
+        QMenu *menuEdition;
 
-private:
-    Ui::MainWindow *ui;
 };
 
-#endif // MAINWINDOW_H
+#endif
