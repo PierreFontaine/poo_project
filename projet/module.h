@@ -2,19 +2,23 @@
 #define MODULE_H
 
 #include <QWidget>
+#include <QLabel>
 
 class Module : public QWidget{
     Q_OBJECT
 protected:
     double _height;
     double _width;
-public:
-    explicit Module(QWidget *parent = 0,double h, double w);
-    void setHeight();
-    void setWidth();
-    double getHeight();
-    double getWidth();
+    QString title;
 
+public:
+    explicit Module(QWidget *parent = 0,double h = 0, double w = 0);
+    void setHeight(const double&);
+    void setWidth(const double&);
+    double getHeight()const;
+    double getWidth()const;
+    void setTitle(const QString&);
+    QString getTitle()const;
 
 signals:
 
