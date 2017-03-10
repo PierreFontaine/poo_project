@@ -4,6 +4,8 @@
 Module::Module(QWidget *parent, double h, double w) : QWidget(parent)
 {
     this->setFixedSize(w,h);
+    _height = h;
+    _width = w;
 }
 
 //setter de la hauteur du module
@@ -32,6 +34,6 @@ void Module::setTitle(const QString& s){
 }
 
 //getter du titre du module
-QString Module::getTitle(){
+QString Module::getTitle()const{
 
 }
