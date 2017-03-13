@@ -7,18 +7,18 @@
 FenPrincipale::FenPrincipale(){
     QWidget *zoneCentrale = new QWidget;
     setCentralWidget(zoneCentrale);
-    QWidget *bouton1 = new QWidget(zoneCentrale);
-    QWidget *bouton2 = new QWidget(zoneCentrale);
-    QWidget *bouton3 = new QWidget(zoneCentrale);
+    Module *mod1 = new BudgetModule(zoneCentrale);
+    Module *mod2 = new BudgetModule(zoneCentrale);
+    Module *mod3 = new BudgetModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
-    layout->addWidget(bouton1, 0, 0);
-    layout->addWidget(bouton2, 0, 1);
-    layout->addWidget(bouton3, 1, 0);
+    layout->addWidget(mod1, 0, 0);
+    layout->addWidget(mod2, 0, 1);
+    layout->addWidget(mod3, 1, 0);
 
-    bouton1->show();
-    bouton2->show();
-    bouton3->show();
+    mod1->show();
+    mod2->show();
+    mod3->show();
     zoneCentrale->setLayout(layout);
 }
 

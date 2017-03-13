@@ -1,7 +1,7 @@
 #include "budgetmodule.h"
 
 BudgetModule::BudgetModule(QWidget *parent):Module(parent){
-    button = new QPushButton("test");
+    button = new QPushButton("test",this);
     label = new QLabel("hello",this);
     initLayout();
     containerLeft->addWidget(label);
