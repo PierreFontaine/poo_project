@@ -3,6 +3,7 @@
 
 #include<QLayout>
 #include<QLabel>
+#include<QPushButton>
 #include"module.h"
 
 class BudgetModule:public Module{
@@ -11,14 +12,16 @@ protected:
     QVBoxLayout *main;
     QHBoxLayout *head;
     QHBoxLayout *container;
-    QVBoxLayout *containerleft;
-    QVBoxLayout *containerRigth;
+    QVBoxLayout *containerLeft;
+    QVBoxLayout *containerRight;
+    QPushButton *button;
+    QLabel *label;
 
     //initialisation des composants
     void initLayout();
 
 public:
-    BudgetModule();
+    explicit BudgetModule(QWidget *parent = 0);
 };
 
 #endif // BUDGETMODULE_H

@@ -1,32 +1,25 @@
 #include "mainwindow.h"
 #include <QPushButton>
+#include "budgetmodule.h"
+#include<iostream>
 
 
 FenPrincipale::FenPrincipale(){
-    QMdiArea *area = new QMdiArea;
+    QWidget *zoneCentrale = new QWidget;
+    setCentralWidget(zoneCentrale);
+    QWidget *bouton1 = new QWidget(zoneCentrale);
+    QWidget *bouton2 = new QWidget(zoneCentrale);
+    QWidget *bouton3 = new QWidget(zoneCentrale);
 
-    QWidget *widget1 = new QWidget;
-    QWidget *widget2 = new QWidget;
-
-    widget1->setFixedSize(300, 150);
-    widget2->setFixedSize(300, 150);
-
-    QPushButton *bouton1 = new QPushButton(tr("Agenda"),widget1);
-    QPushButton *bouton2 = new QPushButton(tr("Météo"),widget2);
+    QGridLayout *layout = new QGridLayout;
+    layout->addWidget(bouton1, 0, 0);
+    layout->addWidget(bouton2, 0, 1);
+    layout->addWidget(bouton3, 1, 0);
 
     bouton1->show();
     bouton2->show();
-
-    QMdiSubWindow *sousFenetre1 = area->addSubWindow(widget1);
-    QMdiSubWindow *sousFenetre2 = area->addSubWindow(widget2);
-
-    sousFenetre1->setFixedSize(300, 150);
-    sousFenetre2->setFixedSize(300, 150);
-
-    setWindowTitle(tr("DashBoard"));
-    defineAction();
-    defineMenu();
-    setCentralWidget(area);
+    bouton3->show();
+    zoneCentrale->setLayout(layout);
 }
 
 void FenPrincipale::defineAction(){
