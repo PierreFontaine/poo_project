@@ -1,8 +1,7 @@
 #include "meteodata.h"
 
-MeteoData::MeteoData(std::string url,std::string units,std::string appid):_url(url),_units(units),_appid(appid){
-    //_socket = new QTcpSocket(this);
-    _tailleMessage = 0;
+MeteoData::MeteoData(QString url,QString appid):_url(url),_appid(appid){
+    url = _url + _appid;
 }
 
 void MeteoData::donneesRecues(){
@@ -10,6 +9,15 @@ void MeteoData::donneesRecues(){
 }
 
 void MeteoData::requete(){
-    //_socket->abort();
-    //_socket->connectToHost(_url+_appid,80);
+    reply = qnam.get(QNetworkRequest(url));
+    connect(reply, &QNetworkReply::finished, this, &MeteoData::replyEnd);
+    connect(reply, &QIODevice::readyRead, this, &MeteoData::pretAlire);
+}
+
+void MeteoData::replyEnd(){
+   std::cerr << "requete terminé" << '\n';
+}
+
+void MeteoData::pretAlire(){
+   std::cerr << "requete peut etre lu" << '\n';
 }

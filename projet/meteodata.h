@@ -1,28 +1,41 @@
 #ifndef METEODATA_H
 #define METEODATA_H
 
-#include<QtNetwork>
-#include<string>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QMap>
+#include <QObject>
+#include <QFile>
+#include <iostream>
 
-class MeteoData{
+class MeteoData:public QObject{
     protected:
         //TCP CO
-        QTcpSocket *_socket;
-        quint16 _tailleMessage;
+        QUrl url;
+        QNetworkAccessManager qnam;
+        QNetworkReply *reply;
+        QFile *file;
         //API DATA
-        std::string _url;
-        std::string _units;
-        std::string _appid;
+        QString _url;
+        QString _units;
+        QString _appid;
         //RELEVENT DATA
-        std::string _ville;
+        QString _ville;
         double _humidity;
         double _pressure;
+        //JSON REPLY
+        QJsonObject *_replyJson;
+
+
 
     public:
         //Constructeur pour notre requete API
-        MeteoData(std::string url,std::string units,std::string appid);
+        MeteoData(QString url,QString appid);
         void donneesRecues();
         void requete();
+        void replyEnd();
+        void pretAlire();
 };
 
 #endif // METEODATA_H
