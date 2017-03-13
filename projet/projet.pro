@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 TARGET = projet
 TEMPLATE = app
@@ -28,12 +28,14 @@ SOURCES += main.cpp\
     module.cpp \
     budgetmodule.cpp \
     meteomodule.cpp \
-    meteojour.cpp
+    meteojour.cpp \
+    meteodata.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
     budgetmodule.h \
     meteomodule.h \
-    meteojour.h
+    meteojour.h \
+    meteodata.h
 
 FORMS    += mainwindow.ui
