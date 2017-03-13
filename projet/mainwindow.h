@@ -2,11 +2,14 @@
 #define HEADER_FENPRINCIPALE
 
 #include <QtWidgets>
+#include "budgetmodule.h"
+#include "meteomodule.h"
+#include <QPushButton>
+#include<iostream>
 
-class FenPrincipale : public QMainWindow
-{
+class FenPrincipale : public QMainWindow{
     public:
-    FenPrincipale();
+        FenPrincipale();
 
     private:
         void defineAction();
@@ -15,6 +18,11 @@ class FenPrincipale : public QMainWindow
         QAction *copy;
         QMenu *menuFichier;
         QMenu *menuEdition;
+        QWidget *zoneCentrale;
+        Module *mod1;
+        Module *mod2;
+        Module *mod3;
+        Module *mod4;
 
 };
 

@@ -26,10 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     module.cpp \
-    budgetmodule.cpp
+    budgetmodule.cpp \
+    meteomodule.cpp \
+    meteojour.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
-    budgetmodule.h
+    budgetmodule.h \
+    meteomodule.h \
+    meteojour.h
 
 FORMS    += mainwindow.ui
