@@ -1,24 +1,25 @@
 #include "mainwindow.h"
-#include <QPushButton>
-#include "budgetmodule.h"
-#include<iostream>
-
 
 FenPrincipale::FenPrincipale(){
-    QWidget *zoneCentrale = new QWidget;
+    zoneCentrale = new QWidget;
     setCentralWidget(zoneCentrale);
-    Module *mod1 = new BudgetModule(zoneCentrale);
-    Module *mod2 = new BudgetModule(zoneCentrale);
-    Module *mod3 = new BudgetModule(zoneCentrale);
+
+    mod1 = new BudgetModule(zoneCentrale);
+    mod2 = new MeteoModule(zoneCentrale);
+    mod3 = new BudgetModule(zoneCentrale);
+    mod4 = new BudgetModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(mod1, 0, 0);
     layout->addWidget(mod2, 0, 1);
     layout->addWidget(mod3, 1, 0);
+    layout->addWidget(mod4, 1, 1);
 
     mod1->show();
     mod2->show();
     mod3->show();
+    mod4->show();
+
     zoneCentrale->setLayout(layout);
 }
 

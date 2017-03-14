@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 TARGET = projet
 TEMPLATE = app
@@ -26,10 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     module.cpp \
-    budgetmodule.cpp
+    budgetmodule.cpp \
+    meteomodule.cpp \
+    meteojour.cpp \
+    meteodata.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
-    budgetmodule.h
+    budgetmodule.h \
+    meteomodule.h \
+    meteojour.h \
+    meteodata.h
 
 FORMS    += mainwindow.ui
