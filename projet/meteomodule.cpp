@@ -19,7 +19,7 @@ void MeteoModule::setSemaine(){
     semaine->setGeometry(0,20,300,160);
     //Initialisation des 7 jours
     for(i= 0; i< 7; i++){
-        jours[i] = new meteoJour;
+        jours[i] = new MeteoJour;
     }
     //Insertion des 7 jours dans tabWidget
     semaine->addTab(jours[0],"L");

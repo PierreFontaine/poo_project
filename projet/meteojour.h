@@ -2,11 +2,19 @@
 #define METEOJOUR_H
 
 #include <QWidget>
+#include <QLayout>
 
-class meteoJour : public QWidget{
+class MeteoJour : public QWidget{
     Q_OBJECT
+protected:
+    QHBoxLayout *mainLayout;
+    QVBoxLayout *leftLayout;
+    QVBoxLayout *rightLayout;
+
+    //Init
+    void initLayout();
 public:
-    explicit meteoJour(QWidget *parent = 0);
+    explicit MeteoJour(QWidget *parent = 0);
 
 signals:
 

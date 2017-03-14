@@ -13,7 +13,7 @@ protected:
     QTabWidget *semaine;
     QLabel *label;
     QVBoxLayout *main;
-    meteoJour* jours[7];
+    MeteoJour* jours[7];
 
     void setSemaine();
 public:
