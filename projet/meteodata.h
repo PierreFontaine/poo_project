@@ -12,11 +12,13 @@
 #include <QTextEdit>
 #include <QEventLoop>
 #include <QDebug>
+#include <QObject>
+
 class MeteoData:public QObject{
+    Q_OBJECT
     protected:
         //TCP CO
         QUrl url;
-        QNetworkReply *reply;
         //API DATA
         QString _url;
         QString _units;
@@ -32,11 +34,13 @@ class MeteoData:public QObject{
         QWidget *debug;
     public:
         //Constructeur pour notre requete API
-        MeteoData(QString url,QString appid);
+        MeteoData(QString url,QString appid,QObject *parent = 0);
         void requete();
-private slots:
-        void displayData();
-        void writeFile();
+    signals:
+
+    public slots:
+        void storeReplyInObj(QNetworkReply*);
+        void onError();
 };
 
 #endif // METEODATA_H
