@@ -8,14 +8,15 @@
 #include <QObject>
 #include <QFile>
 #include <iostream>
-
+#include <QDateTime>
+#include <QTextEdit>
+#include <QEventLoop>
+#include <QDebug>
 class MeteoData:public QObject{
     protected:
         //TCP CO
         QUrl url;
-        QNetworkAccessManager qnam;
         QNetworkReply *reply;
-        QFile *file;
         //API DATA
         QString _url;
         QString _units;
@@ -25,17 +26,17 @@ class MeteoData:public QObject{
         double _humidity;
         double _pressure;
         //JSON REPLY
-        QJsonObject *_replyJson;
-
-
-
+        QFile *file;
+        //Debugage
+        QTextEdit *zoneEdit;
+        QWidget *debug;
     public:
         //Constructeur pour notre requete API
         MeteoData(QString url,QString appid);
-        void donneesRecues();
         void requete();
-        void replyEnd();
-        void pretAlire();
+private slots:
+        void displayData();
+        void writeFile();
 };
 
 #endif // METEODATA_H
