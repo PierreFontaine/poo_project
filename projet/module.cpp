@@ -8,32 +8,80 @@ Module::Module(QWidget *parent, double h, double w) : QWidget(parent)
     _width = w;
 }
 
-//setter de la hauteur du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : Gerer la hauteur du module
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void Module::setHeight(const double& h){
     _height = h;
 }
 
-//setter de la largeur du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : gerer la largeur du module
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void Module::setWidth(const double& w){
     _width = w;
 }
 
-//getter de la hauteur du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : recuperer la hauteur
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double Module::getHeight()const{
     return _height;
 }
 
-//getter de la largeur du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : recuperer la largeur
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double Module::getWidth()const{
     return _width;
 }
 
-//setter du titre du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : etablir le titre du module
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void Module::setTitle(const QString& s){
     //title = s;
 }
 
-//getter du titre du module
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : recuperer le titre du module
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 QString Module::getTitle()const{
     //return title;
 }
