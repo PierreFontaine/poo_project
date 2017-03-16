@@ -2,9 +2,6 @@
 #include "meteojour.h"
 MeteoData::MeteoData(QString url,QString appid,QObject *parent):QObject(parent),_url(url),_appid(appid){
     url = _url + _appid;
-    //file = new QFile("test.txt");
-    //connect(this,SIGNAL(dataChanged()),
-
 }
 
 void MeteoData::onError(){

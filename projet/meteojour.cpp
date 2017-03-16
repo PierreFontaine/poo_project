@@ -1,7 +1,7 @@
 #include "meteojour.h"
 
 MeteoJour::MeteoJour(MeteoData *data, QWidget *parent) : QWidget(parent),_data(data){
-
+    QObject::connect(data,SIGNAL(dataChanged()),this,SLOT(majData()));
     initLabel();
     initLayout();
     setLayout(mainLayout);
