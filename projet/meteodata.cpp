@@ -16,7 +16,7 @@ void MeteoData::requete(){
     qDebug()<<"Creation connexion pour succès ou echec";
     connect(manager,SIGNAL(finished(QNetworkReply*)),
             this,SLOT(storeReplyInObj(QNetworkReply*)));
-    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c")));
+    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric")));
 }
 
 void MeteoData::storeReplyInObj(QNetworkReply* r){
