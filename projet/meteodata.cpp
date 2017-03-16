@@ -26,9 +26,29 @@ void MeteoData::storeReplyInObj(QNetworkReply* r){
     if(r->error() == QNetworkReply::NoError){
         QByteArray bts = r->readAll();
         QString str(bts);
-        qDebug()<<bts;
+        QJsonDocument doc = QJsonDocument::fromJson(str.toUtf8());
+        if(!doc.isNull()){
+            if(doc.isObject()){
+                obj = doc.object();
+                parseObj();
+            }else{
+                qDebug()<<"le doc n'est pas un objet";
+            }
+        } else {
+            qDebug() << "JSON FORMAT INVALIDE";
+        }
+        //qDebug()<<bts;
     }else{
         qDebug()<<r->errorString();
     }
 }
 
+void MeteoData::parseObj(){
+    QJsonObject main = obj.value("main").toObject();
+
+    _pressure = main.value("pressure").toDouble();
+    _humidity = main.value("humidity").toDouble();
+    _tempMin = main.value("temp_min").toDouble();
+    _tempMax = main.value("temp_max").toDouble();
+    _temp = main.value("temp").toDouble();
+}

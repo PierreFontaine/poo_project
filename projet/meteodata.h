@@ -13,6 +13,8 @@
 #include <QEventLoop>
 #include <QDebug>
 #include <QObject>
+#include <QJsonObject>
+#include <QJsonDocument>
 
 class MeteoData:public QObject{
     Q_OBJECT
@@ -27,8 +29,11 @@ class MeteoData:public QObject{
         QString _ville;
         double _humidity;
         double _pressure;
+        double _tempMin;
+        double _tempMax;
+        double _temp;
         //JSON REPLY
-        QFile *file;
+        QJsonObject obj;
         //Debugage
         QTextEdit *zoneEdit;
         QWidget *debug;
@@ -36,6 +41,7 @@ class MeteoData:public QObject{
         //Constructeur pour notre requete API
         MeteoData(QString url,QString appid,QObject *parent = 0);
         void requete();
+        void parseObj();
     signals:
 
     public slots:
