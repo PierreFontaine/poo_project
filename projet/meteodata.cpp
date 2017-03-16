@@ -1,8 +1,9 @@
 #include "meteodata.h"
-
+#include "meteojour.h"
 MeteoData::MeteoData(QString url,QString appid,QObject *parent):QObject(parent),_url(url),_appid(appid){
     url = _url + _appid;
     //file = new QFile("test.txt");
+    //connect(this,SIGNAL(dataChanged()),
 
 }
 
@@ -51,4 +52,26 @@ void MeteoData::parseObj(){
     _tempMin = main.value("temp_min").toDouble();
     _tempMax = main.value("temp_max").toDouble();
     _temp = main.value("temp").toDouble();
+    emit dataChanged();
 }
+
+double MeteoData::getHumidity()const{
+    return _humidity;
+}
+
+double MeteoData::getPressure()const{
+    return _pressure;
+}
+
+double MeteoData::getTempMin()const{
+    return _tempMin;
+}
+
+double MeteoData::getTempMax()const{
+    return _tempMax;
+}
+
+double MeteoData::getTemp()const{
+    return _temp;
+}
+

@@ -42,8 +42,13 @@ class MeteoData:public QObject{
         MeteoData(QString url,QString appid,QObject *parent = 0);
         void requete();
         void parseObj();
+        double getHumidity()const;
+        double getPressure()const;
+        double getTempMin()const;
+        double getTempMax()const;
+        double getTemp()const;
     signals:
-
+        void dataChanged();
     public slots:
         void storeReplyInObj(QNetworkReply*);
         void onError();

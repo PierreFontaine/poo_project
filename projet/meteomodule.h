@@ -7,6 +7,7 @@
 #include<QPushButton>
 #include"module.h"
 #include"meteojour.h"
+#include"meteodata.h"
 
 class MeteoModule:public Module{
 protected:
@@ -14,6 +15,7 @@ protected:
     QLabel *label;
     QVBoxLayout *main;
     MeteoJour* jours[7];
+    MeteoData *_data;
 
     void setSemaine();
 public:
