@@ -4,10 +4,28 @@ MeteoData::MeteoData(QString url,QString appid,QObject *parent):QObject(parent),
     url = _url + _appid;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : afficher message d'erreur dans la console
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoData::onError(){
     qDebug()<<"Erreur de requete";
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : effectuer une requete pour recupérer données JSON de l'API
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoData::requete(){
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     qDebug()<<"Exe Req";
@@ -19,6 +37,15 @@ void MeteoData::requete(){
     manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric")));
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : Stocker la réponse de l'API dans un QJsonObject
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoData::storeReplyInObj(QNetworkReply* r){
     qDebug()<<"CallBack";
     if(r->error() == QNetworkReply::NoError){
@@ -41,6 +68,15 @@ void MeteoData::storeReplyInObj(QNetworkReply* r){
     }
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : parser le QJsonDocument pour récupérer les données
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoData::parseObj(){
     QJsonObject main = obj.value("main").toObject();
 
@@ -52,23 +88,132 @@ void MeteoData::parseObj(){
     emit dataChanged();
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter humidité
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double MeteoData::getHumidity()const{
     return _humidity;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter pression
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double MeteoData::getPressure()const{
     return _pressure;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter temp min
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double MeteoData::getTempMin()const{
     return _tempMin;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter temp max
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double MeteoData::getTempMax()const{
     return _tempMax;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter temp actuelle
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 double MeteoData::getTemp()const{
     return _temp;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter humidité
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void setHumidity(double h){
+  _humidity = h;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter pression
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void setPressure(double p){
+  _pressure = p;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter temp min
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void setTempMin(double t){
+  _tempMin = t;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter temp max
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void setTempMax(double t){
+  _tempMax = t;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter temp actuelle
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void setTemp(double t){
+  _temp = t;
+}

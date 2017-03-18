@@ -47,6 +47,11 @@ class MeteoData:public QObject{
         double getTempMin()const;
         double getTempMax()const;
         double getTemp()const;
+        void setHumidity(double);
+        void setPressure(double);
+        void setTempMin(double);
+        void setTempMax(double);
+        void setTemp(double);
     signals:
         void dataChanged();
     public slots:
