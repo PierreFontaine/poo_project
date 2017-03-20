@@ -1,7 +1,7 @@
 #include "meteomodule.h"
 
 MeteoModule::MeteoModule(QWidget *parent):Module(parent){
-    _data = new MeteoData("pau");
+    _data = new MeteoData("Pau,fr");
     _data->requete();
     setSemaine();
     main = new QVBoxLayout();

@@ -34,7 +34,7 @@ void MeteoData::requete(){
     qDebug()<<"Creation connexion pour succès ou echec";
     connect(manager,SIGNAL(finished(QNetworkReply*)),
             this,SLOT(storeReplyInObj(QNetworkReply*)));
-    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/forecast/daily?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric&cnt=5")));
+    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/forecast/daily?q="+_ville+"&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric&cnt=5")));
 }
 
 /*
@@ -225,4 +225,30 @@ void MeteoData::setTempMax(double t){
  */
 void MeteoData::setTemp(double t){
   _temp = t;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter ville actuelle
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+QString MeteoData::getVille()const{
+    return _ville;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter ville actuelle
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void MeteoData::setVille(QString v){
+    _ville = v;
 }

@@ -24,6 +24,7 @@ void MeteoJour::initLayout(){
 
 
     rightLayout = new QVBoxLayout();
+    rightLayout->addWidget(ville);
     rightLayout->addWidget(temp);
     rightLayout->addWidget(temp_min);
     rightLayout->addWidget(temp_max);
@@ -45,11 +46,12 @@ void MeteoJour::initLayout(){
  ©2017
  */
 void MeteoJour::initLabel(){
-    temp = new QLabel(QString::number(_data->getTemp())+"C°",this);
-    temp_min = new QLabel(QString::number(_data->getTempMin())+"C°",this);
-    temp_max = new QLabel(QString::number(_data->getTempMax())+"C°",this);
-    pressure = new QLabel(QString::number(_data->getPressure())+"Pa",this);
-    humidity = new QLabel(QString::number(_data->getHumidity())+"%",this);
+    ville = new QLabel("Ville : "+_data->getVille());
+    temp = new QLabel("temp moyenne : "+QString::number(_data->getTemp())+"C°",this);
+    temp_min = new QLabel("temp min : "+QString::number(_data->getTempMin())+"C°",this);
+    temp_max = new QLabel("temp max : "+QString::number(_data->getTempMax())+"C°",this);
+    pressure = new QLabel("pression : "+QString::number(_data->getPressure())+"Pa",this);
+    humidity = new QLabel("humidité : "+QString::number(_data->getHumidity())+"%",this);
 
 }
 
@@ -64,11 +66,11 @@ void MeteoJour::initLabel(){
  */
 void MeteoJour::majData(int i){
     if(i == _j){
-        temp->setText(QString::number(_data->getTemp())+"C°");
-        temp_min->setText(QString::number(_data->getTempMin())+"C°");
-        temp_max->setText(QString::number(_data->getTempMax())+"C°");
-        pressure->setText(QString::number(_data->getPressure())+"Pa");
-        humidity->setText(QString::number(_data->getHumidity())+"%");
+        temp->setText("temp moyenne : "+QString::number(_data->getTemp())+"C°");
+        temp_min->setText("temp min : "+QString::number(_data->getTempMin())+"C°");
+        temp_max->setText("temp max : "+QString::number(_data->getTempMax())+"C°");
+        pressure->setText("pression : "+QString::number(_data->getPressure())+"Pa");
+        humidity->setText("humidité : "+QString::number(_data->getHumidity())+"%");
     }
 
 }

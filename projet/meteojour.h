@@ -15,7 +15,7 @@ protected:
     QHBoxLayout *mainLayout;
     QVBoxLayout *leftLayout;
     QVBoxLayout *rightLayout;
-    QLabel *temp,*temp_min,*temp_max,*pressure,*humidity;
+    QLabel *temp,*temp_min,*temp_max,*pressure,*humidity,*ville;
 
     //model
     MeteoData *_data;
