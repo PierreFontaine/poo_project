@@ -27,6 +27,8 @@ class MeteoData:public QObject{
         double _tempMin;
         double _tempMax;
         double _temp;
+        double _coeffNuage;
+        double _coeffPluie;
         //JSON REPLY
         QJsonObject obj;
     public:
@@ -39,12 +41,16 @@ class MeteoData:public QObject{
         double getTempMin()const;
         double getTempMax()const;
         double getTemp()const;
+        double getCoeffNuage()const;//TODO
+        double getCoeffPluie()const;//TODO
         QString getVille()const;
         void setHumidity(double);
         void setPressure(double);
         void setTempMin(double);
         void setTempMax(double);
         void setTemp(double);
+        void setCoeffNuage(double);//TODO
+        void setCoeffPluie(double);//TODO
         void setVille(QString);
     signals:
         void dataChanged(int i);

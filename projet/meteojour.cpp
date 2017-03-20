@@ -54,9 +54,10 @@ void MeteoJour::initLabel(){
     pressure = new QLabel("pression : "+QString::number(_data->getPressure())+"Pa");
     humidity = new QLabel("humidité : "+QString::number(_data->getHumidity())+"%");
     qDebug()<<QApplication::applicationDirPath();
+    sprite = new QPixmap(":/new/prefix1/img/logo.png");
     img = new QLabel(this);
     qDebug()<<QFileInfo::exists(":/new/prefix1/img/logo.png");
-    img->setPixmap(QPixmap(":/new/prefix1/img/logo.png"));
+    img->setPixmap(getSpriteImg(SOLEIL));
 
 }
 
@@ -76,6 +77,39 @@ void MeteoJour::majData(int i){
         temp_max->setText("temp max : "+QString::number(_data->getTempMax())+"C°");
         pressure->setText("pression : "+QString::number(_data->getPressure())+"Pa");
         humidity->setText("humidité : "+QString::number(_data->getHumidity())+"%");
+        img->setPixmap(getSpriteImg(determinatePic()));
     }
 
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : recuperer le bon sprite
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+QPixmap MeteoJour::getSpriteImg(int i){
+    return(sprite->copy((i%12),(i/12),100,100));
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter ville actuelle
+ remarque: determiner le sprite par rapport aux coeffs
+ precond :
+ postcond:
+ ©2017
+ */
+int MeteoJour::determinatePic(){
+    if(_data->getCoeffPluie() > 30){
+        return PLUIE;
+    } else if (_data->getCoeffNuage() > 30){
+        return SOLEIL_NUAGE_FONCE;
+    } else {
+        return SOLEIL;
+    }
 }

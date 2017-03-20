@@ -85,7 +85,8 @@ void MeteoData::parseObj(){
         QJsonObject jData = list.at(i).toObject();
         qDebug() << jData.keys();//("clouds", "deg", "dt", "humidity", "pressure", "rain", "speed", "temp", "weather")
         QJsonObject jTemp = jData.value("temp").toObject();
-
+        _coeffNuage = jData.value("clouds").toDouble();
+        _coeffPluie = jData.value("rain").toDouble();
         _pressure = jData.value("pressure").toDouble();
         _humidity = jData.value("humidity").toDouble();
         _tempMin = jTemp.value("min").toDouble();
@@ -249,4 +250,56 @@ QString MeteoData::getVille()const{
  */
 void MeteoData::setVille(QString v){
     _ville = v;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter coeff nuage
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+double MeteoData::getCoeffNuage()const{
+    return _coeffNuage;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : getter coeff pluie
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+double MeteoData::getCoeffPluie()const{
+    return _coeffPluie;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter coeff nuage
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void MeteoData::setCoeffNuage(double c){
+    _coeffNuage = c;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter coeff pluie
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void MeteoData::setCoeffPluie(double c){
+    _coeffPluie = c;
 }
