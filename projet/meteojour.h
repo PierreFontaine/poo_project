@@ -9,6 +9,8 @@
 class MeteoJour : public QWidget{
     Q_OBJECT
 protected:
+    //Unicité
+    int _j;
     //view
     QHBoxLayout *mainLayout;
     QVBoxLayout *leftLayout;
@@ -23,12 +25,12 @@ protected:
     void initLabel();
 
 public:
-    explicit MeteoJour(MeteoData *data,QWidget *parent = 0);
+    explicit MeteoJour(int j,MeteoData *data,QWidget *parent = 0);
 
 signals:
 
 public slots:
-    void majData();
+    void majData(int i);
 };
 
 #endif // METEOJOUR_H

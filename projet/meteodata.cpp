@@ -1,7 +1,7 @@
 #include "meteodata.h"
 #include "meteojour.h"
-MeteoData::MeteoData(QString url,QString appid,QObject *parent):QObject(parent),_url(url),_appid(appid){
-    url = _url + _appid;
+MeteoData::MeteoData(QString v,QObject *parent):QObject(parent),_ville(v){
+
 }
 
 /*
@@ -34,7 +34,7 @@ void MeteoData::requete(){
     qDebug()<<"Creation connexion pour succès ou echec";
     connect(manager,SIGNAL(finished(QNetworkReply*)),
             this,SLOT(storeReplyInObj(QNetworkReply*)));
-    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric")));
+    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/forecast/daily?q=London,uk&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric&cnt=5")));
 }
 
 /*
@@ -78,14 +78,23 @@ void MeteoData::storeReplyInObj(QNetworkReply* r){
  ©2017
  */
 void MeteoData::parseObj(){
-    QJsonObject main = obj.value("main").toObject();
+    qDebug() << obj.keys();//("city", "cnt", "cod", "list", "message")
+    QJsonArray list = obj.value("list").toArray();
+    for(int i = 0; i < 5;i ++){
+        qDebug() << list.at(i);
+        QJsonObject jData = list.at(i).toObject();
+        qDebug() << jData.keys();//("clouds", "deg", "dt", "humidity", "pressure", "rain", "speed", "temp", "weather")
+        QJsonObject jTemp = jData.value("temp").toObject();
 
-    _pressure = main.value("pressure").toDouble();
-    _humidity = main.value("humidity").toDouble();
-    _tempMin = main.value("temp_min").toDouble();
-    _tempMax = main.value("temp_max").toDouble();
-    _temp = main.value("temp").toDouble();
-    emit dataChanged();
+
+
+        _pressure = jData.value("pressure").toDouble();
+        _humidity = jData.value("humidity").toDouble();
+        _tempMin = jTemp.value("min").toDouble();
+        _tempMax = jTemp.value("max").toDouble();
+        _temp = jTemp.value("day").toDouble();
+        emit dataChanged(i);
+    }
 }
 
 /*

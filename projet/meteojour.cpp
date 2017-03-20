@@ -1,7 +1,7 @@
 #include "meteojour.h"
 
-MeteoJour::MeteoJour(MeteoData *data, QWidget *parent) : QWidget(parent),_data(data){
-    QObject::connect(data,SIGNAL(dataChanged()),this,SLOT(majData()));
+MeteoJour::MeteoJour(int j,MeteoData *data, QWidget *parent) : QWidget(parent),_j(j),_data(data){
+    QObject::connect(data,SIGNAL(dataChanged(int)),this,SLOT(majData(int)));
     initLabel();
     initLayout();
     setLayout(mainLayout);
@@ -62,10 +62,13 @@ void MeteoJour::initLabel(){
  postcond:
  ©2017
  */
-void MeteoJour::majData(){
-    temp->setText(QString::number(_data->getTemp())+"C°");
-    temp_min->setText(QString::number(_data->getTempMin())+"C°");
-    temp_max->setText(QString::number(_data->getTempMax())+"C°");
-    pressure->setText(QString::number(_data->getPressure())+"Pa");
-    humidity->setText(QString::number(_data->getHumidity())+"%");
+void MeteoJour::majData(int i){
+    if(i == _j){
+        temp->setText(QString::number(_data->getTemp())+"C°");
+        temp_min->setText(QString::number(_data->getTempMin())+"C°");
+        temp_max->setText(QString::number(_data->getTempMax())+"C°");
+        pressure->setText(QString::number(_data->getPressure())+"Pa");
+        humidity->setText(QString::number(_data->getHumidity())+"%");
+    }
+
 }

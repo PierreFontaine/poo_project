@@ -1,7 +1,7 @@
 #include "meteomodule.h"
 
 MeteoModule::MeteoModule(QWidget *parent):Module(parent){
-    _data = new MeteoData("api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=","9a5b3401d0ae43c0fdd643de1a05660c");
+    _data = new MeteoData("pau");
     _data->requete();
     setSemaine();
     main = new QVBoxLayout();
@@ -26,7 +26,7 @@ void MeteoModule::setSemaine(){
     semaine->setGeometry(0,20,300,400);
     //Initialisation des 7 jours
     for(i= 0; i< 5; i++){
-        jours[i] = new MeteoJour(_data);
+        jours[i] = new MeteoJour(i,_data);
     }
     //Insertion des 7 jours dans tabWidget
     semaine->addTab(jours[0],"1");

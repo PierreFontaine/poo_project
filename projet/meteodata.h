@@ -15,6 +15,7 @@
 #include <QObject>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QJsonArray>
 
 class MeteoData:public QObject{
     Q_OBJECT
@@ -39,7 +40,7 @@ class MeteoData:public QObject{
         QWidget *debug;
     public:
         //Constructeur pour notre requete API
-        MeteoData(QString url,QString appid,QObject *parent = 0);
+        MeteoData(QString, QObject *parent = 0);
         void requete();
         void parseObj();
         double getHumidity()const;
@@ -53,7 +54,7 @@ class MeteoData:public QObject{
         void setTempMax(double);
         void setTemp(double);
     signals:
-        void dataChanged();
+        void dataChanged(int i);
     public slots:
         void storeReplyInObj(QNetworkReply*);
         void onError();
