@@ -20,12 +20,6 @@
 class MeteoData:public QObject{
     Q_OBJECT
     protected:
-        //TCP CO
-        QUrl url;
-        //API DATA
-        QString _url;
-        QString _units;
-        QString _appid;
         //RELEVENT DATA
         QString _ville;
         double _humidity;
@@ -35,9 +29,6 @@ class MeteoData:public QObject{
         double _temp;
         //JSON REPLY
         QJsonObject obj;
-        //Debugage
-        QTextEdit *zoneEdit;
-        QWidget *debug;
     public:
         //Constructeur pour notre requete API
         MeteoData(QString, QObject *parent = 0);

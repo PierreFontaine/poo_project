@@ -86,8 +86,6 @@ void MeteoData::parseObj(){
         qDebug() << jData.keys();//("clouds", "deg", "dt", "humidity", "pressure", "rain", "speed", "temp", "weather")
         QJsonObject jTemp = jData.value("temp").toObject();
 
-
-
         _pressure = jData.value("pressure").toDouble();
         _humidity = jData.value("humidity").toDouble();
         _tempMin = jTemp.value("min").toDouble();

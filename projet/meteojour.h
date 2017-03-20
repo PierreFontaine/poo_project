@@ -1,9 +1,12 @@
 #ifndef METEOJOUR_H
 #define METEOJOUR_H
 
+#include <QApplication>
+#include <QPixmap>
 #include <QWidget>
 #include <QLayout>
 #include <QLabel>
+#include <QFileInfo>
 #include "meteodata.h"
 
 class MeteoJour : public QWidget{
@@ -16,7 +19,7 @@ protected:
     QVBoxLayout *leftLayout;
     QVBoxLayout *rightLayout;
     QLabel *temp,*temp_min,*temp_max,*pressure,*humidity,*ville;
-
+    QLabel *img;
     //model
     MeteoData *_data;
 

@@ -20,9 +20,6 @@ MeteoJour::MeteoJour(int j,MeteoData *data, QWidget *parent) : QWidget(parent),_
 void MeteoJour::initLayout(){
     mainLayout = new QHBoxLayout();
 
-    leftLayout = new QVBoxLayout();
-
-
     rightLayout = new QVBoxLayout();
     rightLayout->addWidget(ville);
     rightLayout->addWidget(temp);
@@ -31,9 +28,13 @@ void MeteoJour::initLayout(){
     rightLayout->addWidget(pressure);
     rightLayout->addWidget(humidity);
 
-    mainLayout->addLayout(leftLayout);
-    mainLayout->addLayout(rightLayout);
+    leftLayout = new QVBoxLayout();
+    leftLayout->addWidget(img);
+    img->show();
 
+
+    mainLayout->addLayout(rightLayout);
+    mainLayout->addLayout(leftLayout);
 }
 
 /*
@@ -47,11 +48,15 @@ void MeteoJour::initLayout(){
  */
 void MeteoJour::initLabel(){
     ville = new QLabel("Ville : "+_data->getVille());
-    temp = new QLabel("temp moyenne : "+QString::number(_data->getTemp())+"C°",this);
-    temp_min = new QLabel("temp min : "+QString::number(_data->getTempMin())+"C°",this);
-    temp_max = new QLabel("temp max : "+QString::number(_data->getTempMax())+"C°",this);
-    pressure = new QLabel("pression : "+QString::number(_data->getPressure())+"Pa",this);
-    humidity = new QLabel("humidité : "+QString::number(_data->getHumidity())+"%",this);
+    temp = new QLabel("temp moyenne : "+QString::number(_data->getTemp())+"C°");
+    temp_min = new QLabel("temp min : "+QString::number(_data->getTempMin())+"C°");
+    temp_max = new QLabel("temp max : "+QString::number(_data->getTempMax())+"C°");
+    pressure = new QLabel("pression : "+QString::number(_data->getPressure())+"Pa");
+    humidity = new QLabel("humidité : "+QString::number(_data->getHumidity())+"%");
+    qDebug()<<QApplication::applicationDirPath();
+    img = new QLabel(this);
+    qDebug()<<QFileInfo::exists(":/new/prefix1/img/logo.png");
+    img->setPixmap(QPixmap(":/new/prefix1/img/logo.png"));
 
 }
 
