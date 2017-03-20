@@ -162,7 +162,7 @@ double MeteoData::getTemp()const{
  postcond:
  ©2017
  */
-void setHumidity(double h){
+void MeteoData::setHumidity(double h){
   _humidity = h;
 }
 
@@ -175,7 +175,7 @@ void setHumidity(double h){
  postcond:
  ©2017
  */
-void setPressure(double p){
+void MeteoData::setPressure(double p){
   _pressure = p;
 }
 
@@ -188,7 +188,7 @@ void setPressure(double p){
  postcond:
  ©2017
  */
-void setTempMin(double t){
+void MeteoData::setTempMin(double t){
   _tempMin = t;
 }
 
@@ -201,7 +201,7 @@ void setTempMin(double t){
  postcond:
  ©2017
  */
-void setTempMax(double t){
+void MeteoData::setTempMax(double t){
   _tempMax = t;
 }
 
@@ -214,6 +214,6 @@ void setTempMax(double t){
  postcond:
  ©2017
  */
-void setTemp(double t){
+void MeteoData::setTemp(double t){
   _temp = t;
 }
