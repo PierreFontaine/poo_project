@@ -57,7 +57,7 @@ void MeteoJour::initLabel(){
     sprite = new QPixmap(":/new/prefix1/img/logo.png");
     img = new QLabel(this);
     qDebug()<<QFileInfo::exists(":/new/prefix1/img/logo.png");
-    img->setPixmap(getSpriteImg(SOLEIL));
+    //img->setPixmap(getSpriteImg(SOLEIL));
 
 }
 
@@ -92,7 +92,8 @@ void MeteoJour::majData(int i){
  ©2017
  */
 QPixmap MeteoJour::getSpriteImg(int i){
-    return(sprite->copy((i%12),(i/12),100,100));
+    qDebug()<<i%12 << " " << i/12;
+    return(sprite->copy((i%12)*100,(i/12)*100,100,100));
 }
 
 /*
