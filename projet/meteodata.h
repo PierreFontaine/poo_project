@@ -8,14 +8,19 @@
 #include <QObject>
 #include <QFile>
 #include <iostream>
+#include <QDateTime>
+#include <QTextEdit>
+#include <QEventLoop>
+#include <QDebug>
+#include <QObject>
+#include <QJsonObject>
+#include <QJsonDocument>
 
 class MeteoData:public QObject{
+    Q_OBJECT
     protected:
         //TCP CO
         QUrl url;
-        QNetworkAccessManager qnam;
-        QNetworkReply *reply;
-        QFile *file;
         //API DATA
         QString _url;
         QString _units;
@@ -24,18 +29,34 @@ class MeteoData:public QObject{
         QString _ville;
         double _humidity;
         double _pressure;
+        double _tempMin;
+        double _tempMax;
+        double _temp;
         //JSON REPLY
-        QJsonObject *_replyJson;
-
-
-
+        QJsonObject obj;
+        //Debugage
+        QTextEdit *zoneEdit;
+        QWidget *debug;
     public:
         //Constructeur pour notre requete API
-        MeteoData(QString url,QString appid);
-        void donneesRecues();
+        MeteoData(QString url,QString appid,QObject *parent = 0);
         void requete();
-        void replyEnd();
-        void pretAlire();
+        void parseObj();
+        double getHumidity()const;
+        double getPressure()const;
+        double getTempMin()const;
+        double getTempMax()const;
+        double getTemp()const;
+        void setHumidity(double);
+        void setPressure(double);
+        void setTempMin(double);
+        void setTempMax(double);
+        void setTemp(double);
+    signals:
+        void dataChanged();
+    public slots:
+        void storeReplyInObj(QNetworkReply*);
+        void onError();
 };
 
 #endif // METEODATA_H

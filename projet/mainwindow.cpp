@@ -23,11 +23,29 @@ FenPrincipale::FenPrincipale(){
     zoneCentrale->setLayout(layout);
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     :
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void FenPrincipale::defineAction(){
     bye = new QAction(tr("&salut !"),this);
     copy = new QAction(tr("&copy !"),this);
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     :
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void FenPrincipale::defineMenu(){
     menuFichier = menuBar()->addMenu(tr("&Fichier"));
     menuFichier->addAction(bye);

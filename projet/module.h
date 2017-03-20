@@ -12,7 +12,7 @@ protected:
     QString title;
 
 public:
-    explicit Module(QWidget *parent = 0,double h = 0, double w = 0);
+    explicit Module(QWidget *parent = 0,double h = 300, double w = 400);
     void setHeight(const double&);
     void setWidth(const double&);
     double getHeight()const;

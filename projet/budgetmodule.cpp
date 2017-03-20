@@ -10,8 +10,15 @@ BudgetModule::BudgetModule(QWidget *parent):Module(parent){
     button->show();
 }
 
-//Allocation mémoire des layouts
-
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     :
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void BudgetModule::initLayout(){
     main = new QVBoxLayout();
     head = new QHBoxLayout();
