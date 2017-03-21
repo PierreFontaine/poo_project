@@ -1,10 +1,11 @@
 #include "meteoparam.h"
 
 MeteoParam::MeteoParam(QWidget *parent) : QWidget(parent){
-    initLabel();
+    submitBtn = new QPushButton("Valider",this);
+
     initComboBox();
     initLayout();
-    setLayout(main);
+    setLayout(vLayout);
 }
 
 void MeteoParam::initComboBox(){
@@ -14,14 +15,20 @@ void MeteoParam::initComboBox(){
     _villeListe->addItem("Paris,fr");
     _villeListe->addItem("Toulouse,fr");
 
+    _mesure = new QComboBox(this);
+    _mesure->addItem("Imperial");
+    _mesure->addItem("Metric");
+    _mesure->addItem("Default");
+
 }
 
 void MeteoParam::initLayout(){
-    main = new QVBoxLayout();
-    main->addWidget(_villeTxt);
-    main->addWidget(_villeListe);
-}
+    vLayout = new QVBoxLayout();
 
-void MeteoParam::initLabel(){
-    _villeTxt = new QLabel("Ville",this);
+    formLayout = new QFormLayout();
+    formLayout->addRow("ville : ",_villeListe);
+    formLayout->addRow("mesure : ",_mesure);
+
+    vLayout->addLayout(formLayout);
+    vLayout->addWidget(submitBtn);
 }

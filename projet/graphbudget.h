@@ -3,15 +3,10 @@
 
 #include <QWidget>
 
-class GraphBudget : public QWidget
+class GraphBudget
 {
-    Q_OBJECT
 public:
-    explicit GraphBudget(QWidget *parent = 0);
-
-signals:
-
-public slots:
+    GraphBudget();
 };
 
 #endif // GRAPHBUDGET_H

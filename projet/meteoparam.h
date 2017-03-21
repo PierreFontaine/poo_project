@@ -5,17 +5,20 @@
 #include <QLayout>
 #include <QLabel>
 #include <QComboBox>
+#include <QFormLayout>
+#include <QPushButton>
 
 class MeteoParam : public QWidget{
         Q_OBJECT
     protected:
-        QVBoxLayout *main;
-        QLabel *_villeTxt;
+        QVBoxLayout *vLayout;
+        QFormLayout *formLayout;
         QComboBox *_villeListe;
+        QComboBox *_mesure;
+        QPushButton *submitBtn;
 
         void initLayout();
         void initComboBox();
-        void initLabel();
     public:
         explicit MeteoParam(QWidget *parent = 0);
 
