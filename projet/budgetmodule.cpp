@@ -6,11 +6,15 @@
 
 BudgetModule::BudgetModule(QWidget *parent):Module(parent){
 
-    boutonBudget = new QPushButton("Nouvelles données",this);
-
-    QObject::connect(boutonBudget,SIGNAL(clicked()),this,SLOT(openWindowBudgetData()));
+    newBudgetFen = new NewBudget();
+    initButton();
 }
 
-void BudgetModule::openWindowBudgetData(){
-    QMessageBox::information(this, "Titre de la fenêtre", "Bonjour et bienvenueà tous les Zéros !");
+void BudgetModule::initButton(){
+    boutonBudget = new QPushButton("Nouvelles données",this);
+    QObject::connect(boutonBudget,SIGNAL(clicked(bool)),this,SLOT(openNewBudget()));
+}
+
+void BudgetModule::openNewBudget(){
+    newBudgetFen->show();
 }

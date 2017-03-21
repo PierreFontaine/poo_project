@@ -5,16 +5,19 @@
 #include<QLabel>
 #include<QPushButton>
 #include"module.h"
+#include"newbudget.h"
 
 class BudgetModule:public Module{
     Q_OBJECT
 protected:
-
+    NewBudget *newBudgetFen;
     QPushButton *boutonBudget;
+
+    void initButton();
 
 public slots:
 
-    void openWindowBudgetData();
+    void openNewBudget();
 
 public:
 
