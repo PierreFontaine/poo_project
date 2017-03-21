@@ -4,21 +4,38 @@ NewBudget::NewBudget(QWidget *parent) : QWidget(parent)
 {
     initComboBox();
     initDoubleSpinBox();
-
-    validerBtn = new QPushButton("Valider",this);
-    QObject::connect(validerBtn,SIGNAL(clicked(bool)),this,SLOT());
+    initLayout();
 
 }
 
 void NewBudget::initComboBox(){
-    liste = new QComboBox(this);
-    liste->addItem("Salaire");
-    liste->addItem("Autre Entrée Argent");
-    liste->addItem("Course");
-    liste->addItem("Loisir");
-    liste->addItem("Autre Sortie Argent");
+    newBListe = new QComboBox(this);
+    newBListe->addItem("Salaire");
+    newBListe->addItem("Autre Entrée Argent");
+    newBListe->addItem("Course");
+    newBListe->addItem("Loisir");
+    newBListe->addItem("Loyer");
+    newBListe->addItem("Remboursement pret");
+    newBListe->addItem("Shopping");
+    newBListe->addItem("Autre Sortie Argent");
 }
 
 void NewBudget::initDoubleSpinBox(){
-    valeur = new QDoubleSpinBox(this);
+    newBValeur = new QDoubleSpinBox(this);
+}
+
+void NewBudget::initLayout(){
+
+    newDLayout = new QFormLayout;
+    newDLayout->addRow("Choix : ", newBListe);
+    newDLayout->addRow("Somme Argent : ", newBValeur);
+
+    newBLayout = new QVBoxLayout;
+    newBLayout->addLayout(newDLayout);
+    validerBtn = new QPushButton("Valider");
+    QObject::connect(validerBtn, SIGNAL(clicked(bool)),this, SLOT(quit()));
+    newBLayout->addWidget(validerBtn);
+
+    setLayout(newBLayout);
+
 }
