@@ -6,7 +6,7 @@ FenPrincipale::FenPrincipale(){
 
     mod1 = new BudgetModule(zoneCentrale);
     mod2 = new MeteoModule(zoneCentrale);
-    mod3 = new BudgetModule(zoneCentrale);
+    mod3 = new ActuModule(zoneCentrale);
     mod4 = new BudgetModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;

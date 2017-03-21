@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui charts
+QT       += core gui charts xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     meteodata.cpp \
     budgetdata.cpp \
     meteoparam.cpp \
-    newbudget.cpp
+    newbudget.cpp \
+    actumodule.cpp \
+    actudata.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -42,7 +44,9 @@ HEADERS  += mainwindow.h \
     meteodata.h \
     budgetdata.h \
     meteoparam.h \
-    newbudget.h
+    newbudget.h \
+    actumodule.h \
+    actudata.h
 
 FORMS    += mainwindow.ui
 

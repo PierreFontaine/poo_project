@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include "budgetmodule.h"
 #include "meteomodule.h"
+#include "actumodule.h"
 #include <QPushButton>
 #include<iostream>
 
