@@ -7,6 +7,7 @@
 #include <QComboBox>
 #include <QFormLayout>
 #include <QPushButton>
+#include <QDebug>
 
 class MeteoParam : public QWidget{
         Q_OBJECT
@@ -26,6 +27,7 @@ class MeteoParam : public QWidget{
     signals:
 
     public slots:
+        void debug();
 };
 
 #endif // METEOPARAM_H

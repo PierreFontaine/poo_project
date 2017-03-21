@@ -1,13 +1,32 @@
 #include "meteoparam.h"
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : constructeur par def
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 MeteoParam::MeteoParam(QWidget *parent) : QWidget(parent){
     submitBtn = new QPushButton("Valider",this);
 
     initComboBox();
     initLayout();
     setLayout(vLayout);
+    QObject::connect(submitBtn,SIGNAL(clicked(bool)),this,SLOT(debug()));
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : creation des comboBoxs pour unités et villes
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoParam::initComboBox(){
     _villeListe = new QComboBox(this);
     _villeListe->addItem("Pau,fr");
@@ -22,6 +41,15 @@ void MeteoParam::initComboBox(){
 
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : creation des layouts
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoParam::initLayout(){
     vLayout = new QVBoxLayout();
 
@@ -31,4 +59,9 @@ void MeteoParam::initLayout(){
 
     vLayout->addLayout(formLayout);
     vLayout->addWidget(submitBtn);
+}
+
+void MeteoParam::debug(){
+    qDebug()<<_villeListe->currentText();
+    qDebug()<<_mesure->currentText();
 }
