@@ -2,16 +2,28 @@
 #define NEWBUDGET_H
 
 #include <QWidget>
+#include<QLayout>
+#include<QLabel>
+#include<QComboBox>
+#include<QDoubleSpinBox>
+#include<QPushButton>
 
 class NewBudget : public QWidget
 {
     Q_OBJECT
-public:
-    explicit NewBudget(QWidget *parent = 0);
+    protected:
+        QComboBox *liste;
+        QDoubleSpinBox *valeur;
+        QPushButton *validerBtn;
 
-signals:
+        void initComboBox();
+        void initDoubleSpinBox();
+    public:
+        explicit NewBudget(QWidget *parent = 0);
 
-public slots:
+    signals:
+
+    public slots:
 };
 
 #endif // NEWBUDGET_H
