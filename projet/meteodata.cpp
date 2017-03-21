@@ -1,7 +1,7 @@
 #include "meteodata.h"
 #include "meteojour.h"
 MeteoData::MeteoData(QString v,QObject *parent):QObject(parent),_ville(v){
-
+    _mesure = "metric";
 }
 
 /*
@@ -34,7 +34,7 @@ void MeteoData::requete(){
     qDebug()<<"Creation connexion pour succès ou echec";
     connect(manager,SIGNAL(finished(QNetworkReply*)),
             this,SLOT(storeReplyInObj(QNetworkReply*)));
-    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/forecast/daily?q="+_ville+"&appid=9a5b3401d0ae43c0fdd643de1a05660c&units=metric&cnt=5")));
+    manager->get(QNetworkRequest(QUrl("http://api.openweathermap.org/data/2.5/forecast/daily?q="+_ville+"&appid=9a5b3401d0ae43c0fdd643de1a05660c&units="+_mesure+"&cnt=5")));
 }
 
 /*
@@ -263,6 +263,7 @@ void MeteoData::setVille(QString v){
  */
 double MeteoData::getCoeffNuage()const{
     return _coeffNuage;
+
 }
 
 /*
@@ -304,6 +305,28 @@ void MeteoData::setCoeffPluie(double c){
     _coeffPluie = c;
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : SLOT ré effectuer une requete après une action
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 void MeteoData::reqAgain(){
     requete();
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : setter mesure
+ remarque: choix entre "metric,impérial,default"
+ precond :
+ postcond:
+ ©2017
+ */
+void MeteoData::setMesure(QString s){
+    _mesure = s;
 }

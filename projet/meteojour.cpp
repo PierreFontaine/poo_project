@@ -2,7 +2,7 @@
 
 MeteoJour::MeteoJour(int j,MeteoData *data, QWidget *parent) : QWidget(parent),_j(j),_data(data){
     QObject::connect(data,SIGNAL(dataChanged(int)),this,SLOT(majData(int)));
-    paramFen = new MeteoParam();
+    paramFen = new MeteoParam(NULL,_data);
     initButton();
     initLabel();
     initLayout();
@@ -83,6 +83,7 @@ void MeteoJour::initButton(){
  */
 void MeteoJour::majData(int i){
     if(i == _j){
+        ville->setText("Ville : "+_data->getVille());
         temp->setText("temp moyenne : "+QString::number(_data->getTemp())+"C°");
         temp_min->setText("temp min : "+QString::number(_data->getTempMin())+"C°");
         temp_max->setText("temp max : "+QString::number(_data->getTempMax())+"C°");

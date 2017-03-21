@@ -21,6 +21,7 @@ class MeteoData:public QObject{
     Q_OBJECT
     protected:
         //RELEVENT DATA
+        QString _mesure;
         QString _ville;
         double _humidity;
         double _pressure;
@@ -52,6 +53,7 @@ class MeteoData:public QObject{
         void setCoeffNuage(double);//TODO
         void setCoeffPluie(double);//TODO
         void setVille(QString);
+        void setMesure(QString);
     signals:
         void dataChanged(int i);
     public slots:

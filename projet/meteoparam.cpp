@@ -9,13 +9,14 @@
  postcond:
  ©2017
  */
-MeteoParam::MeteoParam(QWidget *parent) : QWidget(parent){
+MeteoParam::MeteoParam(QWidget *parent, MeteoData *m) : QWidget(parent),_data(m){
     submitBtn = new QPushButton("Valider",this);
 
     initComboBox();
     initLayout();
     setLayout(vLayout);
     QObject::connect(submitBtn,SIGNAL(clicked(bool)),this,SLOT(debug()));
+    QObject::connect(submitBtn,SIGNAL(clicked(bool)),this,SLOT(majParams()));
 }
 
 /*
@@ -64,4 +65,18 @@ void MeteoParam::initLayout(){
 void MeteoParam::debug(){
     qDebug()<<_villeListe->currentText();
     qDebug()<<_mesure->currentText();
+}
+
+QString MeteoParam::getVille()const{
+    return _villeListe->currentText();
+}
+
+QString MeteoParam::getMesure()const{
+    return _mesure->currentText();
+}
+
+void MeteoParam::majParams(){
+    _data->setVille(getVille());
+    _data->setMesure(getMesure());
+    _data->reqAgain();
 }
