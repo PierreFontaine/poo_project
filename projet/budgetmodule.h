@@ -7,20 +7,17 @@
 #include"module.h"
 
 class BudgetModule:public Module{
+    Q_OBJECT
 protected:
-    //Layers
-    QVBoxLayout *main;
-    QHBoxLayout *head;
-    QHBoxLayout *container;
-    QVBoxLayout *containerLeft;
-    QVBoxLayout *containerRight;
-    QPushButton *button;
-    QLabel *label;
 
-    //initialisation des composants
-    void initLayout();
+    QPushButton *boutonBudget;
+
+public slots:
+
+    void openWindowBudgetData();
 
 public:
+
     explicit BudgetModule(QWidget *parent = 0);
 };
 
