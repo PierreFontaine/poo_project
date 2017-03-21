@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     meteojour.cpp \
     meteodata.cpp \
     graphbudget.cpp \
-    budgetdata.cpp
+    budgetdata.cpp \
+    meteoparam.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -40,7 +41,8 @@ HEADERS  += mainwindow.h \
     meteojour.h \
     meteodata.h \
     graphbudget.h \
-    budgetdata.h
+    budgetdata.h \
+    meteoparam.h
 
 FORMS    += mainwindow.ui
 

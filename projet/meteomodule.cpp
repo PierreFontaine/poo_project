@@ -34,6 +34,4 @@ void MeteoModule::setSemaine(){
     semaine->addTab(jours[2],"3");
     semaine->addTab(jours[3],"4");
     semaine->addTab(jours[4],"5");
-
-
 }

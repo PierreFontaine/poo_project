@@ -2,6 +2,8 @@
 
 MeteoJour::MeteoJour(int j,MeteoData *data, QWidget *parent) : QWidget(parent),_j(j),_data(data){
     QObject::connect(data,SIGNAL(dataChanged(int)),this,SLOT(majData(int)));
+    paramFen = new MeteoParam();
+    initButton();
     initLabel();
     initLayout();
     setLayout(mainLayout);
@@ -30,6 +32,8 @@ void MeteoJour::initLayout(){
 
     leftLayout = new QVBoxLayout();
     leftLayout->addWidget(img);
+    leftLayout->addWidget(reload);
+    leftLayout->addWidget(param);
     img->show();
 
 
@@ -61,6 +65,13 @@ void MeteoJour::initLabel(){
 
 }
 
+void MeteoJour::initButton(){
+    reload = new QPushButton("reload",this);
+    QObject::connect(reload,SIGNAL(clicked(bool)),_data,SLOT(reqAgain()));
+    param = new QPushButton("paramètres",this);
+    QObject::connect(param,SIGNAL(clicked(bool)),this,SLOT(openParam()));
+}
+
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
@@ -80,6 +91,19 @@ void MeteoJour::majData(int i){
         img->setPixmap(getSpriteImg(determinatePic()));
     }
 
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : (SLOT) Permet d'ouvrir la fenetre de paramètre
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void MeteoJour::openParam(){
+    paramFen->show();
 }
 
 /*

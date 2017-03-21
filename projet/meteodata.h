@@ -56,6 +56,7 @@ class MeteoData:public QObject{
         void dataChanged(int i);
     public slots:
         void storeReplyInObj(QNetworkReply*);
+        void reqAgain();
         void onError();
 };
 

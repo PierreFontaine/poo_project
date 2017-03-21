@@ -303,3 +303,7 @@ void MeteoData::setCoeffNuage(double c){
 void MeteoData::setCoeffPluie(double c){
     _coeffPluie = c;
 }
+
+void MeteoData::reqAgain(){
+    requete();
+}

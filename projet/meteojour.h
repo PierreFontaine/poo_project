@@ -7,7 +7,9 @@
 #include <QLayout>
 #include <QLabel>
 #include <QFileInfo>
+#include <QPushButton>
 #include "meteodata.h"
+#include "meteoparam.h"
 
 #define SOLEIL 0
 #define SOLEIL_NUAGE_CLAIR 1
@@ -18,6 +20,8 @@
 class MeteoJour : public QWidget{
     Q_OBJECT
 protected:
+    //property
+    MeteoParam *paramFen;
     //sprite
     QPixmap *sprite;
     //Unicité
@@ -28,12 +32,14 @@ protected:
     QVBoxLayout *rightLayout;
     QLabel *temp,*temp_min,*temp_max,*pressure,*humidity,*ville;
     QLabel *img;
+    QPushButton *reload,*param;
     //model
     MeteoData *_data;
 
     //Init
     void initLayout();
     void initLabel();
+    void initButton();
     QPixmap getSpriteImg(int);
     int determinatePic();
 
@@ -44,6 +50,7 @@ signals:
 
 public slots:
     void majData(int i);
+    void openParam();
 };
 
 #endif // METEOJOUR_H
