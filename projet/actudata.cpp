@@ -15,7 +15,7 @@ ActuData::ActuData(QObject *parent) : QObject(parent){
  */
 void ActuData::requete(){
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    qDebug()<<"Exe Req";
+    qDebug()<<"Exe Req XML";
     //execution d'une requete
     //callback du storage a la reception de la requete
     qDebug()<<"Creation connexion pour succès ou echec";
@@ -34,11 +34,53 @@ void ActuData::requete(){
  ©2017
  */
 void ActuData::storeReplyInObj(QNetworkReply* r){
-    qDebug()<<"CallBack";
+    qDebug()<<"CallBack XML";
     if(r->error() == QNetworkReply::NoError){
-        xmlDoc->setContent(r->readAll());
-        qDebug()<<xmlDoc;
+        QByteArray doc = r->readAll();
+        xmlDoc = new QXmlStreamReader(doc);
+        //qDebug()<<xml;
     }else{
         qDebug()<<r->errorString();
+    }
+    parseXML();
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : parser le doc
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void ActuData::parseXML(){
+    if(xmlDoc->readNextStartElement()){
+        if(xmlDoc->name() == "rss"){
+            while(xmlDoc->readNextStartElement()){
+                if(xmlDoc->name() == "channel"){
+                    while(xmlDoc->readNextStartElement()){
+                        if(xmlDoc->name() == "item"){
+                            while(xmlDoc->readNextStartElement()){
+                                if(xmlDoc->name() == "description"){
+                                    qDebug()<<xmlDoc->readElementText();
+                                }else{
+                                    //qDebug()<<"erreur pas d'élément description";
+                                    xmlDoc->skipCurrentElement();
+                                }
+                            }
+                        }else{
+                            //qDebug()<<"erreur pas d'élément item";
+                            xmlDoc->skipCurrentElement();
+                        }
+                    }
+                } else {
+                    //qDebug()<<"erreur pas d'éléments channel";
+                    xmlDoc->skipCurrentElement();
+                }
+            }
+
+        }
+
     }
 }

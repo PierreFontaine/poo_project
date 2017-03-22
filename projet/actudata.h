@@ -7,19 +7,21 @@
 #include <QObject>
 #include <QUrl>
 #include <QtXml>
+#include <QXmlStreamReader>
 
 class ActuData : public QObject
 {
     Q_OBJECT
 protected:
     QUrl *_urlRSS;
-    QDomDocument *xmlDoc;
+    QXmlStreamReader *xmlDoc;
     QDomElement *eltDoc;
 
-    void requete();
+    void parseXML();
 
 public:
     explicit ActuData(QObject *parent = 0);
+    void requete();
 
 signals:
 

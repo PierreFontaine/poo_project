@@ -5,7 +5,6 @@
 #include <QApplication>
 
 BudgetModule::BudgetModule(QWidget *parent):Module(parent){
-
     newBudgetFen = new NewBudget();
     initButton();
 }

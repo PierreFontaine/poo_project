@@ -13,6 +13,7 @@ protected:
     NewBudget *newBudgetFen;
     QPushButton *boutonBudget;
 
+
     void initButton();
 
 public slots:
