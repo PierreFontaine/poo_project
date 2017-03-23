@@ -11,7 +11,10 @@ NewBudget::NewBudget(QWidget *parent) : QWidget(parent)
 void NewBudget::initComboBox(){
     newBListe = new QComboBox(this);
     newBListe->addItem("Salaire");
+    newBListe->addItem("Bourse");
+    newBListe->addItem("Caf");
     newBListe->addItem("Autre Entrée Argent");
+
     newBListe->addItem("Course");
     newBListe->addItem("Loisir");
     newBListe->addItem("Loyer");
