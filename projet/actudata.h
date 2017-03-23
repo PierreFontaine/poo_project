@@ -8,6 +8,8 @@
 #include <QUrl>
 #include <QtXml>
 #include <QXmlStreamReader>
+#include "list.h"
+#include <string>
 
 class ActuData : public QObject
 {
@@ -16,15 +18,17 @@ protected:
     QUrl *_urlRSS;
     QXmlStreamReader *xmlDoc;
     QDomElement *eltDoc;
+    List<string> *_l;
 
     void parseXML();
 
 public:
     explicit ActuData(QObject *parent = 0);
     void requete();
+    List<string> *getList()const;
 
 signals:
-
+    void headLines();
 public slots:
     void storeReplyInObj(QNetworkReply*);
 };

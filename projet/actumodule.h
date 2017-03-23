@@ -3,7 +3,10 @@
 
 #include "module.h"
 #include "actudata.h"
-
+#include <QDebug>
+#include <QObject>
+#include <string>
+#include <iostream>
 class ActuModule : public Module{
     Q_OBJECT
 protected:
@@ -19,6 +22,7 @@ public:
 signals:
 
 public slots:
+    void afficheList();
 };
 
 #endif // ACTUMODULE_H

@@ -1,6 +1,9 @@
 #ifndef LIST_H
 #define LIST_H
-#include<QDebug>
+#include<iostream>
+
+using namespace std;
+
 template <class T>
 class List{
 protected:
@@ -13,12 +16,12 @@ protected:
 public:
     List();
     ~List();
-    List(const& List);
-    List& operator=(const& List);
+    //List(const& List);
+    List<T> operator=(const List<T>);
 
     void insertElemAtPos(int pos,T elt);
     void deleteElemAtPos(int pos);
-    int getElemAtPos(int pos)const;
+    T getElemAtPos(int pos)const;
     int getLength()const;
     bool isEmpty()const;
 
@@ -68,14 +71,17 @@ void List<T>::insertElemAtPos(int pos, T elt){
             _l->valeur = elt;
             _l->suivant = NULL;
         } else {
-            qDebug()<<'erreur de pos';
+            cout<<"erreur de pos";
         }
     } else {
+        //std::cerr << "avant getLength" << '\n';
         nbE = getLength();
-        i = 0;
+        //std::cerr << "après getLength" << '\n';
+        //cerr << nbE << endl;
+        i = 1;
         aux = _l;
         if(pos < 1 || pos > nbE+1){
-            qDebug()<<"erreur de position";
+            cout<<"erreur de position";
         } else {
             while(i != (pos - 1)){
                 i++;
@@ -113,9 +119,9 @@ void List<T>::deleteElemAtPos(int pos){
     int i;
 
     if(isEmpty()){
-        qDebug() << "liste vide";
+        cout << "liste vide";
     } else if((pos < 1) || (pos > getLength())){
-        qDebug() << "erreur de position";
+        cout << "erreur de position";
     }else if (pos != 1){
         i = 1;
         aux = _l;
@@ -140,7 +146,7 @@ void List<T>::deleteElemAtPos(int pos){
  ©2017
  */
 template <class T>
-bool List<T>::isEmpty(){
+bool List<T>::isEmpty()const{
     return (_l == NULL);
 }
 
@@ -152,7 +158,7 @@ bool List<T>::isEmpty(){
  ©2017
  */
 template <class T>
-int List<T>::getLength(){
+int List<T>::getLength()const{
     int i;
     liste celluleActuel;
 
@@ -174,13 +180,13 @@ int List<T>::getLength(){
  ©2017
  */
 template <class T>
-int List<T>::getElemAtPos(int pos) const{
+T List<T>::getElemAtPos(int pos) const{
     int i;
     liste aux;
     i = 1;
     if(_l != NULL){
         if(pos < 1 || pos>getLength()){
-            qDebug()<<"erreur de position";
+            cout<<"erreur de position";
         } else {
             aux = _l;
             while(i < pos){
@@ -190,7 +196,13 @@ int List<T>::getElemAtPos(int pos) const{
             return (aux->valeur);
         }
     }
-    return (-1);
+    //return NULL;
+}
+
+template <class T>
+List<T> List<T>::operator =(const List<T> t){
+    this->_l = t._l;
+    return *this;
 }
 
 #endif // LIST_H

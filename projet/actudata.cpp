@@ -1,7 +1,7 @@
 #include "actudata.h"
 
 ActuData::ActuData(QObject *parent) : QObject(parent){
-
+    _l = new List<string>();
 }
 
 /*
@@ -64,6 +64,10 @@ void ActuData::parseXML(){
                             while(xmlDoc->readNextStartElement()){
                                 if(xmlDoc->name() == "description"){
                                     qDebug()<<xmlDoc->readElementText();
+                                    //qDebug()<<"avant insertion dans la liste";
+                                    _l->insertElemAtPos(_l->getLength()+1,xmlDoc->readElementText().toStdString());
+                                    qDebug()<<"après insertion dans la liste";
+                                    //qDebug()<<_l->getElemAtPos(_l->getLength());
                                 }else{
                                     //qDebug()<<"erreur pas d'élément description";
                                     xmlDoc->skipCurrentElement();
@@ -83,4 +87,9 @@ void ActuData::parseXML(){
         }
 
     }
+    emit headLines();
+}
+
+List<string> * ActuData::getList()const{
+    return _l;
 }
