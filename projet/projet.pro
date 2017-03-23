@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     meteoparam.cpp \
     newbudget.cpp \
     actumodule.cpp \
-    actudata.cpp
+    actudata.cpp \
+    list.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -46,7 +47,8 @@ HEADERS  += mainwindow.h \
     meteoparam.h \
     newbudget.h \
     actumodule.h \
-    actudata.h
+    actudata.h \
+    list.h
 
 FORMS    += mainwindow.ui
 

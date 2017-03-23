@@ -32,6 +32,7 @@ protected:
     QChartView *chartViewL;
     QGridLayout *layout;
 
+
     void initButton();
     void initBarChart();
     void initLineChart();

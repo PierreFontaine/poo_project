@@ -6,7 +6,6 @@
 QT_CHARTS_USE_NAMESPACE
 
 BudgetModule::BudgetModule(QWidget *parent):Module(parent){
-
     newBudgetFen = new NewBudget();
 
     initButton();
