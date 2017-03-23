@@ -1,4 +1,4 @@
-#include "budgetmodule.h"
+﻿#include "budgetmodule.h"
 #include <QPushButton>
 #include <QWidget>
 #include <QApplication>
@@ -11,6 +11,7 @@ BudgetModule::BudgetModule(QWidget *parent):Module(parent){
     initButton();
     initBarChart();
     initLineChart();
+    initTab();
     initLayout();
 }
 
@@ -86,12 +87,30 @@ void BudgetModule::initLineChart(){
     chartViewL->show();
 }
 
+void BudgetModule::initTab(){
+    onglets = new QTabWidget();
+    page1 = new QWidget();
+    page2 = new QWidget();
+
+    layout1 = new QGridLayout();
+    layout1->addWidget(chartViewB,0,0);
+    page1->setLayout(layout1);
+
+    layout2 = new QGridLayout();
+    layout2->addWidget(chartViewL,0,0);
+    page2->setLayout(layout2);
+
+    onglets->addTab(page1,"1");
+    onglets->addTab(page2,"2");
+}
+
 void BudgetModule::initLayout(){
     layout = new QGridLayout();
 
-    layout->addWidget(chartViewL,0,0);
-    layout->addWidget(chartViewB,0,1);
-    layout->addWidget(boutonBudget,1,0,1,2);
+    layout->addWidget(onglets,0,0);
+
+    layout->addWidget(boutonBudget,1,0);
 
     setLayout(layout);
+
 }

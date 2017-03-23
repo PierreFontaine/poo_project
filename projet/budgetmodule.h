@@ -5,17 +5,9 @@
 #include<QLabel>
 #include<QPushButton>
 #include<QtCharts>
+#include<QWidget>
 #include"module.h"
 #include"newbudget.h"
-
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QMainWindow>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QLineSeries>
 
 QT_CHARTS_USE_NAMESPACE
 
@@ -31,12 +23,18 @@ protected:
     QChart *charts;
     QChartView *chartViewL;
     QGridLayout *layout;
-
+    QGridLayout *layout1;
+    QGridLayout *layout2;
+    QTabWidget *onglets;
+    QWidget *page1;
+    QWidget *page2;
 
     void initButton();
     void initBarChart();
     void initLineChart();
     void initLayout();
+    void initTab();
+
 public slots:
 
     void openNewBudget();
