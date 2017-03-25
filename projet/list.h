@@ -16,14 +16,15 @@ protected:
 public:
     List();
     ~List();
-    //List(const& List);
+    List(const List<T> &l);
     List<T> operator=(const List<T>);
+
 
     void insertElemAtPos(int pos,T elt);
     void deleteElemAtPos(int pos);
     T getElemAtPos(int pos)const;
     int getLength()const;
-    bool isEmpty()const;
+    bool empty()const;
 
 };
 
@@ -65,7 +66,7 @@ void List<T>::insertElemAtPos(int pos, T elt){
     liste tmp,aux;
     int i,nbE;
 
-    if(isEmpty()){
+    if(this->empty()){
         if(pos == 1){
             _l = new cellule;
             _l->valeur = elt;
@@ -118,7 +119,7 @@ void List<T>::deleteElemAtPos(int pos){
     liste temp,aux;
     int i;
 
-    if(isEmpty()){
+    if(empty()){
         cout << "liste vide";
     } else if((pos < 1) || (pos > getLength())){
         cout << "erreur de position";
@@ -146,7 +147,7 @@ void List<T>::deleteElemAtPos(int pos){
  ©2017
  */
 template <class T>
-bool List<T>::isEmpty()const{
+bool List<T>::empty()const{
     return (_l == NULL);
 }
 
@@ -181,6 +182,8 @@ int List<T>::getLength()const{
  */
 template <class T>
 T List<T>::getElemAtPos(int pos) const{
+    T def;
+
     int i;
     liste aux;
     i = 1;
@@ -196,7 +199,7 @@ T List<T>::getElemAtPos(int pos) const{
             return (aux->valeur);
         }
     }
-    //return NULL;
+    return def;
 }
 
 template <class T>

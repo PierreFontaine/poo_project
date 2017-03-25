@@ -35,7 +35,6 @@ SOURCES += main.cpp\
     newbudget.cpp \
     actumodule.cpp \
     actudata.cpp \
-    list.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
