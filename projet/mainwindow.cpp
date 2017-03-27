@@ -4,10 +4,10 @@ FenPrincipale::FenPrincipale(){
     zoneCentrale = new QWidget;
     setCentralWidget(zoneCentrale);
 
-    mod1 = new BudgetModule(zoneCentrale);
+    mod1 = new ToDoListModule(zoneCentrale);
     mod2 = new MeteoModule(zoneCentrale);
     mod3 = new ActuModule(zoneCentrale);
-    mod4 = new BudgetModule(zoneCentrale);
+    mod4 = new MeteoModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(mod1, 0, 0);

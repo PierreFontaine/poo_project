@@ -26,28 +26,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     module.cpp \
-    budgetmodule.cpp \
     meteomodule.cpp \
     meteojour.cpp \
     meteodata.cpp \
-    budgetdata.cpp \
     meteoparam.cpp \
-    newbudget.cpp \
     actumodule.cpp \
     actudata.cpp \
+    todolistmodule.cpp \
+    todolistdata.cpp \
+    todolistajout.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
-    budgetmodule.h \
     meteomodule.h \
     meteojour.h \
     meteodata.h \
-    budgetdata.h \
     meteoparam.h \
-    newbudget.h \
     actumodule.h \
     actudata.h \
-    list.h
+    list.h \
+    todolistmodule.h \
+    todolistdata.h \
+    todolistajout.h
 
 FORMS    += mainwindow.ui
 
