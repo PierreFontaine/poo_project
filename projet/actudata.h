@@ -10,6 +10,7 @@
 #include <QXmlStreamReader>
 #include "list.h"
 #include <string>
+#include <iostream>
 
 class ActuData : public QObject
 {

@@ -63,11 +63,13 @@ void ActuData::parseXML(){
                         if(xmlDoc->name() == "item"){
                             while(xmlDoc->readNextStartElement()){
                                 if(xmlDoc->name() == "description"){
-                                    qDebug()<<xmlDoc->readElementText();
-                                    //qDebug()<<"avant insertion dans la liste";
+                                    //qDebug()<<xmlDoc->readElementText();
+                                    qDebug()<<"avant insertion dans la liste";
+                                    //std::cerr << "insertion de " << xmlDoc->readElementText().toStdString() << std::endl;
                                     _l->insertElemAtPos(_l->getLength()+1,xmlDoc->readElementText().toStdString());
+                                    std::cerr<<_l->getElemAtPos(_l->getLength()) << std::endl;
                                     qDebug()<<"après insertion dans la liste";
-                                    //qDebug()<<_l->getElemAtPos(_l->getLength());
+
                                 }else{
                                     //qDebug()<<"erreur pas d'élément description";
                                     xmlDoc->skipCurrentElement();

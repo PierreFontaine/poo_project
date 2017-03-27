@@ -3,6 +3,7 @@
 
 #include "module.h"
 #include "actudata.h"
+#include <QWidget>
 #include <QLayout>
 #include <QLabel>
 #include <QDebug>
@@ -14,6 +15,8 @@
 class ActuModule : public Module{
     Q_OBJECT
 protected:
+    QWidget *container;
+    QScrollArea *actuScroll;
     QLabel *_title;
     ActuData *_data;
     QVBoxLayout *actuLayout;
