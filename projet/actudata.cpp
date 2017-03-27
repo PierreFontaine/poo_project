@@ -2,6 +2,7 @@
 
 ActuData::ActuData(QObject *parent) : QObject(parent){
     _l = new List<string>();
+    _h = new List<string>();
 }
 
 /*
@@ -70,7 +71,11 @@ void ActuData::parseXML(){
                                     std::cerr<<_l->getElemAtPos(_l->getLength()) << std::endl;
                                     qDebug()<<"après insertion dans la liste";
 
-                                }else{
+                                } else if (xmlDoc->name() == "link"){
+                                    qDebug()<<"OH UN LIEN !!!";
+                                    _h->insertElemAtPos(_h->getLength()+1,"<a href=\""+xmlDoc->readElementText().toStdString()+"\">link</a>");
+                                    std::cerr<<_h->getElemAtPos(_h->getLength()) << std::endl;
+                                } else {
                                     //qDebug()<<"erreur pas d'élément description";
                                     xmlDoc->skipCurrentElement();
                                 }
@@ -94,4 +99,8 @@ void ActuData::parseXML(){
 
 List<string> * ActuData::getList()const{
     return _l;
+}
+
+List<string> * ActuData::getHyperlink()const{
+    return _h;
 }

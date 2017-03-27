@@ -20,6 +20,7 @@ protected:
     QXmlStreamReader *xmlDoc;
     QDomElement *eltDoc;
     List<string> *_l;
+    List<string> *_h;
 
     void parseXML();
 
@@ -27,6 +28,7 @@ public:
     explicit ActuData(QObject *parent = 0);
     void requete();
     List<string> *getList()const;
+    List<string> *getHyperlink()const;
 
 signals:
     void headLines();

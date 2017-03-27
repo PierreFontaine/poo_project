@@ -20,7 +20,8 @@ protected:
     QLabel *_title;
     ActuData *_data;
     QVBoxLayout *actuLayout;
-    QLabel **_tab;
+    QLabel **_tabDesc;
+    QLabel **_tabLink;
 
     void initLabel();
     void initLayout();
