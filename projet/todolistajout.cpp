@@ -3,6 +3,7 @@
 ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
 {
     initLine();
+    initCalendrier();
     initButton();
     initLayout();
 }
@@ -10,7 +11,12 @@ ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
 void ToDoListAjout::initLine(){
     _titre = new QLineEdit;
     _objectif = new QLineEdit;
-    _date = new QDateEdit;
+    _heure = new QTimeEdit;
+}
+
+void ToDoListAjout::initCalendrier(){
+    _calendrier = new QCalendarWidget;
+    _calendrier->setMinimumDate(QDate::currentDate());
 }
 
 void ToDoListAjout::initButton(){
@@ -22,6 +28,7 @@ void ToDoListAjout::initButton(){
 
 void ToDoListAjout::initLayout(){
     _layoutBtn = new QHBoxLayout;
+    _layoutCalendrier = new QHBoxLayout;
     _layoutLine = new QFormLayout;
     _layoutPrincipal = new QVBoxLayout;
 
@@ -30,9 +37,12 @@ void ToDoListAjout::initLayout(){
 
     _layoutLine->addRow("Titre : ", _titre);
     _layoutLine->addRow("Votre objectif : ", _objectif);
-    _layoutLine->addRow("Date : ", _date);
+    _layoutLine->addRow("Heure : ", _heure);
+
+    _layoutCalendrier->addWidget(_calendrier);
 
     _layoutPrincipal->addLayout(_layoutLine);
+    _layoutPrincipal->addLayout(_layoutCalendrier);
     _layoutPrincipal->addLayout(_layoutBtn);
 
     setLayout(_layoutPrincipal);
