@@ -2,19 +2,37 @@
 
 ActuModule::ActuModule(QWidget *parent) : Module(parent){
     actuScroll = new QScrollArea(this);
-    container = new QWidget();
+    container = new QWidget(actuScroll);
     container->setGeometry(20,20,400,2500);
-    actuLayout = new QVBoxLayout();
+    initLabel();
+    initLayout();
+
     _data = new ActuData();
+
+    scrollLayout->addWidget(container);
     container->setLayout(actuLayout);
+    //container->set
+    actuScroll->setLayout(scrollLayout);
     actuScroll->setWidget(container);
     actuScroll->viewport()->setBackgroundRole(QPalette::Dark);
     actuScroll->viewport()->setAutoFillBackground(true);
     actuScroll->setWindowTitle(QObject::tr("News"));
     actuScroll->show();
     _data->requete();
+    mainLayout->addWidget(actuScroll);
+    mainLayout->addWidget(_title);
     connect(_data,SIGNAL(headLines()),this,SLOT(afficheList()));
+    setLayout(mainLayout);
+}
 
+void ActuModule::initLabel(){
+    _title = new QLabel("Actu ©LeMonde");
+}
+
+void ActuModule::initLayout(){
+    scrollLayout = new QVBoxLayout();
+    actuLayout = new QVBoxLayout();
+    mainLayout = new QVBoxLayout();
 }
 
 void ActuModule::afficheList(){

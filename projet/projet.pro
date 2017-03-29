@@ -34,7 +34,10 @@ SOURCES += main.cpp\
     actudata.cpp \
     todolistmodule.cpp \
     todolistdata.cpp \
-    todolistajout.cpp
+    todolistajout.cpp \
+    flux.cpp \
+    fluxatom.cpp \
+    fluxrss.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -47,7 +50,10 @@ HEADERS  += mainwindow.h \
     list.h \
     todolistmodule.h \
     todolistdata.h \
-    todolistajout.h
+    todolistajout.h \
+    flux.h \
+    fluxatom.h \
+    fluxrss.h
 
 FORMS    += mainwindow.ui
 

@@ -17,8 +17,10 @@ class ActuModule : public Module{
 protected:
     QWidget *container;
     QScrollArea *actuScroll;
+    QVBoxLayout *scrollLayout;
     QLabel *_title;
     ActuData *_data;
+    QVBoxLayout *mainLayout;
     QVBoxLayout *actuLayout;
     QLabel **_tabDesc;
     QLabel **_tabLink;
