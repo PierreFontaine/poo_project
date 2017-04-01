@@ -5,38 +5,40 @@
 
 class FluxAtom:public Flux{
 protected:
-  QString _feed;
-  QString _rigths;
-  QString _subtitle;
-  QString _summary;
-  QString _content;
-  QString _id;
-  QString _logo;
-  QString _entry;
-  QString _updated;
-  QString _contributor;
-  QString _published;
+  List<QString> *_feed;
+  List<QString> *_rigths;
+  List<QString> *_subtitle;
+  List<QString> *_summary;
+  List<QString> *_content;
+  List<QString> *_id;
+  List<QString> *_logo;
+  List<QString> *_entry;
+  List<QString> *_updated;
+  List<QString> *_contributor;
+  List<QString> *_published;
+
+  void initLists();
 public:
   FluxAtom();
   ~FluxAtom();
   //INHERITED FROM FLUX.H
-  QString getAuthor()const;
-  QString getCategory()const;
-  QString getGenerator()const;
-  QString getLink()const;
-  QString getTitle()const;
+  List<QString> getAuthor()const;
+  List<QString> getCategory()const;
+  List<QString> getGenerator()const;
+  List<QString> getLink()const;
+  List<QString> getTitle()const;
   //ATOM
-  QString getFeed()const;
-  QString getRigths()const;
-  QString getSubtitle()const;
-  QString getSummary()const;
-  QString getContent()const;
-  QString getId()const;
-  QString getLogo()const;
-  QString getEntry()const;
-  QString getUpdated()const;
-  QString getContributor()const;
-  QString getPublished()const;
+  List<QString> getFeed()const;
+  List<QString> getRigths()const;
+  List<QString> getSubtitle()const;
+  List<QString> getSummary()const;
+  List<QString> getContent()const;
+  List<QString> getId()const;
+  List<QString> getLogo()const;
+  List<QString> getEntry()const;
+  List<QString> getUpdated()const;
+  List<QString> getContributor()const;
+  List<QString> getPublished()const;
 
 };
 

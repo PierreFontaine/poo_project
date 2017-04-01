@@ -8,22 +8,34 @@ FluxRss::~FluxRss(){
 
 }
 
-QString FluxRss::getAuthor()const{
-  return _author;
+void FluxRss::initLists(){
+  _channel = new List<QString>();
+  _copyright = new List<QString>();
+  _description = new List<QString>();
+  _guid = new List<QString>();
+  _image = new List<QString>();
+  _item = new List<QString>();
+  _lastBuildDate = new List<QString>();
+  _managingEditor = new List<QString>();
+  _pubDate = new List<QString>();
 }
 
-QString FluxRss::getCategory()const{
+List<QString> FluxRss::getAuthor()const{
 
 }
 
-QString FluxRss::getGenerator()const{
+List<QString> FluxRss::getCategory()const{
 
 }
 
-QString FluxRss::getLink()const{
+List<QString> FluxRss::getGenerator()const{
 
 }
 
-QString FluxRss::getTitle()const{
+List<QString> FluxRss::getLink()const{
+
+}
+
+List<QString> FluxRss::getTitle()const{
 
 }

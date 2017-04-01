@@ -5,23 +5,24 @@
 
 class FluxRss:public Flux{
 protected:
-  QString _channel;
-  QString _copyright;
-  QString _description;
-  QString _guid;
-  QString _image;
-  QString _item;
-  QString _lastBuildDate;
-  QString _managingEditor;
-  QString _pubDate;
+  List<QString> *_channel;
+  List<QString> *_copyright;
+  List<QString> *_description;
+  List<QString> *_guid;
+  List<QString> *_image;
+  List<QString> *_item;
+  List<QString> *_lastBuildDate;
+  List<QString> *_managingEditor;
+  List<QString> *_pubDate;
+  void initLists();
 public:
   FluxRss();
   ~FluxRss();
-  QString getAuthor()const;
-  QString getCategory()const;
-  QString getGenerator()const;
-  QString getLink()const;
-  QString getTitle()const;
+  List<QString> getAuthor()const;
+  List<QString> getCategory()const;
+  List<QString> getGenerator()const;
+  List<QString> getLink()const;
+  List<QString> getTitle()const;
 };
 
 #endif // FLUXRSS_H

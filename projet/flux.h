@@ -2,22 +2,26 @@
 #define FLUX_H
 
 #include <QString>
+#include <QXmlStreamReader>
+#include "list.h"
 
-class Flux{
+class Flux:public QXmlStreamReader{
 protected:
-    QString _author;
-    QString _category;
-    QString _generator;
-    QString _link;
-    QString _title;
+    List<QString> *_author;
+    List<QString> *_category;
+    List<QString> *_generator;
+    List<QString> *_link;
+    List<QString> *_title;
+
+    void initLists();
 public:
     Flux();
     virtual ~Flux();
-    virtual QString getAuthor() const = 0;
-    virtual QString getCategory() const = 0;
-    virtual QString getGenerator() const = 0;
-    virtual QString getLink() const = 0;
-    virtual QString getTitle() const = 0;
+    List<QString> * getAuthor() const;
+    List<QString> * getCategory() const;
+    List<QString> * getGenerator() const;
+    List<QString> * getLink() const;
+    List<QString> * getTitle() const;
 };
 
 #endif // FLUX_H
