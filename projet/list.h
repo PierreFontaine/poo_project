@@ -176,13 +176,12 @@ int List<T>::getLength()const{
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     :return la valeur de l'elt à la pos demandé
+ but     :return la valeur de l'elt à la pos demandé si la pos n'est pas bonne, renvoi tete de liste
  remarque:
  ©2017
  */
 template <class T>
 T List<T>::getElemAtPos(int pos) const{
-    T def;
 
     int i;
     liste aux;
@@ -199,7 +198,7 @@ T List<T>::getElemAtPos(int pos) const{
             return (aux->valeur);
         }
     }
-    return def;
+    return _l->valeur;
 }
 
 template <class T>

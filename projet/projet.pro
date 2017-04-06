@@ -35,9 +35,8 @@ SOURCES += main.cpp\
     todolistmodule.cpp \
     todolistdata.cpp \
     todolistajout.cpp \
-    flux.cpp \
-    fluxatom.cpp \
-    fluxrss.cpp
+    fluxrss.cpp \
+    itemrss.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -51,14 +50,15 @@ HEADERS  += mainwindow.h \
     todolistmodule.h \
     todolistdata.h \
     todolistajout.h \
-    flux.h \
-    fluxatom.h \
-    fluxrss.h
+    fluxrss.h \
+    itemrss.h
 
 FORMS    += mainwindow.ui
 
 DISTFILES += \
-    ../build-projet-Desktop_Qt_5_8_0_clang_64bit-Debug/nuageux.png
+    ../build-projet-Desktop_Qt_5_8_0_clang_64bit-Debug/nuageux.png \
+    TDLdata.txt
 
 RESOURCES += \
-    images.qrc
+    images.qrc \
+    todolist.qrc

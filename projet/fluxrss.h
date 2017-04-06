@@ -1,28 +1,28 @@
 #ifndef FLUXRSS_H
 #define FLUXRSS_H
 
-#include "flux.h"
+#include "ItemRss.h"
+#include "list.h"
+#include <QtXml>
+#include <QXmlStreamReader>
 
-class FluxRss:public Flux{
+class FluxRss:public QXmlStreamReader{
 protected:
-  List<QString> *_channel;
-  List<QString> *_copyright;
-  List<QString> *_description;
-  List<QString> *_guid;
-  List<QString> *_image;
-  List<QString> *_item;
-  List<QString> *_lastBuildDate;
-  List<QString> *_managingEditor;
-  List<QString> *_pubDate;
-  void initLists();
+    FluxRss *root;
+    FluxRss *channel;
+    QString mainTitle;
+    QString mainDescription;
+    QString mainCopyright;
+    QString mainUrl;
+    QString mainPubDate;
+    List<QXmlStreamReader> item;
+
+    void fetchData();
 public:
   FluxRss();
+  FluxRss(QByteArray);
+  FluxRss(const FluxRss&);
   ~FluxRss();
-  List<QString> getAuthor()const;
-  List<QString> getCategory()const;
-  List<QString> getGenerator()const;
-  List<QString> getLink()const;
-  List<QString> getTitle()const;
 };
 
 #endif // FLUXRSS_H
