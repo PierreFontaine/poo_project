@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     actudata.cpp \
     todolistmodule.cpp \
     todolistdata.cpp \
-    todolistajout.cpp
+    todolistajout.cpp \
+    convertmodule.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -47,7 +48,8 @@ HEADERS  += mainwindow.h \
     list.h \
     todolistmodule.h \
     todolistdata.h \
-    todolistajout.h
+    todolistajout.h \
+    convertmodule.h
 
 FORMS    += mainwindow.ui
 

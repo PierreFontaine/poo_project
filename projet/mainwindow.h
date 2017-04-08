@@ -5,6 +5,7 @@
 #include "todolistmodule.h"
 #include "meteomodule.h"
 #include "actumodule.h"
+#include "convertmodule.h"
 #include <QPushButton>
 #include<iostream>
 
