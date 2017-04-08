@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QDebug>
 #include <QLineEdit>
+#include <QPushButton>
 
 class convertModule : public Module{
     Q_OBJECT
@@ -24,18 +25,27 @@ protected:
     QLabel *_unit2Lbl;
     QLineEdit *_unit1Edit;
     QLineEdit *_unit2Edit;
+    QPushButton *_val;
 
+    enum entiteValues{
+        temperature,
+        vitesse,
+        puissance,
+        volume
+    };
 
     void initLayout();
     void initComboBox();
     void initLabel();
     void initLineEdit();
+
 public:
     explicit convertModule(QWidget *parent = 0);
 
 signals:
-
+    void entiteChanged(entiteValues);
 public slots:
+    void loadUnits(entiteValues);
 };
 
 #endif // CONVERTMODULE_H

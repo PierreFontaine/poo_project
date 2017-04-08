@@ -60,8 +60,10 @@ void convertModule::initLayout(){
 */
 void convertModule::initComboBox(){
     _entite = new QComboBox();
-    _entite->addItems({"température",
-                       "b"});
+    _entite->addItems({ "température",
+                        "vitesse",
+                        "puissance",
+                        "volume"});
 
     _unit1 = new QComboBox();
     _unit2 = new QComboBox();
@@ -93,4 +95,28 @@ void convertModule::initLabel(){
 void convertModule::initLineEdit(){
     _unit1Edit = new QLineEdit();
     _unit2Edit = new QLineEdit();
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : charger les combo box en fonction de la conv souhaitée
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void convertModule::loadUnits(entiteValues e){
+    switch (e) {
+    case temperature:
+        break;
+    case vitesse:
+        break;
+    case puissance:
+        break;
+    case volume:
+        break;
+    default:
+        break;
+    }
 }
