@@ -10,7 +10,7 @@ ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
 
 void ToDoListAjout::initLine(){
     _titre = new QLineEdit;
-    _objectif = new QLineEdit;
+    _description = new QLineEdit;
     _heure = new QTimeEdit;
 }
 
@@ -24,6 +24,18 @@ void ToDoListAjout::initButton(){
     _validerBtn = new QPushButton("Valider",this);
 
     QObject::connect(_quitBtn, SIGNAL(clicked(bool)),this, SLOT(hide()));
+    QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this, SLOT(ajoutTDL()));
+}
+
+void ToDoListAjout::ajoutTDL(){
+    //qDebug()<<"Fonction ajoutTDL";
+    QFile TDLdata("TDLdata.txt");
+    if(!QFile::exists("TDLdata.txt"))
+
+        QMessageBox::critical(NULL,"Erreur","Le fichier spécifié n'existe pas !");
+
+    else QMessageBox::information(NULL,"Information","Le fichier spécifié existe !");
+    hide();
 }
 
 void ToDoListAjout::initLayout(){
@@ -36,7 +48,7 @@ void ToDoListAjout::initLayout(){
     _layoutBtn->addWidget(_quitBtn);
 
     _layoutLine->addRow("Titre : ", _titre);
-    _layoutLine->addRow("Votre objectif : ", _objectif);
+    _layoutLine->addRow("Description : ", _description);
     _layoutLine->addRow("Heure : ", _heure);
 
     _layoutCalendrier->addWidget(_calendrier);

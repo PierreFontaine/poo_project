@@ -1,15 +1,18 @@
 #ifndef TODOLISTAJOUT_H
 #define TODOLISTAJOUT_H
 
+
 #include <QApplication>
-#include <QTimeEdit>
+#include <QCalendarWidget>
+#include <QDebug>
+#include <QFile>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QObject>
 #include <QPushButton>
+#include <QTimeEdit>
 #include <QWidget>
-#include <QCalendarWidget>
-
 
 #include "todolistdata.h"
 
@@ -18,15 +21,19 @@ class ToDoListAjout : public QWidget
     Q_OBJECT
 protected:
     QCalendarWidget *_calendrier;
+
     QFormLayout *_layoutLine;
     QHBoxLayout *_layoutBtn;
     QHBoxLayout *_layoutCalendrier;
+    QVBoxLayout *_layoutPrincipal;
+
     QLineEdit *_titre;
-    QLineEdit *_objectif;
+    QLineEdit *_description;
     QTimeEdit *_heure;
+
     QPushButton *_quitBtn;
     QPushButton *_validerBtn;
-    QVBoxLayout *_layoutPrincipal;
+
 
     void initButton();
     void initCalendrier();
@@ -39,6 +46,7 @@ public:
 signals:
 
 public slots:
+        void ajoutTDL();
 };
 
 #endif // TODOLISTAJOUT_H

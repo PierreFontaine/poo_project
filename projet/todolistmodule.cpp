@@ -2,16 +2,24 @@
 
 ToDoListModule::ToDoListModule(QWidget *parent) : Module(parent)
 {
-    ajoutFen = new ToDoListAjout;
+    _ajoutFen = new ToDoListAjout;
     initButton();
+    initLayout();
+
 }
 
 void ToDoListModule::initButton(){
-    boutonAjout = new QPushButton("Nouveau",this);
-    QObject::connect(boutonAjout,SIGNAL(clicked(bool)),this,SLOT(openAjout()));
+   _newBtn = new QPushButton("Nouveau",this);
+    QObject::connect(_newBtn,SIGNAL(clicked(bool)),this,SLOT(openAjout()));
+
+    //_supprBtn = new QPushButton("Supprimer",this);
 }
 
 void ToDoListModule::openAjout(){
-    ajoutFen->show();
+    _ajoutFen->show();
+
+}
+
+void ToDoListModule::initLayout(){
 
 }
