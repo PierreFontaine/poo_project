@@ -11,6 +11,7 @@
 */
 convertModule::convertModule(QWidget *parent) : Module(parent){
     initLabel();
+    initLineEdit();
     initLayout();
     initComboBox();
     setLayout(_mainLyt);
@@ -21,6 +22,9 @@ convertModule::convertModule(QWidget *parent) : Module(parent){
     _entriesLyt->addWidget(_unit2Lbl,0,1);
     _entriesLyt->addWidget(_unit1,1,0);
     _entriesLyt->addWidget(_unit2,1,1);
+    _entriesLyt->addWidget(_unit1Edit,2,0);
+    _entriesLyt->addWidget(_unit2Edit,2,1);
+
     qDebug() << "après replissage de la table " << endl;
 
 }
@@ -56,6 +60,9 @@ void convertModule::initLayout(){
 */
 void convertModule::initComboBox(){
     _entite = new QComboBox();
+    _entite->addItems({"température",
+                       "b"});
+
     _unit1 = new QComboBox();
     _unit2 = new QComboBox();
 }
@@ -72,4 +79,18 @@ void convertModule::initComboBox(){
 void convertModule::initLabel(){
     _unit1Lbl = new QLabel("valeur 1");
     _unit2Lbl = new QLabel("valeur 2");
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : gestion des ligne d'entrée
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void convertModule::initLineEdit(){
+    _unit1Edit = new QLineEdit();
+    _unit2Edit = new QLineEdit();
 }

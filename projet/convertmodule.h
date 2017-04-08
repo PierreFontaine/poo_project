@@ -8,6 +8,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QDebug>
+#include <QLineEdit>
 
 class convertModule : public Module{
     Q_OBJECT
@@ -21,10 +22,14 @@ protected:
     QGridLayout *_entriesLyt;
     QLabel *_unit1Lbl;
     QLabel *_unit2Lbl;
+    QLineEdit *_unit1Edit;
+    QLineEdit *_unit2Edit;
+
 
     void initLayout();
     void initComboBox();
     void initLabel();
+    void initLineEdit();
 public:
     explicit convertModule(QWidget *parent = 0);
 
