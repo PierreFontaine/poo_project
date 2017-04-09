@@ -29,12 +29,19 @@ void ToDoListAjout::initButton(){
 
 void ToDoListAjout::ajoutTDL(){
     //qDebug()<<"Fonction ajoutTDL";
-    QFile TDLdata("TDLdata.txt");
-    if(!QFile::exists("TDLdata.txt"))
+    QFile data(":/new/prefix1/TDLdata.txt");
+    if(!data.exists()){
+        QMessageBox::critical(NULL,"Erreur","TDLdata n'existe pas");
+    }else{
+        if(data.open(QIODevice::WriteOnly|QIODevice::Text)){
+        QTextStream texte(&data);
+        texte << _titre->text();
+        }else{
+            QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
+        }
+        data.close();
 
-        QMessageBox::critical(NULL,"Erreur","Le fichier spécifié n'existe pas !");
-
-    else QMessageBox::information(NULL,"Information","Le fichier spécifié existe !");
+    }
     hide();
 }
 
