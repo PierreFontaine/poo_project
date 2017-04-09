@@ -40,7 +40,6 @@ void ToDoListAjout::ajoutTDL(){
             QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
         }
         data.close();
-
     }
     hide();
 }

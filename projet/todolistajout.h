@@ -7,10 +7,13 @@
 #include <QDebug>
 #include <QFile>
 #include <QFormLayout>
+#include <QInputDialog>
+#include <QIODevice>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QObject>
 #include <QPushButton>
+#include <QTextStream>
 #include <QTimeEdit>
 #include <QWidget>
 
