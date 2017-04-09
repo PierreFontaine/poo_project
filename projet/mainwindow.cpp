@@ -8,17 +8,20 @@ FenPrincipale::FenPrincipale(){
     mod2 = new MeteoModule(zoneCentrale);
     mod3 = new ActuModule(zoneCentrale);
     mod4 = new convertModule(zoneCentrale);
+    mod5 = new HorlogeModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(mod1, 0, 0);
     layout->addWidget(mod2, 0, 1);
     layout->addWidget(mod3, 1, 0);
     layout->addWidget(mod4, 1, 1);
+    layout->addWidget(mod5, 0, 2);
 
     mod1->show();
     mod2->show();
     mod3->show();
     mod4->show();
+    mod5->show();
 
     zoneCentrale->setLayout(layout);
 }

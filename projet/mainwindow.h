@@ -6,6 +6,7 @@
 #include "meteomodule.h"
 #include "actumodule.h"
 #include "convertmodule.h"
+#include "horlogemodule.h"
 #include <QPushButton>
 #include<iostream>
 
@@ -25,6 +26,7 @@ class FenPrincipale : public QMainWindow{
         Module *mod2;
         Module *mod3;
         Module *mod4;
+        Module *mod5;
 
 };
 

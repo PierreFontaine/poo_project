@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     todolistmodule.cpp \
     todolistdata.cpp \
     todolistajout.cpp \
-    convertmodule.cpp
+    convertmodule.cpp \
+    horlogemodule.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -49,7 +50,8 @@ HEADERS  += mainwindow.h \
     todolistmodule.h \
     todolistdata.h \
     todolistajout.h \
-    convertmodule.h
+    convertmodule.h \
+    horlogemodule.h
 
 FORMS    += mainwindow.ui
 

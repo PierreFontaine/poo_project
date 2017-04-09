@@ -1,8 +1,10 @@
 #ifndef TODOLISTMODULE_H
 #define TODOLISTMODULE_H
 
+#include <QFont>
 #include <QPushButton>
 #include <QTabWidget>
+#include <QTime>
 #include <QWidget>
 
 #include "module.h"
