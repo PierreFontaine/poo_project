@@ -38,14 +38,15 @@ protected:
     void initComboBox();
     void initLabel();
     void initLineEdit();
+    void initConnection();
 
 public:
     explicit convertModule(QWidget *parent = 0);
 
 signals:
-    void entiteChanged(entiteValues);
+
 public slots:
-    void loadUnits(entiteValues);
+    void loadUnits(QString);
 };
 
 #endif // CONVERTMODULE_H

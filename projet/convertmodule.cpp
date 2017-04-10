@@ -15,6 +15,7 @@ convertModule::convertModule(QWidget *parent) : Module(parent){
     initLayout();
     initComboBox();
     setLayout(_mainLyt);
+    initConnection();
 
     _deviseLyt->addWidget(_entite);
     qDebug() << "on remplie le widget table " << endl;
@@ -67,6 +68,8 @@ void convertModule::initComboBox(){
 
     _unit1 = new QComboBox();
     _unit2 = new QComboBox();
+    _unit1->addItems({"celsius","kelvin","fahrenheit"});
+    _unit2->addItems({"celsius","kelvin","fahrenheit"});
 }
 
 /*
@@ -100,23 +103,33 @@ void convertModule::initLineEdit(){
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
+ but     : initialiser les callbacks
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void convertModule::initConnection(){
+ QObject::connect(_entite,SIGNAL(currentIndexChanged(QString)),this,SLOT(loadUnits(QString)));
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
  but     : charger les combo box en fonction de la conv souhaitée
  remarque:
  precond :
  postcond:
  ©2017
 */
-void convertModule::loadUnits(entiteValues e){
-    switch (e) {
-    case temperature:
-        break;
-    case vitesse:
-        break;
-    case puissance:
-        break;
-    case volume:
-        break;
-    default:
-        break;
+void convertModule::loadUnits(QString e){
+    _unit1->clear();
+    _unit2->clear();
+    if(e == "température"){
+        _unit1->addItems({"celsius","kelvin","fahrenheit"});
+        _unit2->addItems({"celsius","kelvin","fahrenheit"});
+    } else if (e == "vitesse"){
+        _unit1->addItems({"Miles/h","Kilometre/h","noeud"});
+        _unit2->addItems({"Miles/h","Kilometre/h","noeud"});
     }
 }
