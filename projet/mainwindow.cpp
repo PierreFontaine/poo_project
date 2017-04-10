@@ -9,6 +9,7 @@ FenPrincipale::FenPrincipale(){
     mod3 = new ActuModule(zoneCentrale);
     mod4 = new convertModule(zoneCentrale);
     mod5 = new HorlogeModule(zoneCentrale);
+    mod6 = new DiapoModule(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(mod1, 0, 0);
@@ -16,12 +17,14 @@ FenPrincipale::FenPrincipale(){
     layout->addWidget(mod3, 1, 0);
     layout->addWidget(mod4, 1, 1);
     layout->addWidget(mod5, 0, 2);
+    layout->addWidget(mod6, 1, 2);
 
     mod1->show();
     mod2->show();
     mod3->show();
     mod4->show();
     mod5->show();
+    mod6->show();
 
     zoneCentrale->setLayout(layout);
 }

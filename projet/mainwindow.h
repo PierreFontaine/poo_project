@@ -7,6 +7,7 @@
 #include "actumodule.h"
 #include "convertmodule.h"
 #include "horlogemodule.h"
+#include "diapomodule.h"
 #include <QPushButton>
 #include<iostream>
 
@@ -27,6 +28,7 @@ class FenPrincipale : public QMainWindow{
         Module *mod3;
         Module *mod4;
         Module *mod5;
+        Module *mod6;
 
 };
 

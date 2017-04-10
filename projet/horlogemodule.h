@@ -3,6 +3,7 @@
 
 #include <QDate>
 #include <QLayout>
+#include <QMessageBox>
 #include <QObject>
 #include <QTime>
 #include <QTimer>
@@ -14,8 +15,10 @@ class HorlogeModule : public Module
 {
     Q_OBJECT
 protected:
-    QLabel *_date;
-    QLabel *_heure;
+    QDate *_date;
+    QLabel *_labelDate;
+    QLabel *_labelTime;
+    QTime *_heure;
     QTimer *_timer;
     QVBoxLayout *_layout;
 
@@ -27,6 +30,7 @@ public:
 signals:
 
 public slots:
+    void updateDate();
 };
 
 #endif // HORLOGEMODULE_H

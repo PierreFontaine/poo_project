@@ -33,9 +33,10 @@ void ToDoListAjout::ajoutTDL(){
     if(!data.exists()){
         QMessageBox::critical(NULL,"Erreur","TDLdata n'existe pas");
     }else{
-        if(data.open(QIODevice::WriteOnly|QIODevice::Text)){
-        QTextStream texte(&data);
-        texte << _titre->text();
+        data.open(QFile::WriteOnly | QFile::Truncate);
+        if(data.open(QFile::WriteOnly | QFile::Truncate)){
+            QTextStream texte(&data);
+            texte << "dada";
         }else{
             QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
         }
