@@ -3,21 +3,37 @@
 ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
 {
     initLine();
-    initCalendrier();
     initButton();
     initLayout();
 }
 
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Initialisation des lignes d'écriture
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+
 void ToDoListAjout::initLine(){
     _titre = new QLineEdit;
-    _description = new QLineEdit;
+    _note = new QLineEdit;
     _heure = new QTimeEdit;
+    _date = new QDateEdit;
 }
 
-void ToDoListAjout::initCalendrier(){
-    _calendrier = new QCalendarWidget;
-    _calendrier->setMinimumDate(QDate::currentDate());
-}
+
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Initialisation bouton
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 
 void ToDoListAjout::initButton(){
     _quitBtn = new QPushButton("Quitter",this);
@@ -26,6 +42,16 @@ void ToDoListAjout::initButton(){
     QObject::connect(_quitBtn, SIGNAL(clicked(bool)),this, SLOT(hide()));
     QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this, SLOT(ajoutTDL()));
 }
+
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Ecriture fichier
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 
 void ToDoListAjout::ajoutTDL(){
     //qDebug()<<"Fonction ajoutTDL";
@@ -45,9 +71,18 @@ void ToDoListAjout::ajoutTDL(){
     hide();
 }
 
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Initialisation layout
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+
 void ToDoListAjout::initLayout(){
     _layoutBtn = new QHBoxLayout;
-    _layoutCalendrier = new QHBoxLayout;
     _layoutLine = new QFormLayout;
     _layoutPrincipal = new QVBoxLayout;
 
@@ -55,13 +90,11 @@ void ToDoListAjout::initLayout(){
     _layoutBtn->addWidget(_quitBtn);
 
     _layoutLine->addRow("Titre : ", _titre);
-    _layoutLine->addRow("Description : ", _description);
+    _layoutLine->addRow("Note : ", _note);
     _layoutLine->addRow("Heure : ", _heure);
-
-    _layoutCalendrier->addWidget(_calendrier);
+    _layoutLine->addRow("Date : ",_date);
 
     _layoutPrincipal->addLayout(_layoutLine);
-    _layoutPrincipal->addLayout(_layoutCalendrier);
     _layoutPrincipal->addLayout(_layoutBtn);
 
     setLayout(_layoutPrincipal);
