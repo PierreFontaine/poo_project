@@ -12,6 +12,7 @@
 convertModule::convertModule(QWidget *parent) : Module(parent){
     initLabel();
     initLineEdit();
+    initQPushButton();
     initLayout();
     initComboBox();
     setLayout(_mainLyt);
@@ -19,12 +20,12 @@ convertModule::convertModule(QWidget *parent) : Module(parent){
 
     _deviseLyt->addWidget(_entite);
     qDebug() << "on remplie le widget table " << endl;
-    _entriesLyt->addWidget(_unit1Lbl,0,0);
-    _entriesLyt->addWidget(_unit2Lbl,0,1);
-    _entriesLyt->addWidget(_unit1,1,0);
-    _entriesLyt->addWidget(_unit2,1,1);
-    _entriesLyt->addWidget(_unit1Edit,2,0);
-    _entriesLyt->addWidget(_unit2Edit,2,1);
+    _entriesLyt->setVerticalSpacing(10);
+    _entriesLyt->addWidget(_unit1,0,0);
+    _entriesLyt->addWidget(_unit2,0,1);
+    _entriesLyt->addWidget(_unit1Edit,1,0);
+    _entriesLyt->addWidget(_unit2Edit,1,1);
+    _mainLyt->addWidget(_val);
 
     qDebug() << "après replissage de la table " << endl;
 
@@ -75,6 +76,19 @@ void convertModule::initComboBox(){
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
+ but     :
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void convertModule::initQPushButton(){
+    _val = new QPushButton("convertir");
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
  but     : initialiser les labels
  remarque:
  precond :
@@ -82,8 +96,7 @@ void convertModule::initComboBox(){
  ©2017
 */
 void convertModule::initLabel(){
-    _unit1Lbl = new QLabel("valeur 1");
-    _unit2Lbl = new QLabel("valeur 2");
+    //For ANY LABEL
 }
 
 /*
@@ -131,5 +144,11 @@ void convertModule::loadUnits(QString e){
     } else if (e == "vitesse"){
         _unit1->addItems({"Miles/h","Kilometre/h","noeud"});
         _unit2->addItems({"Miles/h","Kilometre/h","noeud"});
+    } else if (e == "puissance"){
+        _unit1->addItems({"Watt","kiloWatt","CV"});
+        _unit2->addItems({"Watt","kiloWatt","CV"});
+    } else if (e == "volume"){
+        _unit1->addItems({"Litre","Mètre cube","Gallon"});
+        _unit2->addItems({"Litre","Mètre cube","Gallon"});
     }
 }

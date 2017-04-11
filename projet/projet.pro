@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     todolistajout.cpp \
     convertmodule.cpp \
     horlogemodule.cpp \
-    diapomodule.cpp
+    diapomodule.cpp \
+    abstractmesureunite.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     todolistajout.h \
     convertmodule.h \
     horlogemodule.h \
-    diapomodule.h
+    diapomodule.h \
+    abstractmesureunite.h
 
 FORMS    += mainwindow.ui
 
