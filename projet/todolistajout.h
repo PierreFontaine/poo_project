@@ -32,8 +32,9 @@ protected:
     QHBoxLayout *_layoutCalendrier;
     QVBoxLayout *_layoutPrincipal;
 
+    QDateEdit *_date;
     QLineEdit *_titre;
-    QLineEdit *_description;
+    QLineEdit *_note;
     QTimeEdit *_heure;
 
     QPushButton *_quitBtn;
