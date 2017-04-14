@@ -38,7 +38,12 @@ SOURCES += main.cpp\
     convertmodule.cpp \
     horlogemodule.cpp \
     diapomodule.cpp \
-    abstractmesureunite.cpp
+    abstractmesureunite.cpp \
+    temperature.cpp \
+    vitesse.cpp \
+    puissance.cpp \
+    volume.cpp \
+    celsius.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -55,7 +60,12 @@ HEADERS  += mainwindow.h \
     convertmodule.h \
     horlogemodule.h \
     diapomodule.h \
-    abstractmesureunite.h
+    abstractmesureunite.h \
+    temperature.h \
+    vitesse.h \
+    puissance.h \
+    volume.h \
+    celsius.h
 
 FORMS    += mainwindow.ui
 

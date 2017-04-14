@@ -8,21 +8,22 @@ using namespace std;
 
 class AbstractMesureUnite{
 protected:
-    double value;
+  double _value;
 public:
-    AbstractMesureUnite();
-    AbstractMesureUnite(const AbstractMesureUnite&);
-    ~AbstractMesureUnite();
+  AbstractMesureUnite();
+  AbstractMesureUnite(const AbstractMesureUnite&);
+  ~AbstractMesureUnite();
+  AbstractMesureUnite &operator=(const AbstractMesureUnite&);
 
-    void setValue(double);
-    double getValue();
+  void setValue(double);
+  double getValue()const;
 
-    virtual void afficher(ostream &flux) const = 0;
+  virtual void afficher(ostream &flux) const = 0;
 
-    friend ostream& operator<<(ostream& flux,const AbstractMesureUnite& u){
-      u.afficher(flux);
-      return flux;
-    }
+  friend ostream& operator<<(ostream& flux,const AbstractMesureUnite& u){
+    u.afficher(flux);
+    return flux;
+  }
 
 
 
