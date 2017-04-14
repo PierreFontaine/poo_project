@@ -8,6 +8,7 @@ using namespace std;
 class Celsius : public Temperature{
 public:
   Celsius();
+  Celsius(double);
   void afficher(ostream &flux);
   double getCelsius();
   double getFahrenheit();
