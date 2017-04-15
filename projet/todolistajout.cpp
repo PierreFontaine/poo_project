@@ -7,9 +7,9 @@ ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
     initLayout();
 }
 
-QDate ToDoListAjout::getDate()const{
-    return _date;
-}
+//QDate ToDoListAjout::getDate()const{
+//    return _date;
+//}
 
 /*
  author  : Sallio Romane
