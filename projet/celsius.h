@@ -9,10 +9,10 @@ class Celsius : public Temperature{
 public:
   Celsius();
   Celsius(double);
-  void afficher(ostream &flux);
-  double getCelsius();
-  double getFahrenheit();
-  double getKelvin();
+  void afficher(ostream &flux)const;
+  double getCelsius()const;
+  double getFahrenheit()const;
+  double getKelvin()const;
 };
 
 #endif // CELSIUS_H

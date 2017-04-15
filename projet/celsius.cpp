@@ -16,7 +16,7 @@ Celsius::Celsius():Temperature(){
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     : Init de la mesure en connaissant la valeur 
+ but     : Init de la mesure en connaissant la valeur
  remarque:
  precond :
  postcond:
@@ -35,7 +35,7 @@ Celsius::Celsius(double v):Temperature(v){
  postcond:
  ©2017
  */
-void Celsius::afficher(ostream &flux){
+void Celsius::afficher(ostream &flux)const{
   flux << getValue() << "C°" << endl;
 }
 
@@ -48,7 +48,7 @@ void Celsius::afficher(ostream &flux){
  postcond:
  ©2017
  */
-double Celsius::getCelsius(){
+double Celsius::getCelsius()const{
   return (getValue());
 }
 
@@ -61,8 +61,8 @@ double Celsius::getCelsius(){
  postcond:
  ©2017
  */
-double Celsius::getFahrenheit(){
-  return ((getValue()*1.8)+32);
+double Celsius::getFahrenheit()const{
+  return ((getValue()*1.8)+32.0);
 }
 
 /*
@@ -74,6 +74,6 @@ double Celsius::getFahrenheit(){
  postcond:
  ©2017
  */
-double Celsius::getKelvin(){
+double Celsius::getKelvin()const{
   return (getValue()-273.15);
 }
