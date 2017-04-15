@@ -7,6 +7,10 @@ ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
     initLayout();
 }
 
+QDate ToDoListAjout::getDate()const{
+    return _date;
+}
+
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
@@ -21,7 +25,7 @@ void ToDoListAjout::initLine(){
     _titre = new QLineEdit;
     _note = new QLineEdit;
     _heure = new QTimeEdit;
-    _date = new QDateEdit;
+    _date = new QDate;
 }
 
 
@@ -92,7 +96,7 @@ void ToDoListAjout::initLayout(){
     _layoutLine->addRow("Titre : ", _titre);
     _layoutLine->addRow("Note : ", _note);
     _layoutLine->addRow("Heure : ", _heure);
-    _layoutLine->addRow("Date : ",_date);
+    //_layoutLine->addRow("Date : ",_date);
 
     _layoutPrincipal->addLayout(_layoutLine);
     _layoutPrincipal->addLayout(_layoutBtn);

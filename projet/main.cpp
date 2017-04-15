@@ -16,12 +16,17 @@ int main(int argc, char *argv[]){
     fenetre.show();
 
     //verifier si dossier existe,créer dossier, verifier si fichier existe,creer fichier
+    QDir home(QStandardPaths::HomeLocation + "");
     QDir dossier(QStandardPaths::HomeLocation + "/.dashboard");
     if (!dossier.exists()){
         qDebug()<<"dossier existe pas";
-        if(dossier.mkdir(QStandardPaths::HomeLocation + "/.dashboard")){
-            qDebug()<<"Dossier";
-        }
+        home.mkdir(".dashboard");
+    } else{
+        qDebug()<<"dossier existe";
+    }
+    if (!dossier.exists()){
+        qDebug()<<"dossier existe pas";
+
     } else{
         qDebug()<<"dossier existe";
     }

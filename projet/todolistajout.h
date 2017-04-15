@@ -30,7 +30,7 @@ protected:
     QHBoxLayout *_layoutCalendrier;
     QVBoxLayout *_layoutPrincipal;
 
-    QDateEdit *_date;
+    QDate *_date;
     QLineEdit *_titre;
     QLineEdit *_note;
     QTimeEdit *_heure;
@@ -47,6 +47,12 @@ protected:
 public:
     explicit ToDoListAjout(QWidget *parent = 0);
 
+    // ToDoListAjout();
+    // ToDoListAjout(const ToDoListAjout&);
+    // ~ToDoListAjout();
+    // ToDoListAjout &operator=(const ToDoListData&);
+
+    QDate getDate()const;
 signals:
 
 public slots:
