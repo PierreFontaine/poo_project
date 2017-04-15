@@ -13,7 +13,7 @@ void Kelvin::afficher(ostream &flux) const{
 }
 
 double Kelvin::getCelsius()const{
-    return(getValue()+273,15);
+    return(getValue()+273.15);
 }
 
 double Kelvin::getKelvin()const{
@@ -21,5 +21,5 @@ double Kelvin::getKelvin()const{
 }
 
 double Kelvin::getFahrenheit()const{
-    return (getCelsius()+273,15);
+    return ((getCelsius()*1.8)+32.0);
 }
