@@ -16,6 +16,19 @@ Celsius::Celsius():Temperature(){
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
+ but     : Init de la mesure en connaissant la valeur 
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+Celsius::Celsius(double v):Temperature(v){
+
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
  but     : affichage de la mesure avec le bon typage d'unité ici "C°"
  remarque:
  precond :

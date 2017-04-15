@@ -6,6 +6,7 @@
 class Temperature : public AbstractMesureUnite{
 public:
   Temperature();
+  Temperature(double);
   virtual void afficher(ostream &flux) const = 0;
   virtual double getCelsius()const = 0;
   virtual double getFahrenheit()const = 0;

@@ -43,7 +43,8 @@ SOURCES += main.cpp\
     vitesse.cpp \
     puissance.cpp \
     volume.cpp \
-    celsius.cpp
+    celsius.cpp \
+    fahrenheit.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -65,7 +66,8 @@ HEADERS  += mainwindow.h \
     vitesse.h \
     puissance.h \
     volume.h \
-    celsius.h
+    celsius.h \
+    fahrenheit.h
 
 FORMS    += mainwindow.ui
 

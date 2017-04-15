@@ -1,79 +1,79 @@
-#include "abstractmesureunite.h"
+#include "fahrenheit.h"
 
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     : constructeur par défaut
+ but     :
  remarque:
  precond :
  postcond:
  ©2017
  */
-AbstractMesureUnite::AbstractMesureUnite(){
-  _value = 0.0;
+Fahrenheit::Fahrenheit():Temperature(){
+  setValue(0.0);
 }
 
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     : constructeur en connaissant valeur 
+ but     :
  remarque:
  precond :
  postcond:
  ©2017
  */
-AbstractMesureUnite::AbstractMesureUnite(double v){
-  _value = v;
-}
-
-/*
- author  : Fontaine pierre
- mail    : pierre.ftn64@gmail.com
- but     : constructeur en connaissant la valeur
- remarque:
- precond :
- postcond:
- ©2017
- */
-AbstractMesureUnite::AbstractMesureUnite(const AbstractMesureUnite &u){
-  _value = u._value;
-}
-
-/*
- author  : Fontaine pierre
- mail    : pierre.ftn64@gmail.com
- but     : destructeur
- remarque:
- precond :
- postcond:
- ©2017
- */
-AbstractMesureUnite::~AbstractMesureUnite(){
+Fahrenheit::Fahrenheit(double v):Temperature(v){
 
 }
 
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     : donner une valeur
+ but     :
  remarque:
  precond :
  postcond:
  ©2017
  */
-void AbstractMesureUnite::setValue(double v){
-  _value = v;
+void Fahrenheit::afficher(ostream &flux)const{
+  flux << getValue() << "F°" << endl;
 }
 
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     : recup la valeur
+ but     : conversion en Celsius
+ remarque: conv vers celsius
+ precond :
+ postcond:
+ ©2017
+ */
+double Fahrenheit::getCelsius()const{
+  return ((getValue()-32.0)/1.8);
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : ici on est deja en Fahrenheit
  remarque:
  precond :
  postcond:
  ©2017
  */
-double AbstractMesureUnite::getValue()const{
-  return _value;
+double Fahrenheit::getFahrenheit()const{
+  return (getValue());
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : conv vers kelvin
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+double Fahrenheit::getKelvin()const{
+  return (getCelsius()-273.15);
 }

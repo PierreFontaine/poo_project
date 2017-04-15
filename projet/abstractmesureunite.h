@@ -11,7 +11,7 @@ protected:
   double _value;
 public:
   AbstractMesureUnite();
-  AbstractMesureUnit(double);
+  AbstractMesureUnite(double);
   AbstractMesureUnite(const AbstractMesureUnite&);
   ~AbstractMesureUnite();
   AbstractMesureUnite &operator=(const AbstractMesureUnite&);

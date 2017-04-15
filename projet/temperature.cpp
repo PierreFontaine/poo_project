@@ -3,3 +3,7 @@
 Temperature::Temperature():AbstractMesureUnite(){
 
 }
+
+Temperature::Temperature(double v):AbstractMesureUnite(v){
+  
+}

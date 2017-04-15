@@ -1,6 +1,5 @@
 #include "vitesse.h"
 
-Vitesse::Vitesse()
-{
+Vitesse::Vitesse():AbstractMesureUnite(){
 
 }
