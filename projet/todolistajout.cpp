@@ -58,15 +58,14 @@ void ToDoListAjout::initButton(){
  */
 
 void ToDoListAjout::ajoutTDL(){
-    //qDebug()<<"Fonction ajoutTDL";
-    QFile data(":/new/prefix1/TDLdata.txt");
+    QFile data("~/TDLdata.txt");
+
     if(!data.exists()){
         QMessageBox::critical(NULL,"Erreur","TDLdata n'existe pas");
     }else{
-        data.open(QFile::WriteOnly | QFile::Truncate);
-        if(data.open(QFile::WriteOnly | QFile::Truncate)){
+        if(data.open(QIODevice::WriteOnly | QIODevice::Text)){
             QTextStream texte(&data);
-            texte << "dada";
+            texte << tr("dada");
         }else{
             QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
         }

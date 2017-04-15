@@ -12,8 +12,7 @@
 #include <string>
 #include <iostream>
 
-class ActuData : public QObject
-{
+class ActuData : public QObject{
     Q_OBJECT
 protected:
     QUrl *_urlRSS;

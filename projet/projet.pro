@@ -37,7 +37,15 @@ SOURCES += main.cpp\
     todolistajout.cpp \
     convertmodule.cpp \
     horlogemodule.cpp \
-    diapomodule.cpp
+    diapomodule.cpp \
+    abstractmesureunite.cpp \
+    temperature.cpp \
+    vitesse.cpp \
+    puissance.cpp \
+    volume.cpp \
+    celsius.cpp \
+    fahrenheit.cpp \
+    kelvin.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -53,7 +61,15 @@ HEADERS  += mainwindow.h \
     todolistajout.h \
     convertmodule.h \
     horlogemodule.h \
-    diapomodule.h
+    diapomodule.h \
+    abstractmesureunite.h \
+    temperature.h \
+    vitesse.h \
+    puissance.h \
+    volume.h \
+    celsius.h \
+    fahrenheit.h \
+    kelvin.h
 
 FORMS    += mainwindow.ui
 

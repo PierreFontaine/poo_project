@@ -27,17 +27,11 @@ protected:
     QLineEdit *_unit2Edit;
     QPushButton *_val;
 
-    enum entiteValues{
-        temperature,
-        vitesse,
-        puissance,
-        volume
-    };
-
     void initLayout();
     void initComboBox();
     void initLabel();
     void initLineEdit();
+    void initQPushButton();
     void initConnection();
 
 public:

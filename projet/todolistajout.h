@@ -5,7 +5,9 @@
 #include <QApplication>
 #include <QCalendarWidget>
 #include <QDebug>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QFormLayout>
 #include <QInputDialog>
 #include <QIODevice>
