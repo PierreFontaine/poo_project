@@ -19,6 +19,7 @@ public:
     virtual double getKilometreValue(subunit) const = 0;
     virtual double getMetreValue(subunit) const = 0;
     virtual double getMilesValue(subunit) const = 0;
+    subunit getUnit()const;
 };
 
 #endif // VITESSE_H
