@@ -141,8 +141,8 @@ void convertModule::loadUnits(QString e){
         _unit1->addItems({"celsius","kelvin","fahrenheit"});
         _unit2->addItems({"celsius","kelvin","fahrenheit"});
     } else if (e == "vitesse"){
-        _unit1->addItems({"Miles/h","Kilometre/h","noeud"});
-        _unit2->addItems({"Miles/h","Kilometre/h","noeud"});
+        _unit1->addItems({"Miles/h","Kilometre/h","metre/s"});
+        _unit2->addItems({"Miles/h","Kilometre/h","metre/s"});
     }
 }
 
@@ -157,5 +157,23 @@ void convertModule::loadUnits(QString e){
  ©2017
 */
 void convertModule::convert(){
+    int val1 = _unit1Edit->text().toInt();
 
+    if(_entite->currentText() == "température"){
+        if(_unit1->currentIndex() == 0){
+            _mesure = new Celsius(val1);
+        } else if (_unit1->currentIndex() == 1){
+            _mesure = new Kelvin(val1);
+        } else if (_unit1->currentIndex() == 2){
+            _mesure = new Fahrenheit(val1);
+        }
+
+        if(_unit2->currentIndex() == 0){
+            _unit2Edit->setText(QString::number(_mesure->getCelsius()));
+        } else if (_unit2->currentIndex() == 1){
+            _unit2Edit->setText(QString::number(_mesure->getKelvin()));
+        } else if (_unit2->currentIndex() == 2){
+            _unit2Edit->setText(QString::number(_mesure->getFahrenheit()));
+        }
+    }
 }
