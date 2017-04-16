@@ -13,14 +13,14 @@ void Miles::afficher(ostream &flux)const{
 
 }
 
-/*double getKilometreValue(subunit)const{
-
+double Miles::getKilometreValue(subunit a)const{
+    return (getMilesValue(a) * 1.609344);
 }
 
-double getMetreValue(subunit)const{
-
+double Miles::getMetreValue(subunit a)const{
+    return (getMilesValue(a) * 1609.344);
 }
 
-double getMilesValue(subunit)const{
-    return (getMilesValue(subunit));
-}*/
+double Miles::getMilesValue(subunit a)const{
+    return (getMilesValue(a));
+}
