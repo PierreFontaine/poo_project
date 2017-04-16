@@ -8,7 +8,7 @@ using namespace std;
 class Miles : public Vitesse{
 public:
     Miles();
-    Miles(double);
+    Miles(double,subunit);
     void afficher(ostream &flux) const;
     double getMiles()const;
     double getKilometres()const;

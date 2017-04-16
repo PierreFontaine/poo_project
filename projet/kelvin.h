@@ -6,7 +6,7 @@
 using namespace std;
 
 class Kelvin : public Temperature{
-public:
+  public:
     Kelvin();
     Kelvin(double);
     void afficher(ostream &flux)const;

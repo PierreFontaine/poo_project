@@ -63,9 +63,7 @@ void convertModule::initLayout(){
 void convertModule::initComboBox(){
     _entite = new QComboBox();
     _entite->addItems({ "température",
-                        "vitesse",
-                        "puissance",
-                        "volume"});
+                        "vitesse"});
 
     _unit1 = new QComboBox();
     _unit2 = new QComboBox();
@@ -124,6 +122,7 @@ void convertModule::initLineEdit(){
 */
 void convertModule::initConnection(){
  QObject::connect(_entite,SIGNAL(currentIndexChanged(QString)),this,SLOT(loadUnits(QString)));
+ QObject::connect(_val,SIGNAL(clicked(bool)),this,SLOT(convert()));
 }
 
 /*
@@ -144,11 +143,19 @@ void convertModule::loadUnits(QString e){
     } else if (e == "vitesse"){
         _unit1->addItems({"Miles/h","Kilometre/h","noeud"});
         _unit2->addItems({"Miles/h","Kilometre/h","noeud"});
-    } else if (e == "puissance"){
-        _unit1->addItems({"Watt","kiloWatt","CV"});
-        _unit2->addItems({"Watt","kiloWatt","CV"});
-    } else if (e == "volume"){
-        _unit1->addItems({"Litre","Mètre cube","Gallon"});
-        _unit2->addItems({"Litre","Mètre cube","Gallon"});
     }
+}
+
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : effectuer la converstion de mesure en jouant sur les 2 labels
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void convertModule::convert(){
+
 }

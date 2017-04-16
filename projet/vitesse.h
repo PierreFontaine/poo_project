@@ -3,16 +3,18 @@
 
 #include "abstractmesureunite.h"
 
-class Vitesse : public AbstractMesureUnite{
-public:
-    enum subunit {
-      HEURE,
-      MINUTE,
-      SECONDE
-    };
+enum subunit {
+  HEURE,
+  MINUTE,
+  SECONDE
+};
 
+class Vitesse : public AbstractMesureUnite{
+protected:
+  subunit _t;
+public:
     Vitesse();
-    Vitesse(double);
+    Vitesse(double,subunit);
     virtual void afficher(ostream &flux) const = 0;
     virtual double getKilometreValue(subunit) const = 0;
     virtual double getMetreValue(subunit) const = 0;

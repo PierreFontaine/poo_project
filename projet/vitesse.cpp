@@ -4,6 +4,6 @@ Vitesse::Vitesse():AbstractMesureUnite(){
 
 }
 
-Vitesse::Vitesse(double v):AbstractMesureUnite(v){
-
+Vitesse::Vitesse(double v,subunit t):AbstractMesureUnite(v){
+ _t = t;
 }

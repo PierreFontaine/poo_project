@@ -10,6 +10,9 @@
 #include <QDebug>
 #include <QLineEdit>
 #include <QPushButton>
+#include "kelvin.h"
+#include "celsius.h"
+
 
 class convertModule : public Module{
     Q_OBJECT
@@ -27,12 +30,16 @@ protected:
     QLineEdit *_unit2Edit;
     QPushButton *_val;
 
+    AbstractMesureUnite *_mesure;
+
     void initLayout();
     void initComboBox();
     void initLabel();
     void initLineEdit();
     void initQPushButton();
     void initConnection();
+
+
 
 public:
     explicit convertModule(QWidget *parent = 0);
@@ -41,6 +48,7 @@ signals:
 
 public slots:
     void loadUnits(QString);
+    void convert();
 };
 
 #endif // CONVERTMODULE_H
