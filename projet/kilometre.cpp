@@ -1,16 +1,16 @@
-#include "miles.h"
+#include "kilometre.h"
 
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
- but     : instance d'une vitesse en miles sans connaitre la valeur
+ but     : instance d'une vitesse en km sans connaitre la valeur
  remarque:
  precond :
  postcond:
  ©2017
  */
 
-Miles::Miles():Vitesse(){
+Kilometre::Kilometre():Vitesse(){
     setValue(0.0);
 }
 
@@ -24,37 +24,37 @@ Miles::Miles():Vitesse(){
  ©2017
  */
 
-Miles::Miles(double v,subunit t):Vitesse(v,t){
+Kilometre::Kilometre(double v,subunit t):Vitesse(v,t){
 
 }
 
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
- but     : affichage de la mesure avec le bon typage d'unité ici "Mp"
+ but     : affichage de la mesure avec le bon typage d'unité ici "Km"
  remarque:
  precond :
  postcond:
  ©2017
  */
 
-void Miles::afficher(ostream &flux)const{
-    flux << getValue() << "Mp" << endl;
+void Kilometre::afficher(ostream &flux)const{
+    flux << getValue() << "Km" << endl;
 
 }
 
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
- but     : conv en km
+ but     : ici on est deja en km
  remarque:
  precond :
  postcond:
  ©2017
  */
 
-double Miles::getKilometreValue(subunit)const{
-    return (getValue() * 1.609344);
+double Kilometre::getKilometreValue(subunit)const{
+    return (getValue());
 }
 
 /*
@@ -67,20 +67,20 @@ double Miles::getKilometreValue(subunit)const{
  ©2017
  */
 
-double Miles::getMetreValue(subunit)const{
-    return (getValue() * 1609.344);
+double Kilometre::getMetreValue(subunit)const{
+    return (getValue() * 100);
 }
 
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
- but     : ici on est deja en mp
+ but     : conv en mp
  remarque:
  precond :
  postcond:
  ©2017
  */
 
-double Miles::getMilesValue(subunit)const{
-    return (getValue());
+double Kilometre::getMilesValue(subunit)const{
+    return (getValue() / 1.609344);
 }

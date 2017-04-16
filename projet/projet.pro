@@ -46,7 +46,9 @@ SOURCES += main.cpp\
     celsius.cpp \
     fahrenheit.cpp \
     kelvin.cpp \
-    miles.cpp
+    miles.cpp \
+    kilometre.cpp \
+    metre.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -71,7 +73,9 @@ HEADERS  += mainwindow.h \
     celsius.h \
     fahrenheit.h \
     kelvin.h \
-    miles.h
+    miles.h \
+    kilometre.h \
+    metre.h
 
 FORMS    += mainwindow.ui
 
