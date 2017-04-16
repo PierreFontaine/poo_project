@@ -53,7 +53,7 @@ void Miles::afficher(ostream &flux)const{
  ©2017
  */
 
-double Miles::getKilometreValue(subunit a)const{
+double Miles::getKilometreValue(subunit)const{
     return (getValue() * 1.609344);
 }
 
@@ -67,7 +67,7 @@ double Miles::getKilometreValue(subunit a)const{
  ©2017
  */
 
-double Miles::getMetreValue(subunit a)const{
+double Miles::getMetreValue(subunit)const{
     return (getValue() * 1609.344);
 }
 
@@ -81,6 +81,6 @@ double Miles::getMetreValue(subunit a)const{
  ©2017
  */
 
-double Miles::getMilesValue(subunit a)const{
+double Miles::getMilesValue(subunit)const{
     return (getValue());
 }
