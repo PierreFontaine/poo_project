@@ -3,7 +3,7 @@
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     :
+ but     : instance d'une temperature en fahrenheit sans connaitre la valeur
  remarque:
  precond :
  postcond:
@@ -17,7 +17,7 @@ Fahrenheit::Fahrenheit():Temperature(){
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
  but     :
- remarque:
+ remarque: Init de la mesure en connaissant la valeur
  precond :
  postcond:
  ©2017
@@ -29,7 +29,7 @@ Fahrenheit::Fahrenheit(double v):Temperature(v){
 /*
  author  : Fontaine pierre
  mail    : pierre.ftn64@gmail.com
- but     :
+ but     : affichage de la mesure avec le bon typage d'unité ici "F°"
  remarque:
  precond :
  postcond:
@@ -49,7 +49,7 @@ void Fahrenheit::afficher(ostream &flux)const{
  ©2017
  */
 double Fahrenheit::getCelsius()const{
-  return ((getValue()-32.0)/1.8);
+    return ((getValue()*1.8)+32.0);
 }
 
 /*
@@ -75,5 +75,5 @@ double Fahrenheit::getFahrenheit()const{
  ©2017
  */
 double Fahrenheit::getKelvin()const{
-  return (getCelsius()-273.15);
+    return (getCelsius()+273.15);
 }

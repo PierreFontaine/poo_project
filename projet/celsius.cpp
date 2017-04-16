@@ -62,7 +62,7 @@ double Celsius::getCelsius()const{
  ©2017
  */
 double Celsius::getFahrenheit()const{
-  return ((getValue()*1.8)+32.0);
+    return ((getValue()-32.0)/1.8);
 }
 
 /*
@@ -75,5 +75,5 @@ double Celsius::getFahrenheit()const{
  ©2017
  */
 double Celsius::getKelvin()const{
-  return (getValue()-273.15);
+    return (getValue()+273.15);
 }
