@@ -160,20 +160,40 @@ void convertModule::convert(){
     int val1 = _unit1Edit->text().toInt();
 
     if(_entite->currentText() == "température"){
+
         if(_unit1->currentIndex() == 0){
-            _mesure = new Celsius(val1);
+            _mesureT = new Celsius(val1);
         } else if (_unit1->currentIndex() == 1){
-            _mesure = new Kelvin(val1);
+            _mesureT = new Kelvin(val1);
         } else if (_unit1->currentIndex() == 2){
-            _mesure = new Fahrenheit(val1);
+            _mesureT = new Fahrenheit(val1);
         }
 
         if(_unit2->currentIndex() == 0){
-            _unit2Edit->setText(QString::number(_mesure->getCelsius()));
+            _unit2Edit->setText(QString::number(_mesureT->getCelsius()));
         } else if (_unit2->currentIndex() == 1){
-            _unit2Edit->setText(QString::number(_mesure->getKelvin()));
+            _unit2Edit->setText(QString::number(_mesureT->getKelvin()));
         } else if (_unit2->currentIndex() == 2){
-            _unit2Edit->setText(QString::number(_mesure->getFahrenheit()));
+            _unit2Edit->setText(QString::number(_mesureT->getFahrenheit()));
         }
+
+    } else if (_entite->currentText() == "vitesse"){
+
+        if(_unit1->currentIndex() == 0){
+            _mesureV = new Miles(val1,HEURE);
+        } /*else if (_unit1->currentIndex() == 1){
+            _mesureV = new Kilometre(val1,HEURE);
+        } else if (_unit1->currentIndex() == 2){
+            _mesureV = new Metre(val1,SECONDE);
+        }*/
+
+        if(_unit2->currentIndex() == 0){
+            _unit2Edit->setText(QString::number(_mesureV->getMilesValue(HEURE)));
+        }/* else if (_unit2->currentIndex() == 1){
+            _unit2Edit->setText(QString::number(_mesureT->getKilometreValue(HEURE)));
+        } else if (_unit2->currentIndex() == 2){
+            _unit2Edit->setText(QString::number(_mesureT->getMetreValue(SECONDE)));
+        }*/
+
     }
 }

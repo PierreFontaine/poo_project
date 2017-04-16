@@ -65,16 +65,16 @@ void ActuData::parseXML(){
                             while(xmlDoc->readNextStartElement()){
                                 if(xmlDoc->name() == "description"){
                                     //qDebug()<<xmlDoc->readElementText();
-                                    qDebug()<<"avant insertion dans la liste";
+                                    //qDebug()<<"avant insertion dans la liste";
                                     //std::cerr << "insertion de " << xmlDoc->readElementText().toStdString() << std::endl;
                                     _l->insertElemAtPos(_l->getLength()+1,xmlDoc->readElementText().toStdString());
-                                    std::cerr<<_l->getElemAtPos(_l->getLength()) << std::endl;
-                                    qDebug()<<"après insertion dans la liste";
+                                    //std::cerr<<_l->getElemAtPos(_l->getLength()) << std::endl;
+                                    //qDebug()<<"après insertion dans la liste";
 
                                 } else if (xmlDoc->name() == "link"){
-                                    qDebug()<<"OH UN LIEN !!!";
+                                    //qDebug()<<"OH UN LIEN !!!";
                                     _h->insertElemAtPos(_h->getLength()+1,"<a href=\""+xmlDoc->readElementText().toStdString()+"\">link</a>");
-                                    std::cerr<<_h->getElemAtPos(_h->getLength()) << std::endl;
+                                    //std::cerr<<_h->getElemAtPos(_h->getLength()) << std::endl;
                                 } else {
                                     //qDebug()<<"erreur pas d'élément description";
                                     xmlDoc->skipCurrentElement();

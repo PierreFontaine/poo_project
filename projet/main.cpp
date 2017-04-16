@@ -16,8 +16,8 @@ int main(int argc, char *argv[]){
     fenetre.show();
 
     //verifier si dossier existe,créer dossier, verifier si fichier existe,creer fichier
-    QDir home(QStandardPaths::HomeLocation + "");
-    QDir dossier(QStandardPaths::HomeLocation + "/.dashboard");
+    QDir home(QStandardPaths::displayName(QStandardPaths::HomeLocation) + "");
+    QDir dossier(QStandardPaths::displayName(QStandardPaths::HomeLocation) + "/.dashboard");
     if (!dossier.exists()){
         qDebug()<<"dossier existe pas";
         home.mkdir(".dashboard");
