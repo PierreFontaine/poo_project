@@ -3,8 +3,8 @@
 /*
  author  : Sallio Romane
  mail    : romane.sallio@gmail.com
- but     : conv en celsius
- remarque: instance d'une temperature en miles sans connaitre la valeur
+ but     : instance d'une temperature en miles sans connaitre la valeur
+ remarque:
  precond :
  postcond:
  ©2017
@@ -54,7 +54,7 @@ void Miles::afficher(ostream &flux)const{
  */
 
 double Miles::getKilometreValue(subunit a)const{
-    return (getValue(a) * 1.609344);
+    return (getValue() * 1.609344);
 }
 
 /*
@@ -68,7 +68,7 @@ double Miles::getKilometreValue(subunit a)const{
  */
 
 double Miles::getMetreValue(subunit a)const{
-    return (getValue(a) * 1609.344);
+    return (getValue() * 1609.344);
 }
 
 /*
@@ -82,5 +82,5 @@ double Miles::getMetreValue(subunit a)const{
  */
 
 double Miles::getMilesValue(subunit a)const{
-    return (getValue(a));
+    return (getValue());
 }
