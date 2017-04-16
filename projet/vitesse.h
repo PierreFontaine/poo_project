@@ -19,6 +19,11 @@ public:
     virtual double getKilometreValue(subunit) const = 0;
     virtual double getMetreValue(subunit) const = 0;
     virtual double getMilesValue(subunit) const = 0;
+
+    double getParS()const;
+    double getParH()const;
+    double getParM()const;
+    
     subunit getUnit()const;
 };
 
