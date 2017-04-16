@@ -12,6 +12,7 @@ public:
     };
 
     Vitesse();
+    Vitesse(double);
     virtual void afficher(ostream &flux) const = 0;
     virtual double getKilometreValue(subunit) const = 0;
     virtual double getMetreValue(subunit) const = 0;
