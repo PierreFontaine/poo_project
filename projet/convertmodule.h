@@ -13,6 +13,7 @@
 #include "kelvin.h"
 #include "celsius.h"
 #include "fahrenheit.h"
+#include "miles.h"
 
 
 class convertModule : public Module{
@@ -31,7 +32,8 @@ protected:
     QLineEdit *_unit2Edit;
     QPushButton *_val;
 
-    Temperature *_mesure;
+    Temperature *_mesureT;
+    Vitesse *_mesureV;
 
     void initLayout();
     void initComboBox();

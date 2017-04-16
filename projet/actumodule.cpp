@@ -43,7 +43,7 @@ void ActuModule::afficheList(){
     _tabDesc = new QLabel*[length];
     _tabLink = new QLabel*[length];
     for(int i = 1;i <= length;i++){
-        std::cerr<<"i = " << i << " " << l->getElemAtPos(i)<<std::endl;
+        //std::cerr<<"i = " << i << " " << l->getElemAtPos(i)<<std::endl;
         _tabDesc[i-1] = new QLabel(QString::fromStdString(l->getElemAtPos(i)));
         _tabDesc[i-1]->setWordWrap(true);
         _tabLink[i-1] = new QLabel(QString::fromStdString(h->getElemAtPos(i)));

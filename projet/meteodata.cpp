@@ -81,9 +81,9 @@ void MeteoData::parseObj(){
     qDebug() << obj.keys();//("city", "cnt", "cod", "list", "message")
     QJsonArray list = obj.value("list").toArray();
     for(int i = 0; i < 5;i ++){
-        qDebug() << list.at(i);
+        //qDebug() << list.at(i);
         QJsonObject jData = list.at(i).toObject();
-        qDebug() << jData.keys();//("clouds", "deg", "dt", "humidity", "pressure", "rain", "speed", "temp", "weather")
+        //qDebug() << jData.keys();//("clouds", "deg", "dt", "humidity", "pressure", "rain", "speed", "temp", "weather")
         QJsonObject jTemp = jData.value("temp").toObject();
         _coeffNuage = jData.value("clouds").toDouble();
         _coeffPluie = jData.value("rain").toDouble();
