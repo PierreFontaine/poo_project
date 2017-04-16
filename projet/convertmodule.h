@@ -12,6 +12,7 @@
 #include <QPushButton>
 #include "kelvin.h"
 #include "celsius.h"
+#include "fahrenheit.h"
 
 
 class convertModule : public Module{
@@ -30,7 +31,7 @@ protected:
     QLineEdit *_unit2Edit;
     QPushButton *_val;
 
-    AbstractMesureUnite *_mesure;
+    Temperature *_mesure;
 
     void initLayout();
     void initComboBox();
