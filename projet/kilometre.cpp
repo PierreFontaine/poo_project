@@ -39,7 +39,17 @@ Kilometre::Kilometre(double v,subunit t):Vitesse(v,t){
  */
 
 void Kilometre::afficher(ostream &flux)const{
-    flux << getValue() << "Km" << endl;
+  switch (_t) {
+    case HEURE:{
+      flux << getValue() << "Km/h" << endl;
+    }
+    case MINUTE:{
+      flux << getValue() << "Km/m" << endl;
+    }
+    case SECONDE:{
+      flux << getValue() << "Km/s" << endl;
+    }
+  }
 
 }
 
@@ -54,7 +64,17 @@ void Kilometre::afficher(ostream &flux)const{
  */
 
 double Kilometre::getKilometreValue(subunit)const{
-    return (getValue());
+  switch (_t) {
+    case HEURE:{
+      return (getParH());
+    }
+    case MINUTE:{
+      return (getParM());
+    }
+    case SECONDE:{
+      return (getParS());
+    }
+  }
 }
 
 /*
@@ -68,7 +88,17 @@ double Kilometre::getKilometreValue(subunit)const{
  */
 
 double Kilometre::getMetreValue(subunit)const{
-    return (getValue() * 100);
+  switch (_t) {
+    case HEURE:{
+      return (getParH() * 100);
+    }
+    case MINUTE:{
+      return (getParM() * 100);
+    }
+    case SECONDE:{
+      return (getParS() * 100);
+    }
+  }
 }
 
 /*
@@ -82,5 +112,15 @@ double Kilometre::getMetreValue(subunit)const{
  */
 
 double Kilometre::getMilesValue(subunit)const{
-    return (getValue() / 1.609344);
+  switch (_t) {
+    case HEURE:{
+      return (getParH() / 1.609344);
+    }
+    case MINUTE:{
+      return (getParM() / 1.609344);
+    }
+    case SECONDE:{
+      return (getParS() / 1.609344);
+    }
+  }
 }
