@@ -69,15 +69,15 @@ void Metre::afficher(ostream &flux)const{
 double Metre::getKilometreValue(subunit s)const{
     switch (s) {
       case HEURE:{
-        return (getParH() / 100);
+        return (getParH() / 1000);
         break;
       }
       case MINUTE:{
-        return (getParM() / 100);
+        return (getParM() / 1000);
         break;
       }
       case SECONDE:{
-        return (getParS() / 100);
+        return (getParS() / 1000);
         break;
       }
     }
