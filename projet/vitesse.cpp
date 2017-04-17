@@ -24,13 +24,16 @@ subunit Vitesse::getUnit()const{
 double Vitesse::getParS()const{
   switch (_t) {
     case HEURE:{
-      return (_value*3600.0);
+      return (_value);
+      break;
     }
     case MINUTE:{
-      return (_value*60.0);
+      return (_value/60.0);
+      break;
     }
     case SECONDE:{
-      return _value;
+      return (_value/3600.0);
+      break;
     }
   }
 }
@@ -48,12 +51,15 @@ double Vitesse::getParH()const{
   switch (_t) {
     case HEURE:{
       return (_value);
+      break;
     }
     case MINUTE:{
-      return (_value/60.0);
+      return (_value*60.0);
+      break;
     }
     case SECONDE:{
-      return (_value/3600.0);
+      return (_value*3600.0);
+      break;
     }
   }
 }
@@ -70,13 +76,16 @@ double Vitesse::getParH()const{
 double Vitesse::getParM()const{
   switch (_t) {
     case HEURE:{
-      return (_value*60);
+      return (_value/60.0);
+      break;
     }
     case MINUTE:{
       return (_value);
+      break;
     }
     case SECONDE:{
-      return (_value/60);
+      return (_value*60.0);
+      break;
     }
   }
 }
