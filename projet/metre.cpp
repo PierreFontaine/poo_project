@@ -39,7 +39,17 @@ Metre::Metre(double v,subunit t):Vitesse(v,t){
  */
 
 void Metre::afficher(ostream &flux)const{
-    flux << getValue() << "m" << endl;
+    switch (_t) {
+      case HEURE:{
+        flux << getValue() << "m/h" << endl;
+      }
+      case MINUTE:{
+        flux << getValue() << "m/m" << endl;
+      }
+      case SECONDE:{
+        flux << getValue() << "m/s" << endl;
+      }
+    }
 
 }
 
@@ -54,7 +64,17 @@ void Metre::afficher(ostream &flux)const{
  */
 
 double Metre::getKilometreValue(subunit)const{
-    return (getValue() / 100);
+    switch (_t) {
+      case HEURE:{
+        return (getParH() / 100);
+      }
+      case MINUTE:{
+        return (getParM() / 100);
+      }
+      case SECONDE:{
+        return (getParS() / 100);
+      }
+    }
 }
 
 /*
@@ -68,7 +88,17 @@ double Metre::getKilometreValue(subunit)const{
  */
 
 double Metre::getMetreValue(subunit)const{
-    return (getValue());
+    switch (_t) {
+      case HEURE:{
+        return (getParH());
+      }
+      case MINUTE:{
+        return (getParM());
+      }
+      case SECONDE:{
+        return (getParS());
+      }
+    }
 }
 
 /*
@@ -81,6 +111,16 @@ double Metre::getMetreValue(subunit)const{
  ©2017
  */
 
-double Metre::getMilesValue(subunit)const{
-    return (getValue() / 1609.344);
+double Metre::getMilesValue(subunit)const{;
+    switch (_t) {
+      case HEURE:{
+        return (getParH() / 1609.344);
+      }
+      case MINUTE:{
+        return (getParM() / 1609.344);
+      }
+      case SECONDE:{
+        return (getParS() / 1609.344);
+      }
+    }
 }
