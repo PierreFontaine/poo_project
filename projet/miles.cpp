@@ -66,8 +66,8 @@ void Miles::afficher(ostream &flux)const{
  ©2017
  */
 
-double Miles::getKilometreValue(subunit)const{
-    switch (_t) {
+double Miles::getKilometreValue(subunit s)const{
+    switch (s) {
       case HEURE:{
         return (getParH() * 1.609344);
         break;
@@ -93,8 +93,8 @@ double Miles::getKilometreValue(subunit)const{
  ©2017
  */
 
-double Miles::getMetreValue(subunit)const{
-    switch (_t) {
+double Miles::getMetreValue(subunit s)const{
+    switch (s) {
       case HEURE:{
         return (getParH() * 1609.344);
         break;
@@ -121,8 +121,8 @@ double Miles::getMetreValue(subunit)const{
  ©2017
  */
 
-double Miles::getMilesValue(subunit)const{
-    switch (_t) {
+double Miles::getMilesValue(subunit s)const{
+    switch (s) {
       case HEURE:{
         return (getParH());
         break;

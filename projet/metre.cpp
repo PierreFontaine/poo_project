@@ -66,8 +66,8 @@ void Metre::afficher(ostream &flux)const{
  ©2017
  */
 
-double Metre::getKilometreValue(subunit)const{
-    switch (_t) {
+double Metre::getKilometreValue(subunit s)const{
+    switch (s) {
       case HEURE:{
         return (getParH() / 100);
         break;
@@ -93,8 +93,8 @@ double Metre::getKilometreValue(subunit)const{
  ©2017
  */
 
-double Metre::getMetreValue(subunit)const{
-    switch (_t) {
+double Metre::getMetreValue(subunit s)const{
+    switch (s) {
       case HEURE:{
         return (getParH());
         break;
@@ -120,8 +120,8 @@ double Metre::getMetreValue(subunit)const{
  ©2017
  */
 
-double Metre::getMilesValue(subunit)const{;
-    switch (_t) {
+double Metre::getMilesValue(subunit s)const{;
+    switch (s) {
       case HEURE:{
         return (getParH() / 1609.344);
         break;
