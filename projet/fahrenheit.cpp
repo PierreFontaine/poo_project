@@ -49,7 +49,8 @@ void Fahrenheit::afficher(ostream &flux)const{
  ©2017
  */
 double Fahrenheit::getCelsius()const{
-    return ((getValue()*1.8)+32.0);
+  return ((getValue()-32.0)/1.8);
+    
 }
 
 /*

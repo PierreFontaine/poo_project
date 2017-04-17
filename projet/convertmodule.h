@@ -14,6 +14,8 @@
 #include "celsius.h"
 #include "fahrenheit.h"
 #include "miles.h"
+#include "kilometre.h"
+#include "metre.h"
 
 
 class convertModule : public Module{

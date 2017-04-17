@@ -181,19 +181,19 @@ void convertModule::convert(){
 
         if(_unit1->currentIndex() == 0){
             _mesureV = new Miles(val1,HEURE);
-        } /*else if (_unit1->currentIndex() == 1){
+        } else if (_unit1->currentIndex() == 1){
             _mesureV = new Kilometre(val1,HEURE);
         } else if (_unit1->currentIndex() == 2){
             _mesureV = new Metre(val1,SECONDE);
-        }*/
+        }
 
         if(_unit2->currentIndex() == 0){
             _unit2Edit->setText(QString::number(_mesureV->getMilesValue(HEURE)));
-        }/* else if (_unit2->currentIndex() == 1){
-            _unit2Edit->setText(QString::number(_mesureT->getKilometreValue(HEURE)));
+        } else if (_unit2->currentIndex() == 1){
+            _unit2Edit->setText(QString::number(_mesureV->getKilometreValue(HEURE)));
         } else if (_unit2->currentIndex() == 2){
-            _unit2Edit->setText(QString::number(_mesureT->getMetreValue(SECONDE)));
-        }*/
+            _unit2Edit->setText(QString::number(_mesureV->getMetreValue(SECONDE)));
+        }
 
     }
 }
