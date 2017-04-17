@@ -42,12 +42,15 @@ void Miles::afficher(ostream &flux)const{
     switch (_t) {
       case HEURE:{
         flux << getValue() << "mp/h" << endl;
+        break;
       }
       case MINUTE:{
         flux << getValue() << "mp/m" << endl;
+        break;
       }
       case SECONDE:{
         flux << getValue() << "mp/s" << endl;
+        break;
       }
     }
 
@@ -67,12 +70,15 @@ double Miles::getKilometreValue(subunit)const{
     switch (_t) {
       case HEURE:{
         return (getParH() * 1.609344);
+        break;
       }
       case MINUTE:{
         return (getParM() * 1.609344);
+        break;
       }
       case SECONDE:{
         return (getParS() * 1.609344);
+        break;
       }
     }
 }
@@ -91,12 +97,15 @@ double Miles::getMetreValue(subunit)const{
     switch (_t) {
       case HEURE:{
         return (getParH() * 1609.344);
+        break;
       }
       case MINUTE:{
         return (getParM() * 1609.344);
+        break;
       }
       case SECONDE:{
         return (getParS()) * 1609.344;
+        break;
       }
     }
 
@@ -116,12 +125,15 @@ double Miles::getMilesValue(subunit)const{
     switch (_t) {
       case HEURE:{
         return (getParH());
+        break;
       }
       case MINUTE:{
         return (getParM());
+        break;
       }
       case SECONDE:{
         return (getParS());
+        break;
       }
     }
 }

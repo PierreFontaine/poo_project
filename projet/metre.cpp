@@ -42,12 +42,15 @@ void Metre::afficher(ostream &flux)const{
     switch (_t) {
       case HEURE:{
         flux << getValue() << "m/h" << endl;
+        break;
       }
       case MINUTE:{
         flux << getValue() << "m/m" << endl;
+        break;
       }
       case SECONDE:{
         flux << getValue() << "m/s" << endl;
+        break;
       }
     }
 
@@ -67,12 +70,15 @@ double Metre::getKilometreValue(subunit)const{
     switch (_t) {
       case HEURE:{
         return (getParH() / 100);
+        break;
       }
       case MINUTE:{
         return (getParM() / 100);
+        break;
       }
       case SECONDE:{
         return (getParS() / 100);
+        break;
       }
     }
 }
@@ -91,12 +97,15 @@ double Metre::getMetreValue(subunit)const{
     switch (_t) {
       case HEURE:{
         return (getParH());
+        break;
       }
       case MINUTE:{
         return (getParM());
+        break;
       }
       case SECONDE:{
         return (getParS());
+        break;
       }
     }
 }
@@ -115,12 +124,15 @@ double Metre::getMilesValue(subunit)const{;
     switch (_t) {
       case HEURE:{
         return (getParH() / 1609.344);
+        break;
       }
       case MINUTE:{
         return (getParM() / 1609.344);
+        break;
       }
       case SECONDE:{
         return (getParS() / 1609.344);
+        break;
       }
     }
 }
