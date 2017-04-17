@@ -24,7 +24,7 @@ subunit Vitesse::getUnit()const{
 double Vitesse::getParS()const{
   switch (_t) {
     case HEURE:{
-      return (_value);
+      return (_value/3600.0);
       break;
     }
     case MINUTE:{
@@ -32,7 +32,7 @@ double Vitesse::getParS()const{
       break;
     }
     case SECONDE:{
-      return (_value/3600.0);
+      return (_value);
       break;
     }
   }
