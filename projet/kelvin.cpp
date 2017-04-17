@@ -82,6 +82,6 @@ double Kelvin::getKelvin()const{
  */
 
 double Kelvin::getFahrenheit()const{
-    return ((getCelsius()-32.0)/1.8);
+    return ((getCelsius()*1.8)+32);
 
 }
