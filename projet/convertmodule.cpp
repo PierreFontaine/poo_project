@@ -141,8 +141,8 @@ void convertModule::loadUnits(QString e){
         _unit1->addItems({"celsius","kelvin","fahrenheit"});
         _unit2->addItems({"celsius","kelvin","fahrenheit"});
     } else if (e == "vitesse"){
-        _unit1->addItems({"Miles/h","Kilometre/h","metre/s"});
-        _unit2->addItems({"Miles/h","Kilometre/h","metre/s"});
+        _unit1->addItems({"Miles/h","Kilometre/h","Metre/h","Miles/m","Kilometre/m","Metre/m","Miles/s","Kilometre/s","Metre/s"});
+        _unit2->addItems({"Miles/h","Kilometre/h","Metre/h","Miles/m","Kilometre/m","Metre/m","Miles/s","Kilometre/s","Metre/s"});
     }
 }
 
@@ -184,14 +184,39 @@ void convertModule::convert(){
         } else if (_unit1->currentIndex() == 1){
             _mesureV = new Kilometre(val1,HEURE);
         } else if (_unit1->currentIndex() == 2){
+            _mesureV = new Metre(val1,HEURE);
+        } else if (_unit1->currentIndex() == 3){
+            _mesureV = new Miles(val1,MINUTE);
+        } else if (_unit1->currentIndex() == 4){
+            _mesureV = new Kilometre(val1,MINUTE);
+        } else if (_unit1->currentIndex() == 5){
+            _mesureV = new Metre(val1,MINUTE);
+        } else if (_unit1->currentIndex() == 6){
+            _mesureV = new Miles(val1,SECONDE);
+        } else if (_unit1->currentIndex() == 7){
+            _mesureV = new Kilometre(val1,SECONDE);
+        } else if (_unit1->currentIndex() == 8){
             _mesureV = new Metre(val1,SECONDE);
         }
+
 
         if(_unit2->currentIndex() == 0){
             _unit2Edit->setText(QString::number(_mesureV->getMilesValue(HEURE)));
         } else if (_unit2->currentIndex() == 1){
             _unit2Edit->setText(QString::number(_mesureV->getKilometreValue(HEURE)));
         } else if (_unit2->currentIndex() == 2){
+            _unit2Edit->setText(QString::number(_mesureV->getMetreValue(HEURE)));
+        } else if (_unit2->currentIndex() == 3){
+            _unit2Edit->setText(QString::number(_mesureV->getMilesValue(MINUTE)));
+        } else if (_unit2->currentIndex() == 4){
+            _unit2Edit->setText(QString::number(_mesureV->getKilometreValue(MINUTE)));
+        } else if (_unit2->currentIndex() == 5){
+            _unit2Edit->setText(QString::number(_mesureV->getMetreValue(MINUTE)));
+        } else if (_unit2->currentIndex() == 6){
+            _unit2Edit->setText(QString::number(_mesureV->getMilesValue(SECONDE)));
+        } else if (_unit2->currentIndex() == 7){
+            _unit2Edit->setText(QString::number(_mesureV->getKilometreValue(SECONDE)));
+        } else if (_unit2->currentIndex() == 8){
             _unit2Edit->setText(QString::number(_mesureV->getMetreValue(SECONDE)));
         }
 

@@ -9,7 +9,8 @@ class Metre : public Vitesse
 {
 public:
     Metre();
-    Metre(double,subunit);
+    Metre
+    (double,subunit);
     void afficher(ostream &flux) const;
     double getKilometreValue(subunit)const;
     double getMetreValue(subunit)const;
