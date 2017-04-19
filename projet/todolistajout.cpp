@@ -1,7 +1,6 @@
 #include "todolistajout.h"
 
-ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
-{
+ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent){
     initLine();
     initButton();
     initLayout();
@@ -60,8 +59,11 @@ void ToDoListAjout::initButton(){
 void ToDoListAjout::ajoutTDL(){
     QFile data("./dashboard/TDLdata.txt");
     if(data.open(QIODevice::WriteOnly | QIODevice::Text)){
-        QTextStream texte(&data);
-        texte << tr("dada");
+        _toSave.titre = _titre->text();
+        _toSave.note = _note->text();
+        _toSave.heure = _heure->text();
+        _toSave.date = _date->toString();
+        data.write(reinterpret_cast<char*>(&_toSave),sizeof(_toSave));
     }else{
         QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
     }

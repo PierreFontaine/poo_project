@@ -25,11 +25,12 @@ class ToDoListAjout : public QWidget{
     Q_OBJECT
 protected:
 
-  struct data{
-    QString titre;
-    QString note;
-    QTimeEdit heure;
-  };
+    struct data{
+      QString titre;
+      QString note;
+      QString heure;
+      QString date;
+    };
 
     QCalendarWidget *_calendrier;
 
@@ -45,6 +46,8 @@ protected:
 
     QPushButton *_quitBtn;
     QPushButton *_validerBtn;
+
+    data _toSave;
 
 
     void initButton();
