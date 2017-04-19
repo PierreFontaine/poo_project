@@ -84,5 +84,4 @@ DISTFILES += \
     TDLdata.txt
 
 RESOURCES += \
-    images.qrc \
-    todolist.qrc
+    images.qrc
