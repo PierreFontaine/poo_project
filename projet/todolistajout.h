@@ -21,10 +21,16 @@
 
 #include "todolistdata.h"
 
-class ToDoListAjout : public QWidget
-{
+class ToDoListAjout : public QWidget{
     Q_OBJECT
 protected:
+
+  struct data{
+    QString titre;
+    QString note;
+    QTimeEdit heure;
+  };
+
     QCalendarWidget *_calendrier;
 
     QFormLayout *_layoutLine;
