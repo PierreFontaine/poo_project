@@ -11,6 +11,7 @@ class ToDoListDisplay : public Module{
     Q_OBJECT
 protected:
     QVBoxLayout *_container;
+    QVBoxLayout *_labelLyt;
     ToDoListData *_data;
     QPushButton *_majBtn;
 
@@ -18,12 +19,14 @@ protected:
     void initLayout();
     void initBtn();
     void connectElt();
+
 public:
     explicit ToDoListDisplay(QWidget *parent = 0);
 
 signals:
 
 public slots:
+    void displayEachToDo();
 };
 
 #endif // TODOLISTDISPLAY_H

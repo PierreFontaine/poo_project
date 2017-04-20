@@ -9,7 +9,7 @@
  postcond:
  ©2017
 */
-QDataStream &operator << (QDataStream &stream, const data &a){
+QDataStream &operator << (QDataStream &stream, const dataToDo &a){
     stream << a.titre << a.note << a.heure << a.date;
     return stream;
 }
@@ -23,7 +23,7 @@ QDataStream &operator << (QDataStream &stream, const data &a){
  postcond:
  ©2017
 */
-QDataStream &operator >> (QDataStream &stream, data &a){
+QDataStream &operator >> (QDataStream &stream, dataToDo &a){
     stream >> a.titre;
     stream >> a.note;
     stream >> a.heure;
@@ -31,6 +31,28 @@ QDataStream &operator >> (QDataStream &stream, data &a){
 
     return stream;
 }
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : overload de l'op flux de stream vers QList
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+QDataStream &operator >> (QDataStream &stream,QList<dataToDo> &l){
+
+    qDebug() << "STREAM -> QList";
+    while (!stream.atEnd()){
+        dataToDo tmp;
+        qDebug() << tmp.titre;
+        stream >> tmp;
+        l.push_back(tmp);
+    }
+    return stream;
+}
+
 
 ToDoListData::ToDoListData(QObject *parent) : QObject(parent){
 
@@ -146,7 +168,7 @@ void ToDoListData::setDate(QString d){
 void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString date){
     QFile file("./dashboard/TDLdata.txt");
     if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
-        data tmp;
+        dataToDo tmp;
 
         tmp.titre = titre;
         tmp.note = note;
@@ -155,10 +177,10 @@ void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString dat
 
         QDataStream stream(&file);
         stream << tmp;
+        file.close();
     }else{
         QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
     }
-    file.close();
 }
 
 /*
@@ -170,11 +192,27 @@ void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString dat
  postcond:
  ©2017
  */
-void ToDoListData::readTDL(){
-  QByteArray tmp;
-  data *dataTmp;
+QList<dataToDo>& ToDoListData::readTDL(){
+  dataToDo a;
   QFile f("./dashboard/TDLdata.txt");
-  if (f.open(QIODevice::ReadOnly | QIODevice::Text)) {
-
+  if (f.open(QIODevice::ReadOnly)) {
+    f.seek(0);
+    qDebug() << "Pos dans le fichier" << f.pos();
+    qDebug() << "création du stream";
+    QDataStream stream(&f);
+    qDebug() << "gestion de la version de QDataStream";
+    stream.setVersion(QDataStream::Qt_5_8);
+    qDebug() << "redirection du flux du fichier vers la liste";
+    stream >> _allData;
+    f.close();
+    qDebug() << "début de la boucle foreach";
+    qDebug() << "taille de la liste " << _allData.size();
+    foreach(a, _allData){
+        qDebug() << a.date << ","
+                 << a.heure << ","
+                 << a.note << ","
+                 << a.titre << ";";
+    }
   }
+  return _allData;
 }

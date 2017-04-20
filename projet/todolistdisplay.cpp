@@ -17,7 +17,6 @@ ToDoListDisplay::ToDoListDisplay(QWidget *parent) : Module(parent){
     _majBtn->show();
     connectElt();
     setLayout(_container);
-
 }
 
 /*
@@ -31,6 +30,9 @@ ToDoListDisplay::ToDoListDisplay(QWidget *parent) : Module(parent){
 */
 void ToDoListDisplay::initLayout(){
     _container = new QVBoxLayout();
+    _labelLyt = new QVBoxLayout();
+
+    _container->addLayout(_labelLyt);
 }
 
 /*
@@ -56,5 +58,26 @@ void ToDoListDisplay::initBtn(){
  ©2017
 */
 void ToDoListDisplay::connectElt(){
-    QObject::connect(_majBtn,SIGNAL(clicked(bool)),_data,SLOT(readTDL()));
+    QObject::connect(_majBtn,SIGNAL(clicked(bool)),this,SLOT(displayEachToDo()));
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : afficher chaque ToDo
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+void ToDoListDisplay::displayEachToDo(){
+    QList<struct dataToDo> tmp;
+    tmp = _data->readTDL();
+    qDebug()<<"on va afficher chaque ToDo";
+    foreach(struct dataToDo a, tmp){
+        qDebug() << a.date << ","
+                 << a.heure << ","
+                 << a.note << ","
+                 << a.titre << ";";
+    }
 }

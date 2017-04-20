@@ -4,28 +4,22 @@
 #include <iostream>
 #include <QDate>
 #include <QWidget>
-<<<<<<< HEAD
-#include <QFile>
 #include <QTextStream>
-=======
 #include <QObject>
 #include <QFile>
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
 #include <QDebug>
-<<<<<<< HEAD
->>>>>>> 4c1fd46757dd9b4b7047b05e802762ad95a53b03
-=======
 #include <QDataStream>
->>>>>>> 279a5e28d9ba6e6dc0c5bfba5a5bce44b8124c72
+#include <QList>
 
 #include "module.h"
 #include "todolistdata.h"
 #include "list.h"
 
 //Type de structure enregistré dans le fichier
-struct data{
+struct dataToDo{
   QString titre;
   QString note;
   QString heure;
@@ -40,8 +34,8 @@ protected:
     QString _date;
     QString _heure;
 
-    data _toSave;
-    list<data> _allData;
+    dataToDo _toSave;
+    QList<dataToDo> _allData;
 
 
 public:
@@ -63,7 +57,7 @@ signals:
 
 public slots:
 
-  void readTDL();
+  QList<dataToDo>& readTDL();
 };
 
 #endif // TODOLISTDATA_H
