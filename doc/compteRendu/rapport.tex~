@@ -17,14 +17,14 @@
     Pour ce projet nous avons choisis d'implémenter un "Dashboard", cela se présente sous forme d'une fenêtre graphique qui est développer en C++ grâce au framework QT largement utilisé dans le monde professionel de l'informatique.\\
     Il implémente une todolist, la recherche de la météo grâce à une API, la recherche d'actualité grâce à un flux RSS, une horloge et un convertisseur de vitesse et de température.
   \newline
-    ***La todolist est composée de  
+    ***La todolist 
   \newline
-    ***La recherche de la météo est composée de meteodata.cpp/hpp, meteojour.cpp/hpp, meteomodule.cpp/hpp et meteoparam.cpp/hpp.
+    ***La recherche de la météo 
   \newline
-    ***La recherche d'actualité est composée de actudata.cpp/hpp, actumodule.cpp/hpp.
+    ***La recherche d'actualité
   \newline
-    L'horloge est composée de horlogemodule.cpp et horlogemodule.hpp. Nous avons utilisé un timer ce qui permet l'actualisation de la date et de l'heure toutes les 0.1s\\
+    L'horloge est composée de deux fichier : horlogemodule.cpp et horlogemodule.hpp. Nous avons utilisé un timer ce qui permet l'actualisation de la date et de l'heure toutes les 0.1s\\
   \newline
-    ***Le convertisseur est composé de abstractmesureunite.cpp/hpp, celsius.cpp/hpp, convertmodule.cpp/hpp, fahrenheit.cpp/hpp, kelvin.cpp/hpp, kilometre.cpp/hpp, metre.cpp/hpp, miles.cpp/hpp, temperature.cpp/hpp, vitesse.cpp/hpp et volulme.cpp/hpp.
+    ***Le convertisseur
     
 \end{document}
