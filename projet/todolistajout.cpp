@@ -1,7 +1,7 @@
 #include "todolistajout.h"
 
-ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent)
-{
+ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent){
+    _save = new ToDoListData();
     initLine();
     initButton();
     initLayout();
@@ -44,6 +44,7 @@ void ToDoListAjout::initButton(){
     _validerBtn = new QPushButton("Valider",this);
 
     QObject::connect(_quitBtn, SIGNAL(clicked(bool)),this, SLOT(hide()));
+<<<<<<< HEAD
     QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this, SLOT(ajoutTDL()));
 }
 
@@ -72,6 +73,9 @@ void ToDoListAjout::ajoutTDL(){
         data.close();
     //}
     hide();
+=======
+    QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this,SLOT(sendDataToFile()));
+>>>>>>> 4c1fd46757dd9b4b7047b05e802762ad95a53b03
 }
 
 /*
@@ -101,4 +105,27 @@ void ToDoListAjout::initLayout(){
     _layoutPrincipal->addLayout(_layoutBtn);
 
     setLayout(_layoutPrincipal);
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : callback du click sur _validerBtn
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void ToDoListAjout::sendDataToFile(){
+  QString titre;
+  QString note;
+  QString heure;
+  QString date;
+
+  titre = _titre->text();
+  note = _note->text();
+  heure = _heure->text();
+  date = _date->toString(Qt::TextDate);
+
+  _save->ajoutTDL(titre,note,heure,date);
 }

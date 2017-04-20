@@ -21,8 +21,7 @@
 
 #include "todolistdata.h"
 
-class ToDoListAjout : public QWidget
-{
+class ToDoListAjout : public QWidget{
     Q_OBJECT
 protected:
     QCalendarWidget *_calendrier;
@@ -40,6 +39,7 @@ protected:
     QPushButton *_quitBtn;
     QPushButton *_validerBtn;
 
+    ToDoListData *_save;
 
     void initButton();
     void initCalendrier();
@@ -48,17 +48,11 @@ protected:
 
 public:
     explicit ToDoListAjout(QWidget *parent = 0);
-
-    // ToDoListAjout();
-    // ToDoListAjout(const ToDoListAjout&);
-    // ~ToDoListAjout();
-    // ToDoListAjout &operator=(const ToDoListData&);
-
     QDate getDate()const;
 signals:
 
 public slots:
-        void ajoutTDL();
+  void sendDataToFile();
 };
 
 #endif // TODOLISTAJOUT_H

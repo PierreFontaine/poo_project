@@ -9,15 +9,15 @@ FenPrincipale::FenPrincipale(){
     mod3 = new ActuModule(zoneCentrale);
     mod4 = new convertModule(zoneCentrale);
     mod5 = new HorlogeModule(zoneCentrale);
-    mod6 = new DiapoModule(zoneCentrale);
+    mod6 = new ToDoListDisplay(zoneCentrale);
 
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(mod1, 0, 0);
-    layout->addWidget(mod2, 0, 1);
+    layout->addWidget(mod6, 0, 1);
+    layout->addWidget(mod2, 0, 2);
     layout->addWidget(mod3, 1, 0);
     layout->addWidget(mod4, 1, 1);
-    layout->addWidget(mod5, 0, 2);
-    layout->addWidget(mod6, 1, 2);
+    layout->addWidget(mod5, 1, 2);
 
     mod1->show();
     mod2->show();

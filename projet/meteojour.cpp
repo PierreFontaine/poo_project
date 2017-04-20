@@ -52,7 +52,7 @@ void MeteoJour::initLayout(){
  */
 void MeteoJour::initLabel(){
     ville = new QLabel("Ville : "+_data->getVille());
-    temp = new QLabel("temp moyenne : "+QString::number(_data->getTemp())+"C°");
+    temp = new QLabel("temp actuelle: "+QString::number(_data->getTemp())+"C°");
     temp_min = new QLabel("temp min : "+QString::number(_data->getTempMin())+"C°");
     temp_max = new QLabel("temp max : "+QString::number(_data->getTempMax())+"C°");
     pressure = new QLabel("pression : "+QString::number(_data->getPressure())+"Pa");

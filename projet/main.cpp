@@ -7,29 +7,24 @@
 #include <QtWidgets>
 
 int main(int argc, char *argv[]){
-
+    qDebug() << QDir().absolutePath();
+    if(QDir("dashboard/").exists()){
+        qDebug()<< "Le dossier existe";
+    } else {
+        qDebug() << "Le dossier n'existe pas.";
+        qDebug() << "tentative de creation de celui ci";
+        QDir().mkdir("dashboard");
+        if(QDir("dashboard/").exists()){
+            qDebug()<< "Le dossier existe";
+        } else {
+            qDebug()<< "surement un pb d'autorisation";
+        }
+    }
     // Création de l'objet app
     QApplication app(argc, argv);
     // Création de la fenêtre principale
     FenPrincipale fenetre;
     // Affichage de la fenêtre
     fenetre.show();
-
-    //verifier si dossier existe,créer dossier, verifier si fichier existe,creer fichier
-    QDir home(QStandardPaths::displayName(QStandardPaths::HomeLocation) + "");
-    QDir dossier(QStandardPaths::displayName(QStandardPaths::HomeLocation) + "/.dashboard");
-    if (!dossier.exists()){
-        qDebug()<<"dossier existe pas";
-        home.mkdir(".dashboard");
-    } else{
-        qDebug()<<"dossier existe";
-    }
-    if (!dossier.exists()){
-        qDebug()<<"dossier existe pas";
-
-    } else{
-        qDebug()<<"dossier existe";
-    }
-
     return app.exec();
 }

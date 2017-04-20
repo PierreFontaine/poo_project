@@ -1,11 +1,9 @@
 #include "todolistmodule.h"
 
-ToDoListModule::ToDoListModule(QWidget *parent) : Module(parent)
-{
+ToDoListModule::ToDoListModule(QWidget *parent) : Module(parent){
     _ajoutFen = new ToDoListAjout;
     initCalendar();
     initLayout();
-
 }
 
 /*
@@ -37,7 +35,6 @@ void ToDoListModule::initCalendar(){
 
 void ToDoListModule::openAjout(){
     _ajoutFen->show();
-
 }
 
 /*
@@ -53,10 +50,7 @@ void ToDoListModule::openAjout(){
 void ToDoListModule::initLayout(){
     _layoutCalendar = new QVBoxLayout;
     _layoutPrincipal = new QVBoxLayout;
-
     _layoutCalendar->addWidget(_calendar);
-
     _layoutPrincipal->addLayout(_layoutCalendar);
-
     setLayout(_layoutPrincipal);
 }
