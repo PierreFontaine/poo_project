@@ -48,7 +48,8 @@ SOURCES += main.cpp\
     kelvin.cpp \
     miles.cpp \
     kilometre.cpp \
-    metre.cpp
+    metre.cpp \
+    todolistdisplay.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -75,7 +76,8 @@ HEADERS  += mainwindow.h \
     kelvin.h \
     miles.h \
     kilometre.h \
-    metre.h
+    metre.h \
+    todolistdisplay.h
 
 FORMS    += mainwindow.ui
 

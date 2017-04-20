@@ -1,6 +1,7 @@
 #include "todolistajout.h"
 
 ToDoListAjout::ToDoListAjout(QWidget *parent) : QWidget(parent){
+    _save = new ToDoListData();
     initLine();
     initButton();
     initLayout();
@@ -42,33 +43,11 @@ void ToDoListAjout::initButton(){
     _quitBtn = new QPushButton("Quitter",this);
     _validerBtn = new QPushButton("Valider",this);
 
+
+
+
     QObject::connect(_quitBtn, SIGNAL(clicked(bool)),this, SLOT(hide()));
-    QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this, SLOT(ajoutTDL()));
-}
-
-/*
- author  : Sallio Romane
- mail    : romane.sallio@gmail.com
- but     : Ecriture fichier
- remarque:
- precond :
- postcond:
- ©2017
- */
-
-void ToDoListAjout::ajoutTDL(){
-    QFile data("./dashboard/TDLdata.txt");
-    if(data.open(QIODevice::WriteOnly | QIODevice::Text)){
-        _toSave.titre = _titre->text();
-        _toSave.note = _note->text();
-        _toSave.heure = _heure->text();
-        _toSave.date = _date->toString();
-        data.write(reinterpret_cast<char*>(&_toSave),sizeof(_toSave));
-    }else{
-        QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
-    }
-    data.close();
-    hide();
+    QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this,SLOT(sendDataToFile()));
 }
 
 /*
@@ -98,4 +77,27 @@ void ToDoListAjout::initLayout(){
     _layoutPrincipal->addLayout(_layoutBtn);
 
     setLayout(_layoutPrincipal);
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : callback du click sur _validerBtn
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+void ToDoListAjout::sendDataToFile(){
+  QString titre;
+  QString note;
+  QString heure;
+  QString date;
+
+  titre = _titre->text();
+  note = _note->text();
+  heure = _heure->text();
+  date = _date->toString(Qt::TextDate);
+
+  _save.ajoutTDL(titre,note,heure,date);
 }
