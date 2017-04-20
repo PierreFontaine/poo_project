@@ -17,15 +17,24 @@
     Pour ce projet nous avons choisis d'implémenter un "Dashboard", cela se présente sous forme d'une fenêtre graphique qui est développer en C++ grâce au framework QT largement utilisé dans le monde professionel de l'informatique.\\
     Il implémente une todolist, la recherche de la météo grâce à une API, la recherche d'actualité grâce à un flux RSS, une horloge et un convertisseur de vitesse et de température.
   \part{Widgets}
+  \section{Menu}
+    Le menu est composé d'un main.cpp, mainwindow.cpp/hpp, module.cpp/hpp.\\
+    Le main.cpp permet l'affichage de la fentere principal et la création du dossier dashboard.\\
+    La classe MainWindow permet la création des différents modules et de les afficher.\\
+    La classe Module est le modèle pour les classes ToDoListModule, MeteoModule.. qui en dérivent.\\
   \section{ToDoList}
-    ***La todolist est composée de  
-	Lire fichier et ecrire dans la liste de alldata.a la lecture push old data puis retourner liste dans le gestionnaire d'affichage q label dans to do list display
+    ***La todolist est composée de todolistajout.cpp/hpp, todolistdata.cpp/hpp, todolistdisplay.cpp/hpp, todolistmodule.hpp/hpp.\\
+    La classe ToDoListModule est une classe qui hérite de QWidget, elle permet d'afficher le calendrier et d'ouvirir la fenêtre ToDoListAjout lorsque l'on double cliques sur une date supérieure ou égale à la date actuelle.\\
+    ToDoListAjout permet à l'utilisateur de rentrer les informations titre, note et heure.\\
+    La classeToDoListDisplay est utilisée pour afficher la liste des informations données par l'utilisateur.\\
+    ToDoListData permet la lecture et l'écriture dans un fichier des différentes informations.
   \section{Météo}
-    ***La recherche de la météo est composée de meteodata.cpp/hpp, meteojour.cpp/hpp, meteomodule.cpp/hpp et meteoparam.cpp/hpp.
+    ***La recherche de la météo est composée de meteodata.cpp/hpp, meteojour.cpp/hpp, meteomodule.cpp/hpp et meteoparam.cpp/hpp.\\
   \section{Actualité}
-    ***La recherche d'actualité est composée de actudata.cpp/hpp, actumodule.cpp/hpp.
+    ***La recherche d'actualité est composée de actudata.cpp/hpp, actumodule.cpp/hpp.\\
   \section{Horloge}
-    L'horloge est composée de horlogemodule.cpp et horlogemodule.hpp. Nous avons utilisé un timer ce qui permet l'actualisation de la date et de l'heure toutes les 0.1s.\\
+    L'horloge est composée de horlogemodule.cpp et horlogemodule.hpp.\\
+    Nous avons utilisé un timer ce qui permet l'actualisation de la date et de l'heure toutes les 0.1s.\\
   \section{Convertisseur}
     Le convertisseur est composé de abstractmesureunite.cpp/hpp, celsius.cpp/hpp, convertmodule.cpp/hpp, fahrenheit.cpp/hpp, kelvin.cpp/hpp, kilometre.cpp/hpp, metre.cpp/hpp, miles.cpp/hpp, temperature.cpp/hpp, vitesse.cpp/hpp et volume.cpp/hpp."\\
     La classe AbstractMesureUnite est une classe abstraite qui sert de plateforfme de base pour les classes Vitesse et Température.\\
