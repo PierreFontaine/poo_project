@@ -135,12 +135,14 @@ void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString dat
  ©2017
  */
 void ToDoListData::readTDL(){
-  QByteArray Data;
+  data tmp;
+  qDebug()<<"you clicked on MAJ ToDoList Button2";
   QFile f("./dashboard/TDLdata.txt");
   if (f.open(QIODevice::ReadOnly)) {
-    Data = f.readAll();
-    f.close();
+    f.read(reinterpret_cast<char*>(&tmp),sizeof(data));
   }
-  data *dataPt = reinterpret_cast<data*>(Data.data());
-  qDebug()<<dataPt[0].date;
+  qDebug()<<tmp.titre;
+  qDebug()<<tmp.note;
+  qDebug()<<tmp.heure;
+  qDebug()<<tmp.date;
 }

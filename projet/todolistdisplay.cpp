@@ -15,6 +15,7 @@ ToDoListDisplay::ToDoListDisplay(QWidget *parent) : Module(parent){
     initLayout();
     _container->addWidget(_majBtn);
     _majBtn->show();
+    connectElt();
     setLayout(_container);
 
 }

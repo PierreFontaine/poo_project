@@ -43,9 +43,6 @@ void ToDoListAjout::initButton(){
     _quitBtn = new QPushButton("Quitter",this);
     _validerBtn = new QPushButton("Valider",this);
 
-
-
-
     QObject::connect(_quitBtn, SIGNAL(clicked(bool)),this, SLOT(hide()));
     QObject::connect(_validerBtn, SIGNAL(clicked(bool)),this,SLOT(sendDataToFile()));
 }
@@ -99,5 +96,5 @@ void ToDoListAjout::sendDataToFile(){
   heure = _heure->text();
   date = _date->toString(Qt::TextDate);
 
-  _save.ajoutTDL(titre,note,heure,date);
+  _save->ajoutTDL(titre,note,heure,date);
 }

@@ -48,13 +48,13 @@ public:
     void setDate(QString);
     void setHeure(QString);
 
-    void readData();
+    void ajoutTDL(QString titre,QString note,QString heure,QString date);
 
 
 signals:
 
 public slots:
-  void ajoutTDL(QString titre,QString note,QString heure,QString date);
+
   void readTDL();
 };
 
