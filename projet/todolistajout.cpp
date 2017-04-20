@@ -58,19 +58,19 @@ void ToDoListAjout::initButton(){
  */
 
 void ToDoListAjout::ajoutTDL(){
-    QFile data("~/TDLdata.txt");
+    QFile data("resources/TDLdata.txt");
 
-    if(!data.exists()){
-        QMessageBox::critical(NULL,"Erreur","TDLdata n'existe pas");
-    }else{
-        if(data.open(QIODevice::WriteOnly | QIODevice::Text)){
+    //if(!data.exists()){
+    //    QMessageBox::critical(NULL,"Erreur","TDLdata n'existe pas");
+    //}else{
+        if(data.open(QIODevice::ReadOnly | QIODevice::Text)){
             QTextStream texte(&data);
             texte << tr("dada");
         }else{
-            QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
+            QMessageBox::critical(NULL,"Erreur","Impossible de lire TDLdata");
         }
         data.close();
-    }
+    //}
     hide();
 }
 

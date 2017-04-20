@@ -4,6 +4,8 @@
 #include <iostream>
 #include <QDate>
 #include <QWidget>
+#include <QFile>
+#include <QTextStream>
 
 #include "module.h"
 #include "todolistdata.h"

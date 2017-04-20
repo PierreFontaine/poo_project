@@ -10,6 +10,16 @@ HorlogeModule::HorlogeModule(QWidget *parent) : Module(parent)
 
 }
 
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Initialisation horloge
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+
 void HorlogeModule::initHorloge(){
 
 
@@ -30,6 +40,16 @@ void HorlogeModule::initHorloge(){
 
 }
 
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Mise à jour date et heure
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
+
 void HorlogeModule::updateDate(){
 
     QDate dateTemp = _date->currentDate();
@@ -39,6 +59,16 @@ void HorlogeModule::updateDate(){
     _labelTime->setText(QString(heureTemp.toString()));
 
 }
+
+/*
+ author  : Sallio Romane
+ mail    : romane.sallio@gmail.com
+ but     : Initialisation des layouts
+ remarque:
+ precond :
+ postcond:
+ ©2017
+ */
 
 void HorlogeModule::initLayout(){
 
