@@ -10,22 +10,23 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QDebug>
+#include <QDataStream>
 
 #include "module.h"
 #include "todolistdata.h"
 #include "list.h"
 
+//Type de structure enregistré dans le fichier
+struct data{
+  QString titre;
+  QString note;
+  QString heure;
+  QString date;
+};
+
 class ToDoListData : public QObject{
     Q_OBJECT
 protected:
-    //Type de structure enregistré dans le fichier
-    struct data{
-      QString titre;
-      QString note;
-      QString heure;
-      QString date;
-    };
-
     QString _titre;
     QString _note;
     QString _date;
@@ -49,7 +50,6 @@ public:
     void setHeure(QString);
 
     void ajoutTDL(QString titre,QString note,QString heure,QString date);
-
 
 signals:
 

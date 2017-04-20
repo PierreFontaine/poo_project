@@ -68,7 +68,6 @@ void ToDoListAjout::initLayout(){
     _layoutLine->addRow("Titre : ", _titre);
     _layoutLine->addRow("Note : ", _note);
     _layoutLine->addRow("Heure : ", _heure);
-    //_layoutLine->addRow("Date : ",_date);
 
     _layoutPrincipal->addLayout(_layoutLine);
     _layoutPrincipal->addLayout(_layoutBtn);

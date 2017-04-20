@@ -1,5 +1,37 @@
 #include "todolistdata.h"
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : overload de l'op flux entrant pour QDataStream en utilisant une donnée de type data
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+QDataStream &operator << (QDataStream &stream, const data &a){
+    stream << a.titre << a.note << a.heure << a.date;
+    return stream;
+}
+
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : overload de l'op flux sortant pour QDataStream en utilisant une donnée de type data
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
+QDataStream &operator >> (QDataStream &stream, data &a){
+    stream >> a.titre;
+    stream >> a.note;
+    stream >> a.heure;
+    stream >> a.date;
+
+    return stream;
+}
+
 ToDoListData::ToDoListData(QObject *parent) : QObject(parent){
 
 }
@@ -112,17 +144,21 @@ void ToDoListData::setDate(QString d){
  */
 
 void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString date){
-    QFile data("./dashboard/TDLdata.txt");
-    if(data.open(QIODevice::WriteOnly | QIODevice::Text)){
-        _toSave.titre = titre;
-        _toSave.note = note;
-        _toSave.heure = heure;
-        _toSave.date = date;
-        data.write(reinterpret_cast<char*>(&_toSave),sizeof(_toSave));
+    QFile file("./dashboard/TDLdata.txt");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        data tmp;
+
+        tmp.titre = titre;
+        tmp.note = note;
+        tmp.heure = heure;
+        tmp.date = date;
+
+        QDataStream stream(&file);
+        stream << tmp;
     }else{
         QMessageBox::critical(NULL,"Erreur","Impossible d'écrire dans TDLdata");
     }
-    data.close();
+    file.close();
 }
 
 /*
@@ -135,14 +171,10 @@ void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString dat
  ©2017
  */
 void ToDoListData::readTDL(){
-  data tmp;
-  qDebug()<<"you clicked on MAJ ToDoList Button2";
+  QByteArray tmp;
+  data *dataTmp;
   QFile f("./dashboard/TDLdata.txt");
-  if (f.open(QIODevice::ReadOnly)) {
-    f.read(reinterpret_cast<char*>(&tmp),sizeof(data));
+  if (f.open(QIODevice::ReadOnly | QIODevice::Text)) {
+
   }
-  qDebug()<<tmp.titre;
-  qDebug()<<tmp.note;
-  qDebug()<<tmp.heure;
-  qDebug()<<tmp.date;
 }
