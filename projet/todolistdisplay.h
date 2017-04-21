@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include "module.h"
 #include "todolistdata.h"
+#include "displaynote.h"
 
 class ToDoListDisplay : public Module{
     Q_OBJECT
