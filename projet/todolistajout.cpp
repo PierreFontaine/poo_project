@@ -96,4 +96,7 @@ void ToDoListAjout::sendDataToFile(){
   date = _date->toString(Qt::TextDate);
 
   _save->ajoutTDL(titre,note,heure,date);
+
+  hide();
+
 }

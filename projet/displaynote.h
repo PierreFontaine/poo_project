@@ -14,8 +14,9 @@ protected:
     QLabel *_heure;
     QLabel *_note;
     QLabel *_titre;
+    QVBoxLayout *_layoutPrincipal;
 public:
-    DisplayNote(QString,QString,QString,QString);
+    explicit DisplayNote(QString,QString,QString,QString,QWidget *parent = 0);
     explicit DisplayNote(QWidget *parent = 0);
 
 signals:
