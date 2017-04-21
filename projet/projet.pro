@@ -79,7 +79,6 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     ../build-projet-Desktop_Qt_5_8_0_clang_64bit-Debug/nuageux.png \
-    TDLdata.txt
 
 RESOURCES += \
     images.qrc
