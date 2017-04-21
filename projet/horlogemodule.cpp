@@ -3,8 +3,10 @@
 HorlogeModule::HorlogeModule(QWidget *parent) : Module(parent)
 {
     _timer = new QTimer(this);
+
     initHorloge();
     initLayout();
+
     connect(_timer, SIGNAL(timeout()), this, SLOT(update()));
     _timer->start(1000);
 
@@ -18,7 +20,7 @@ HorlogeModule::HorlogeModule(QWidget *parent) : Module(parent)
  precond :
  postcond:
  ©2017
- */
+*/
 
 void HorlogeModule::initHorloge(){
 
@@ -33,7 +35,6 @@ void HorlogeModule::initHorloge(){
 
     _labelTime = new QLabel;
     _heure = new QTime;
-    //_heure->start();
     _labelTime->setText(QString(_heure->toString()));
     _labelTime->setFont(QFont("URW Chancery L",30));
     QObject::connect(_timer, SIGNAL(timeout()), this, SLOT(updateDate()));
@@ -76,7 +77,6 @@ void HorlogeModule::initLayout(){
 
     _layout->addWidget(_labelDate);
     _layout->addWidget(_labelTime);
-    //_layout->a(_heure);
 
     setLayout(_layout);
 }
