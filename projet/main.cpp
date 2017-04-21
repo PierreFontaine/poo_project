@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "mainwindow.h"
 #include "meteodata.h"
 #include <QApplication>
 #include <QDebug>
