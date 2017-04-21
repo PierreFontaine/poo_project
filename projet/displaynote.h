@@ -5,8 +5,7 @@
 #include <QFormLayout>
 #include <QWidget>
 
-class DisplayNote : public QWidget
-{
+class DisplayNote : public QWidget{
     Q_OBJECT
 protected:
     QFormLayout *_layoutLine;

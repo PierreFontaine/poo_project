@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYGdefault{k}{class} \PYGdefault{n+nc}{Temperature} \PYGdefault{o}{:} \PYGdefault{k}{public} \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{k}{public}\PYGdefault{o}{:}
+        \PYGdefault{n}{Temperature}\PYGdefault{p}{();}
+        \PYGdefault{n}{Temperature}\PYGdefault{p}{(}\PYGdefault{k+kt}{double}\PYGdefault{p}{);}
+        \PYGdefault{k}{virtual} \PYGdefault{k+kt}{void} \PYGdefault{n}{afficher}\PYGdefault{p}{(}\PYGdefault{n}{ostream} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{n}{flux}\PYGdefault{p}{)} \PYGdefault{k}{const} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+        \PYGdefault{k}{virtual} \PYGdefault{k+kt}{double} \PYGdefault{n}{getCelsius}\PYGdefault{p}{()}\PYGdefault{k}{const} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+        \PYGdefault{k}{virtual} \PYGdefault{k+kt}{double} \PYGdefault{n}{getFahrenheit}\PYGdefault{p}{()}\PYGdefault{k}{const} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+        \PYGdefault{k}{virtual} \PYGdefault{k+kt}{double} \PYGdefault{n}{getKelvin}\PYGdefault{p}{()}\PYGdefault{k}{const} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+    \PYGdefault{p}{\PYGdefaultZcb{};}
+
+    \PYGdefault{k}{class} \PYGdefault{n+nc}{Celsius} \PYGdefault{o}{:} \PYGdefault{k}{public} \PYGdefault{n}{Temperature}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{k}{public}\PYGdefault{o}{:}
+        \PYGdefault{n}{Celsius}\PYGdefault{p}{();}
+        \PYGdefault{n}{Celsius}\PYGdefault{p}{(}\PYGdefault{k+kt}{double}\PYGdefault{p}{);}
+        \PYGdefault{k+kt}{void} \PYGdefault{n}{afficher}\PYGdefault{p}{(}\PYGdefault{n}{ostream} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{n}{flux}\PYGdefault{p}{)}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getCelsius}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getFahrenheit}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getKelvin}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+    \PYGdefault{p}{\PYGdefaultZcb{};}
+
+    \PYGdefault{k}{class} \PYGdefault{n+nc}{Kelvin} \PYGdefault{o}{:} \PYGdefault{k}{public} \PYGdefault{n}{Temperature}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{k}{public}\PYGdefault{o}{:}
+        \PYGdefault{n}{Kelvin}\PYGdefault{p}{();}
+        \PYGdefault{n}{Kelvin}\PYGdefault{p}{(}\PYGdefault{k+kt}{double}\PYGdefault{p}{);}
+        \PYGdefault{k+kt}{void} \PYGdefault{n}{afficher}\PYGdefault{p}{(}\PYGdefault{n}{ostream} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{n}{flux}\PYGdefault{p}{)}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getCelsius}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getFahrenheit}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getKelvin}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+    \PYGdefault{p}{\PYGdefaultZcb{};}
+\end{Verbatim}

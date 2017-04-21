@@ -1,7 +1,7 @@
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
-\usepackage{amsmath,amsfonts,amssymb,tikz,graphicx,geometry,tkz-tab,pgfplots,float}
+\usepackage{amsmath,minted,amsfonts,amssymb,tikz,graphicx,geometry,tkz-tab,pgfplots,float}
 
 \title{Rapport de Projet en Programmation Orientée Objet C++}
 \author{Sallio Romane and Fontaine Pierre}
@@ -11,31 +11,131 @@
   \tableofcontents
   \part{Introduction}
     Pour ce projet nous avons choisis d'implémenter un "Dashboard", cela se présente sous forme d'une fenêtre graphique qui est développer en C++ grâce au framework QT largement utilisé dans le monde professionel de l'informatique.\\
-    Il implémente une todolist, la recherche de la météo grâce à une API, la recherche d'actualité grâce à un flux RSS, une horloge et un convertisseur de vitesse et de température.
-  \part{Widgets}
-    \section{Menu}
-      Le menu est composé d'un main.cpp, mainwindow.cpp/hpp, module.cpp/hpp.\\
-      Le main.cpp permet l'affichage de la fentere principal et la création du dossier dashboard.\\
-      La classe MainWindow permet la création des différents modules et de les afficher.\\
-      La classe Module est le modèle pour les classes ToDoListModule, MeteoModule.. qui en dérivent.\\
+
+    Nous avons choisis QT car ce framework comparé à d'autres comme la SDL, SFML ... permet une implémentation objet. Chaque éléments repose sur le principe de l'objet, ainsi une fenetre peut se dériver en une classe spéciale ainsi que tous les autres éléments. D'autre part il est 'Javascript Like' c'est à dire la gestion des évènements pour l'IHM est semblable au code Javascript.\\
+
+    Il implémente une todolist, la recherche de la météo grâce à une API, la recherche d'actualité grâce à un flux RSS, une horloge et un convertisseur de vitesse et de température. \\
+
+    Afin de pouvoir introduire les notions vues en TP nous avons implémenter la classe List qui fait intervenir
+
+  \part{Implémentation d'une liste avec template}
+    \section{liste}
+      \emph{list.h}\\
+
+      Nous avons ré-implémenté le container liste pour les besoins du projet. Grâce aux templates que nous avons introduit il est possible de l'utiliser pour stocker n'importe quel type d'éléments.
+  \part{Coeur du projet}
+
     \section{ToDoList}
-      La todolist est composée de todolistajout.cpp/hpp, todolistdata.cpp/hpp, todolistdisplay.cpp/hpp, todolistmodule.hpp/hpp.\\
-      La classe ToDoListModule est une classe qui hérite de QWidget, elle permet d'afficher le calendrier et d'ouvirir la fenêtre ToDoListAjout lorsque l'on double cliques sur une date supérieure ou égale à la date actuelle.\\
-      ToDoListAjout permet à l'utilisateur de rentrer les informations titre, note et heure.\\
-      La classeToDoListDisplay est utilisée pour afficher la liste des informations données par l'utilisateur.\\
-      ToDoListData permet la lecture et l'écriture dans un fichier des différentes informations.
+      Ce module permet de choisir une date à partir de la date actuelle en cliquant sur celle choisi dans le calendrier, cela parmet l'ouverture d'une nouvelle fenêtre dans laquelle l'utilisateur doit rentrer les données titre, note et heure pouis appuyer sur le bouton valider. Si l'utilisateur ne souhaite pas enregistrer les données il lui suffit de choisir le bouton quitter.
+      \\
+      Lorsque l'on clique sur le bouton valider les différentes informations sont enregistrées dans le fichier TDLdata.
+      \\
+      Ensuite, après avoir créé une ou plusieurs tâche, on peut cliquer sur le bouton Mise à jour liste ce qui affiche une liste des titres des différentes notes. A droite de tous les titres se trouve un bouton open qui permet d'afficher dans une nouvelle fenêtre les information associées à chaque titre.
+
     \section{Météo}
-      La recherche de la météo est composée de meteodata.cpp/hpp, meteojour.cpp/hpp, meteomodule.cpp/hpp et meteoparam.cpp/hpp.\\
-      La classe météo data permet de parser une requete xml, une de ses principales fonctionnalité et de retourner sous forme de liste chacune des entrées du document qui est au format JSON à parser.
+
+      Ce module à pour objectif d'afficher la météo pour les 5 prochains jours.
+      Il suffit de cliquer sur l'onglet du jour que l'on souhaite obtenir.
+
     \section{Actualité}
-      La recherche d'actualité est composée de actudata.cpp/hpp, actumodule.cpp/hpp.\\
-      Il possède une classe actuData qui permet de faire l'intermediaire entre le flux RSS au format XML fournit par le site distant et l'affichage.
+
+      Ce module à pour objectif de fournir les titres principaux de l'actualité fournis par le flux RSS du site LeMonde.
+
     \section{Horloge}
-      L'horloge est composée de horlogemodule.cpp et horlogemodule.hpp.\\
-      Nous avons utilisé un timer ce qui permet l'actualisation de la date et de l'heure toutes les 0.1s.\\
+
+      Ce module a pour objectif de d'afficher la date et l'heure en ce mettant à jours automatiquement toute les 0,1s.
+
     \section{Convertisseur}
-      Le convertisseur est composé de abstractmesureunite.cpp/hpp, celsius.cpp/hpp, convertmodule.cpp/hpp, fahrenheit.cpp/hpp, kelvin.cpp/hpp, kilometre.cpp/hpp, metre.cpp/hpp, miles.cpp/hpp, temperature.cpp/hpp, vitesse.cpp/hpp et volume.cpp/hpp."\\
-      La classe AbstractMesureUnite est une classe abstraite qui sert de plateforfme de base pour les classes Vitesse et Température.\\
-      Les classes Vitesse et Temperature servent de plateformes pour les classes Celsius, Fahrenheit, Kelvin, Kilometre, Metre, Miles et Volume.\\
-      Les septs classes cités précédemment permettent de récupérer un réel, de la convertir dans la mesure voulu et d'afficher le réel obtenu après conversion.
+
+      Ce module permet le conversion de vitesse (miles, mètres, kilomètres) et de température (celsius, fahrenheit, kelvin). Pour cela il suffit de choisir dans les différents menus déroulants le genre de conversion (vitesse ou température), l'unité du chiffre que l'on souhaite convertir et celle qu'on veut obtenir et l'utilsateur doit également saisir le réel à convertir.
+      \\
+      Ensuite il lui suffit de cliquer sur le bouton et la conversion s'affiche dans la case en dessous du menu déroulant de l'unité que l'on souhaite convertir.
+
+      \section{Annexe}
+
+      Classe abstraite, fonction fiend, fonction virtuel:
+      \begin{minted}{cpp}
+    class AbstractMesureUnite{
+      protected:
+        double _value;
+      public:
+        AbstractMesureUnite();
+        AbstractMesureUnite(double);
+        AbstractMesureUnite(const AbstractMesureUnite&);
+        ~AbstractMesureUnite();
+        AbstractMesureUnite &operator=(const AbstractMesureUnite&);
+
+        void setValue(double);
+        double getValue()const;
+
+        virtual void afficher(ostream &flux) const = 0;
+
+        friend ostream& operator<<(ostream& flux,const AbstractMesureUnite& u){
+          u.afficher(flux);
+          return flux;
+        }
+    };
+      \end{minted}
+
+      Template:
+      \\\begin{minted}{cpp}
+  template <class T>
+    class List{
+      protected:
+        struct cellule{
+          cellule *suivant;
+          T valeur;
+        };
+        typedef cellule* liste;
+        liste _l;
+      public:
+        List();
+        ~List();
+        List(const List<T> &l);
+        List<T> operator=(const List<T>);
+
+        void insertElemAtPos(int pos,T elt);
+        void deleteElemAtPos(int pos);
+        T getElemAtPos(int pos)const;
+        int getLength()const;
+        bool empty()const;
+    };
+    \end{minted}
+
+    Une classe mère (Temperature) et ses deux classes filles (Celsius, Kelvin):
+
+    \begin{minted}{cpp}
+    class Temperature : public AbstractMesureUnite{
+      public:
+        Temperature();
+        Temperature(double);
+        virtual void afficher(ostream &flux) const = 0;
+        virtual double getCelsius()const = 0;
+        virtual double getFahrenheit()const = 0;
+        virtual double getKelvin()const = 0;
+    };
+
+    class Celsius : public Temperature{
+      public:
+        Celsius();
+        Celsius(double);
+        void afficher(ostream &flux)const;
+        double getCelsius()const;
+        double getFahrenheit()const;
+        double getKelvin()const;
+    };
+
+    class Kelvin : public Temperature{
+      public:
+        Kelvin();
+        Kelvin(double);
+        void afficher(ostream &flux)const;
+        double getCelsius()const;
+        double getFahrenheit()const;
+        double getKelvin()const;
+    };
+    \end{minted}
+
+
+
 \end{document}

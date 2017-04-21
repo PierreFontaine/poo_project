@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYGdefault{k}{class} \PYGdefault{n+nc}{AbstractMesureUnite}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{k}{protected}\PYGdefault{o}{:}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{\PYGdefaultZus{}value}\PYGdefault{p}{;}
+      \PYGdefault{k}{public}\PYGdefault{o}{:}
+        \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{p}{();}
+        \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{p}{(}\PYGdefault{k+kt}{double}\PYGdefault{p}{);}
+        \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{p}{(}\PYGdefault{k}{const} \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{p}{);}
+        \PYGdefault{o}{\PYGdefaultZti{}}\PYGdefault{n}{AbstractMesureUnite}\PYGdefault{p}{();}
+        \PYGdefault{n}{AbstractMesureUnite} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{k}{operator}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{k}{const} \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{p}{);}
+
+        \PYGdefault{k+kt}{void} \PYGdefault{n+nf}{setValue}\PYGdefault{p}{(}\PYGdefault{k+kt}{double}\PYGdefault{p}{);}
+        \PYGdefault{k+kt}{double} \PYGdefault{n}{getValue}\PYGdefault{p}{()}\PYGdefault{k}{const}\PYGdefault{p}{;}
+
+        \PYGdefault{k}{virtual} \PYGdefault{k+kt}{void} \PYGdefault{n}{afficher}\PYGdefault{p}{(}\PYGdefault{n}{ostream} \PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{n}{flux}\PYGdefault{p}{)} \PYGdefault{k}{const} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{;}
+
+        \PYGdefault{k}{friend} \PYGdefault{n}{ostream}\PYGdefault{o}{\PYGdefaultZam{}} \PYGdefault{k}{operator}\PYGdefault{o}{\PYGdefaultZlt{}\PYGdefaultZlt{}}\PYGdefault{p}{(}\PYGdefault{n}{ostream}\PYGdefault{o}{\PYGdefaultZam{}} \PYGdefault{n}{flux}\PYGdefault{p}{,}\PYGdefault{k}{const} \PYGdefault{n}{AbstractMesureUnite}\PYGdefault{o}{\PYGdefaultZam{}} \PYGdefault{n}{u}\PYGdefault{p}{)\PYGdefaultZob{}}
+          \PYGdefault{n}{u}\PYGdefault{p}{.}\PYGdefault{n}{afficher}\PYGdefault{p}{(}\PYGdefault{n}{flux}\PYGdefault{p}{);}
+          \PYGdefault{k}{return} \PYGdefault{n}{flux}\PYGdefault{p}{;}
+        \PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{p}{\PYGdefaultZcb{};}
+\end{Verbatim}
