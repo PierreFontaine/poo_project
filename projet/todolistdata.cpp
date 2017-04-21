@@ -195,6 +195,7 @@ void ToDoListData::ajoutTDL(QString titre,QString note,QString heure,QString dat
 QList<dataToDo>& ToDoListData::readTDL(){
   dataToDo a;
   QFile f("./dashboard/TDLdata.txt");
+  _allData.clear();
   if (f.open(QIODevice::ReadOnly)) {
     f.seek(0);
     QDataStream stream(&f);

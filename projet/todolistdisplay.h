@@ -20,6 +20,8 @@ protected:
     void initBtn();
     void connectElt();
 
+    void clearLayout(QLayout*,bool);
+
 public:
     explicit ToDoListDisplay(QWidget *parent = 0);
 

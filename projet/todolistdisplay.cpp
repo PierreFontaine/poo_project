@@ -31,6 +31,8 @@ ToDoListDisplay::ToDoListDisplay(QWidget *parent) : Module(parent){
 void ToDoListDisplay::initLayout(){
     _container = new QVBoxLayout();
     _labelLyt = new QVBoxLayout();
+    QLabel *titleLbl = new QLabel("ToDo List");
+    _labelLyt->addWidget(titleLbl);
 
     _container->addLayout(_labelLyt);
 }
@@ -72,12 +74,31 @@ void ToDoListDisplay::connectElt(){
 */
 void ToDoListDisplay::displayEachToDo(){
     QList<struct dataToDo> tmp;
+    clearLayout(_labelLyt,true);
+    _labelLyt->update();
     tmp = _data->readTDL();
     qDebug()<<"on va afficher chaque ToDo";
     foreach(struct dataToDo a, tmp){
+        QLabel *tmpLbl = new QLabel(a.titre);
+        _labelLyt->addWidget(tmpLbl);
         qDebug() << a.date << ","
                  << a.heure << ","
                  << a.note << ","
                  << a.titre << ";";
+    }
+}
+
+void ToDoListDisplay::clearLayout(QLayout* layout, bool deleteWidgets = true){
+    while (QLayoutItem* item = layout->takeAt(0)){
+        if (deleteWidgets){
+            if (QWidget* widget = item->widget()){
+                qDebug() << "suppression de widget";
+               delete widget;
+            }
+        }
+        if (QLayout* childLayout = item->layout()){
+            clearLayout(childLayout, deleteWidgets);
+        }
+        delete item;
     }
 }
