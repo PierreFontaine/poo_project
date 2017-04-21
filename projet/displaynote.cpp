@@ -16,3 +16,10 @@ DisplayNote::DisplayNote(QWidget *parent) : QWidget(parent)
     setLayout(_layoutLine);
 
 }
+
+DisplayNote::DisplayNote(QString d, QString h, QString n, QString t){
+   _date = new QLabel(d);
+   _heure = new QLabel(h);
+   _note = new QLabel(n);
+   _titre = new QLabel(t);
+}

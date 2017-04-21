@@ -15,6 +15,7 @@ protected:
     QLabel *_note;
     QLabel *_titre;
 public:
+    DisplayNote(QString,QString,QString,QString);
     explicit DisplayNote(QWidget *parent = 0);
 
 signals:
