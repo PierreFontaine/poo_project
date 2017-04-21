@@ -7,10 +7,9 @@
 #include "actumodule.h"
 #include "convertmodule.h"
 #include "horlogemodule.h"
-#include "diapomodule.h"
 #include "todolistdisplay.h"
 #include <QPushButton>
-#include<iostream>
+#include <iostream>
 
 class FenPrincipale : public QMainWindow{
     public:
@@ -19,6 +18,7 @@ class FenPrincipale : public QMainWindow{
     private:
         void defineAction();
         void defineMenu();
+
         QAction *bye;
         QAction *copy;
         QMenu *menuFichier;

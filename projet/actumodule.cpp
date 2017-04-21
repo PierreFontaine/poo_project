@@ -3,7 +3,9 @@
 ActuModule::ActuModule(QWidget *parent) : Module(parent){
     actuScroll = new QScrollArea(this);
     container = new QWidget(actuScroll);
+
     container->setGeometry(20,20,400,2500);
+
     initLabel();
     initLayout();
 
@@ -11,17 +13,21 @@ ActuModule::ActuModule(QWidget *parent) : Module(parent){
 
     scrollLayout->addWidget(container);
     container->setLayout(actuLayout);
-    //container->set
+
     actuScroll->setLayout(scrollLayout);
     actuScroll->setWidget(container);
     actuScroll->viewport()->setBackgroundRole(QPalette::Dark);
     actuScroll->viewport()->setAutoFillBackground(true);
     actuScroll->setWindowTitle(QObject::tr("News"));
     actuScroll->show();
+
     _data->requete();
+
     mainLayout->addWidget(actuScroll);
     mainLayout->addWidget(_title);
+
     connect(_data,SIGNAL(headLines()),this,SLOT(afficheList()));
+
     setLayout(mainLayout);
 }
 
@@ -39,9 +45,12 @@ void ActuModule::afficheList(){
     List<string> *l = _data->getList();
     List<string> *h = _data->getHyperlink();
     int length = l->getLength();
+
     std::cerr<<"longueur de liste"<< length << std::endl;
+
     _tabDesc = new QLabel*[length];
     _tabLink = new QLabel*[length];
+
     for(int i = 1;i <= length;i++){
         //std::cerr<<"i = " << i << " " << l->getElemAtPos(i)<<std::endl;
         _tabDesc[i-1] = new QLabel(QString::fromStdString(l->getElemAtPos(i)));

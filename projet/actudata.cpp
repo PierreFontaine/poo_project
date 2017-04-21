@@ -17,9 +17,11 @@ ActuData::ActuData(QObject *parent) : QObject(parent){
 void ActuData::requete(){
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     qDebug()<<"Exe Req XML";
+
     //execution d'une requete
     //callback du storage a la reception de la requete
     qDebug()<<"Creation connexion pour succès ou echec";
+
     connect(manager,SIGNAL(finished(QNetworkReply*)),
             this,SLOT(storeReplyInObj(QNetworkReply*)));
     manager->get(QNetworkRequest(QUrl("http://www.lemonde.fr/rss/une.xml")));
@@ -36,6 +38,7 @@ void ActuData::requete(){
  */
 void ActuData::storeReplyInObj(QNetworkReply* r){
     qDebug()<<"CallBack XML";
+
     if(r->error() == QNetworkReply::NoError){
         QByteArray doc = r->readAll();
         xmlDoc = new QXmlStreamReader(doc);
@@ -43,6 +46,7 @@ void ActuData::storeReplyInObj(QNetworkReply* r){
     }else{
         qDebug()<<r->errorString();
     }
+
     parseXML();
 }
 
