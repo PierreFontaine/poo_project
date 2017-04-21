@@ -20,7 +20,7 @@ void ToDoListModule::initCalendar(){
     _calendar = new QCalendarWidget;
     _calendar->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
     _calendar->setMinimumDate(QDate::currentDate());
-    QObject::connect(_calendar,SIGNAL(activated(QDate)),this,SLOT(openAjout()));
+    QObject::connect(_calendar,SIGNAL(activated(QDate)),this,SLOT(openAjout(QDate)));
 }
 
 /*
@@ -33,7 +33,8 @@ void ToDoListModule::initCalendar(){
  ©2017
  */
 
-void ToDoListModule::openAjout(){
+void ToDoListModule::openAjout(QDate d){
+    _ajoutFen->setDate(d);
     _ajoutFen->show();
 }
 

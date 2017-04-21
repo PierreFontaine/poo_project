@@ -100,3 +100,7 @@ void ToDoListAjout::sendDataToFile(){
   hide();
 
 }
+
+void ToDoListAjout::setDate(QDate d){
+    *_date = d;
+}

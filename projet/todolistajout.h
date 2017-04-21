@@ -49,6 +49,7 @@ protected:
 public:
     explicit ToDoListAjout(QWidget *parent = 0);
     QDate getDate()const;
+    void setDate(QDate);
 signals:
 
 public slots:

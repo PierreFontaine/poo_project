@@ -32,7 +32,7 @@ public:
 signals:
 
 public slots:
-    void openAjout();
+    void openAjout(QDate);
 };
 
 #endif // TODOLISTMODULE_H
