@@ -46,7 +46,8 @@ SOURCES += main.cpp\
     miles.cpp \
     kilometre.cpp \
     metre.cpp \
-    todolistdisplay.cpp
+    todolistdisplay.cpp \
+    displaynote.cpp
 
 HEADERS  += mainwindow.h \
     module.h \
@@ -71,7 +72,8 @@ HEADERS  += mainwindow.h \
     miles.h \
     kilometre.h \
     metre.h \
-    todolistdisplay.h
+    todolistdisplay.h \
+    displaynote.h
 
 FORMS    += mainwindow.ui
 
