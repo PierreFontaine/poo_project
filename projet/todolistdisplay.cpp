@@ -73,14 +73,24 @@ void ToDoListDisplay::connectElt(){
  ©2017
 */
 void ToDoListDisplay::displayEachToDo(){
+    //container pour recup donnée depuis todolistdata
     QList<struct dataToDo> tmp;
+    //effacer le layout avant de recharger toute les données dedans
     clearLayout(_labelLyt,true);
     _labelLyt->update();
     tmp = _data->readTDL();
     qDebug()<<"on va afficher chaque ToDo";
     foreach(struct dataToDo a, tmp){
+        QHBoxLayout *tmpLyt = new QHBoxLayout();
+        QPushButton *openBtn = new QPushButton("open",this);
         QLabel *tmpLbl = new QLabel(a.titre);
-        _labelLyt->addWidget(tmpLbl);
+
+        tmpLyt->addWidget(tmpLbl);
+        tmpLyt->addWidget(openBtn);
+
+        openBtn->show();
+
+        _labelLyt->addLayout(tmpLyt);
         qDebug() << a.date << ","
                  << a.heure << ","
                  << a.note << ","
@@ -88,6 +98,15 @@ void ToDoListDisplay::displayEachToDo(){
     }
 }
 
+/*
+ author  : Fontaine pierre
+ mail    : pierre.ftn64@gmail.com
+ but     : effacer tous les elts d'un layout
+ remarque:
+ precond :
+ postcond:
+ ©2017
+*/
 void ToDoListDisplay::clearLayout(QLayout* layout, bool deleteWidgets = true){
     while (QLayoutItem* item = layout->takeAt(0)){
         if (deleteWidgets){
