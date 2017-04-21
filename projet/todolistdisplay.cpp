@@ -84,7 +84,7 @@ void ToDoListDisplay::displayEachToDo(){
         QHBoxLayout *tmpLyt = new QHBoxLayout();
         QPushButton *openBtn = new QPushButton("open",this);
         QLabel *tmpLbl = new QLabel(a.titre);
-        DisplayNote *taskView = new DisplayNote(a.date,a.heure,a.note,a.titre,this);
+        DisplayNote *taskView = new DisplayNote(a.date,a.heure,a.note,a.titre);
 
         tmpLyt->addWidget(tmpLbl);
         tmpLyt->addWidget(openBtn);
