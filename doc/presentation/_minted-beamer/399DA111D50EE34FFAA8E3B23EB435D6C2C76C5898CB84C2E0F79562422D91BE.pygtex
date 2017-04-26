@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{subsection}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{Heritage}\PYGdefault{p}{\PYGdefaultZcb{}}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{begin}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+        \PYGdefault{n}{heritage} \PYGdefault{p}{...}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{end}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{subsection}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{Classe} \PYGdefault{n}{Complexe}\PYGdefault{p}{\PYGdefaultZcb{}}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{begin}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+        \PYGdefault{n}{classe} \PYGdefault{n}{complexe} \PYGdefault{p}{...}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{end}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{subsection}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{Classe} \PYGdefault{n}{Abstraite}\PYGdefault{p}{\PYGdefaultZcb{}}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{begin}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+        \PYGdefault{n}{classe} \PYGdefault{n}{abstraite} \PYGdefault{p}{...}
+      \PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{end}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{frame}\PYGdefault{p}{\PYGdefaultZcb{}}
+\PYGdefault{err}{\PYGdefaultZbs{}}\PYGdefault{n}{end}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{document}\PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

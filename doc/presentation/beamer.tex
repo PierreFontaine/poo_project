@@ -1,6 +1,8 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\usepackage{amsmath,minted,amsfonts,amssymb,tikz,graphicx,geometry,tkz-tab,pgfplots,float}
 \usetheme{Warsaw}
 \title{Projet POO, Dashboard}
 \author{Sallio Romane, Fontaine Pierre}
@@ -17,10 +19,64 @@
       Dashboard est le projet que nous avons conçu en C++ avec le paradigme Objet.
 
       Nous avons utilisé le Framework QT pour développer l'interface utilisateur.
+
+      Son objectif est simple : permettre à l'utilisateur d'avoir les éléments essentiels à porté de click.
     \end{frame}
   \section{Pourquoi QT}
     \subsection{Des classes}
     \begin{frame}
       QT est écrit en C++ et est implémenté selon le paradigme objet. Chacun des composants réfère à une classe particulière qui peut ou non dérivé d'une autre classe mère.
     \end{frame}
+    \subsection{JS Like}
+      \begin{frame}
+        Lors de l'utilisation d'un nouveau \emph{Framework}, une partie crucial du temps est concacré à l'étude du fonctionnement de celui ci. Il semblait évident qu'après avoir étudier le \emph{JavaScript}, le \emph{QT} qui partage la même philosophie de la gestion d'évènement \emph{(Async/Sync)} serait plus digeste.
+      \end{frame}
+  \section{Spécifications techniques du code}
+    \subsection{Template}
+      \begin{frame}
+        Utilisé dans \emph{List.h}\\
+
+        Pourquoi ?
+        \begin{enumerate}
+          \item Créer une liste de n'importe quoi
+          \item Container important
+        \end{enumerate}
+      \end{frame}
+      \begin{minted}[linenos,fontsize=\footnotesize]{cpp}
+      template <class T>
+      class List{
+      protected:
+          struct cellule{
+              cellule *suivant;
+              T valeur;
+          };
+          typedef cellule* liste;
+          liste _l;
+      public:
+          List();
+          ~List();
+          List(const List<T> &l);
+          List<T> operator=(const List<T>);
+
+
+          void insertElemAtPos(int pos,T elt);
+          void deleteElemAtPos(int pos);
+          T getElemAtPos(int pos)const;
+          int getLength()const;
+          bool empty()const;
+
+      };
+      \end{minted}
+    \subsection{Heritage}
+      \begin{frame}
+        Objectif : rendre des composants plus spécifique.
+      \end{frame}
+    \subsection{Classe Complexe}
+      \begin{frame}
+        classe complexe ...
+      \end{frame}
+    \subsection{Classe Abstraite}
+      \begin{frame}
+        classe abstraite ...
+      \end{frame}
 \end{document}

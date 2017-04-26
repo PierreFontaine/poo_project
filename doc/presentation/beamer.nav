@@ -14,8 +14,26 @@
 \headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Des classes}}\headcommand {\beamer@subsectionpages {4}{3}}
 \headcommand {\slideentry {2}{1}{1}{4/4}{Des classes}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@partpages {1}{4}}
-\headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\beamer@sectionpages {4}{4}}
-\headcommand {\beamer@documentpages {4}}
-\headcommand {\def \inserttotalframenumber {4}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{5}{JS Like}}\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {2}{2}{1}{5/5}{JS Like}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\sectionentry {3}{Sp\IeC {\'e}cifications techniques du code}{6}{Sp\IeC {\'e}cifications techniques du code}{0}}
+\headcommand {\beamer@sectionpages {4}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{6}{Template}}\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {3}{1}{1}{6/6}{Template}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{7}{Heritage}}\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\slideentry {3}{2}{1}{7/7}{Heritage}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{9}{Classe Complexe}}\headcommand {\beamer@subsectionpages {7}{8}}
+\headcommand {\slideentry {3}{3}{1}{9/9}{Classe Complexe}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{10}{Classe Abstraite}}\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {3}{4}{1}{10/10}{Classe Abstraite}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@partpages {1}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\beamer@sectionpages {6}{10}}
+\headcommand {\beamer@documentpages {10}}
+\headcommand {\def \inserttotalframenumber {9}}

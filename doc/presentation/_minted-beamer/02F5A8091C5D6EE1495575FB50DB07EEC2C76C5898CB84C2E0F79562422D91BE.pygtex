@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYGdefault{k}{template} \PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{k}{class} \PYGdefault{n+nc}{T}\PYGdefault{o}{\PYGdefaultZgt{}}
+  \PYGdefault{k}{class} \PYGdefault{n+nc}{List}\PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{p}{...}
+  \PYGdefault{p}{\PYGdefaultZcb{};}
+\end{Verbatim}
