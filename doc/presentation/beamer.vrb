@@ -1,21 +1,4 @@
-Utilisé dans \emph{List.h}\\
-
-        Pourquoi ?
-        \begin{enumerate}
-          \item Créer une liste de n'importe quoi
-          \item Container important
-        \end{enumerate}
-      \end{frame}
-    \subsection{Heritage}
-      \begin{frame}
-        heritage ...
-      \end{frame}
-    \subsection{Classe Complexe}
-      \begin{frame}
-        classe complexe ...
-      \end{frame}
-    \subsection{Classe Abstraite}
-      \begin{frame}
-        classe abstraite ...
-      \end{frame}
-\end{document}
+\begin{minted}{c++}
+    template <class T>
+    class List{...}
+  \end{minted}
