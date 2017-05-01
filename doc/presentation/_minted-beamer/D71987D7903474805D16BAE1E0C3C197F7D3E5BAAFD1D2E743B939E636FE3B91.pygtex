@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{k}{class} \PYGtango{n+nc}{AbstractMesureUnite}\PYGtango{p}{\PYGtangoZob{}}
+\PYGtango{k}{protected}\PYGtango{o}{:}
+  \PYGtango{k+kt}{double} \PYGtango{n}{\PYGtangoZus{}value}\PYGtango{p}{;}
+\PYGtango{k}{public}\PYGtango{o}{:}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{();}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{(}\PYGtango{k+kt}{double}\PYGtango{p}{);}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{AbstractMesureUnite}\PYGtango{o}{\PYGtangoZam{}}\PYGtango{p}{);}
+  \PYGtango{o}{\PYGtangoZti{}}\PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{();}
+  \PYGtango{n}{AbstractMesureUnite} \PYGtango{o}{\PYGtangoZam{}}\PYGtango{k}{operator}\PYGtango{o}{=}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{AbstractMesureUnite}\PYGtango{o}{\PYGtangoZam{}}\PYGtango{p}{);}
+  \PYGtango{p}{...}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

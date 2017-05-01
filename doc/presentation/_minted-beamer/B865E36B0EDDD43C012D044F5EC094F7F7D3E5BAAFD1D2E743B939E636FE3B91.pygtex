@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{c+cp}{\PYGtangoZsh{}include \PYGtangoZlt{}QWidget\PYGtangoZgt{}}
+
+\PYGtango{k}{class} \PYGtango{n+nc}{Module} \PYGtango{o}{:} \PYGtango{k}{public} \PYGtango{n}{QWidget}\PYGtango{p}{\PYGtangoZob{}}
+    \PYGtango{n}{Q\PYGtangoZus{}OBJECT}
+\PYGtango{k}{protected}\PYGtango{o}{:}
+  \PYGtango{c+c1}{//méthodes protégées.}
+\PYGtango{k}{public}\PYGtango{o}{:}
+  \PYGtango{k}{explicit} \PYGtango{n}{Module}\PYGtango{p}{(}\PYGtango{n}{QWidget} \PYGtango{o}{*}\PYGtango{n}{parent} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{,}\PYGtango{k+kt}{double} \PYGtango{n}{h} \PYGtango{o}{=} \PYGtango{l+m+mi}{300}\PYGtango{p}{,} \PYGtango{k+kt}{double} \PYGtango{n}{w} \PYGtango{o}{=} \PYGtango{l+m+mi}{400}\PYGtango{p}{);}
+  \PYGtango{c+c1}{//méthodes publiques}
+
+\PYGtango{n+nl}{signals}\PYGtango{p}{:}
+  \PYGtango{c+c1}{//signals}
+\PYGtango{k}{public} \PYGtango{n+nl}{slots}\PYGtango{p}{:}
+  \PYGtango{c+c1}{//slots}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

@@ -1,4 +1,7 @@
-\begin{minted}{c++}
-    template <class T>
-    class List{...}
-  \end{minted}
+\frametitle{Heritage}
+  \framesubtitle{En dehors de QT}
+  \begin{center}
+    \begin{figure}
+      \includegraphics[scale=0.4]{img/Diagrammedeclasses.png}
+    \end{figure}
+  \end{center}

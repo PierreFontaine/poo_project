@@ -25,17 +25,28 @@
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\slideentry {3}{1}{2}{7/7}{Template}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{8}{Heritage}}\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\slideentry {3}{2}{1}{8/8}{Heritage}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{8}{Forme canonique de coplien}}\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {3}{2}{1}{8/8}{Forme canonique de coplien}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{9}{Classe Complexe}}\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {3}{3}{1}{9/9}{Classe Complexe}{0}}
+\headcommand {\slideentry {3}{2}{2}{9/9}{Forme canonique de coplien}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{10}{Classe Abstraite}}\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\slideentry {3}{4}{1}{10/10}{Classe Abstraite}{0}}
+\headcommand {\slideentry {3}{2}{3}{10/10}{Forme canonique de coplien}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {10}{10}}
-\headcommand {\beamer@sectionpages {6}{10}}
-\headcommand {\beamer@documentpages {10}}
-\headcommand {\def \inserttotalframenumber {10}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{11}{Heritage}}\headcommand {\beamer@subsectionpages {8}{10}}
+\headcommand {\slideentry {3}{3}{1}{11/11}{Heritage}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {3}{3}{2}{12/12}{Heritage}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {3}{3}{3}{13/13}{Heritage}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{14}{Classe Complexe}}\headcommand {\beamer@subsectionpages {11}{13}}
+\headcommand {\slideentry {3}{4}{1}{14/14}{Classe Complexe}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{3}{5}{15}{Classe Abstraite}}\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\slideentry {3}{5}{1}{15/15}{Classe Abstraite}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@partpages {1}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\beamer@sectionpages {6}{15}}
+\headcommand {\beamer@documentpages {15}}
+\headcommand {\def \inserttotalframenumber {15}}

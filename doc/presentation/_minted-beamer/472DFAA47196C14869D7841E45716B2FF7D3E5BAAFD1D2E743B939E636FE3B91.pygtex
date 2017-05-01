@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{k}{template} \PYGtango{o}{\PYGtangoZlt{}}\PYGtango{k}{class} \PYGtango{n+nc}{T}\PYGtango{o}{\PYGtangoZgt{}}
+\PYGtango{k}{class} \PYGtango{n+nc}{List}\PYGtango{p}{\PYGtangoZob{}}
+\PYGtango{k}{protected}\PYGtango{o}{:}
+    \PYGtango{k}{struct} \PYGtango{n}{cellule}\PYGtango{p}{\PYGtangoZob{}}
+        \PYGtango{n}{cellule} \PYGtango{o}{*}\PYGtango{n}{suivant}\PYGtango{p}{;}
+        \PYGtango{n}{T} \PYGtango{n}{valeur}\PYGtango{p}{;}
+    \PYGtango{p}{\PYGtangoZcb{};}
+    \PYGtango{k}{typedef} \PYGtango{n}{cellule}\PYGtango{o}{*} \PYGtango{n}{liste}\PYGtango{p}{;}
+    \PYGtango{n}{liste} \PYGtango{n}{\PYGtangoZus{}l}\PYGtango{p}{;}
+\PYGtango{k}{public}\PYGtango{o}{:}
+    \PYGtango{n}{List}\PYGtango{p}{();}
+    \PYGtango{o}{\PYGtangoZti{}}\PYGtango{n}{List}\PYGtango{p}{();}
+    \PYGtango{n}{List}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{List}\PYGtango{o}{\PYGtangoZlt{}}\PYGtango{n}{T}\PYGtango{o}{\PYGtangoZgt{}} \PYGtango{o}{\PYGtangoZam{}}\PYGtango{n}{l}\PYGtango{p}{);}
+    \PYGtango{n}{List}\PYGtango{o}{\PYGtangoZlt{}}\PYGtango{n}{T}\PYGtango{o}{\PYGtangoZgt{}} \PYGtango{k}{operator}\PYGtango{o}{=}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{List}\PYGtango{o}{\PYGtangoZlt{}}\PYGtango{n}{T}\PYGtango{o}{\PYGtangoZgt{}}\PYGtango{p}{);}
+    \PYGtango{p}{...}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

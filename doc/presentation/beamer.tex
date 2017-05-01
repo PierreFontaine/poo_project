@@ -16,6 +16,7 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Sommaire}
   \tableofcontents
 \end{frame}
 
@@ -34,15 +35,22 @@
 \section{Pourquoi QT}
 \subsection{Des classes}
 \begin{frame}
+  \frametitle{Pourquoi QT}
+  \framesubtitle{Paradigme Objet}
   QT est écrit en C++ et est implémenté selon le paradigme objet. Chacun des composants réfère à une classe particulière qui peut ou non dérivé d'une autre classe mère.
 \end{frame}
   \subsection{JS Like}
     \begin{frame}
+      \frametitle{Pourquoi QT}
+      \framesubtitle{JS LIKE}
       Lors de l'utilisation d'un nouveau \emph{Framework}, une partie crucial du temps est concacré à l'étude du fonctionnement de celui ci. Il semblait évident qu'après avoir étudier le \emph{JavaScript}, le \emph{QT} qui partage la même philosophie de la gestion d'évènement \emph{(Async/Sync)} serait plus digeste.
     \end{frame}
 \section{Spécifications techniques du code}
 \subsection{Template}
+
 \begin{frame}
+  \frametitle{Template}
+  \framesubtitle{Utilité ?}
   Utilisé dans \emph{List.h}\\
 
   Pourquoi ?
@@ -51,24 +59,127 @@
     \item Container important
   \end{enumerate}
 \end{frame}
+
 \begin{frame}[fragile]
+  \frametitle{Template}
+  \framesubtitle{Code}
   \begin{minted}{c++}
-    template <class T>
-    class List{...}
+template <class T>
+class List{...};
   \end{minted}
 \end{frame}
-    \subsection{Heritage}
-      \begin{frame}
-        Objectif : rendre des composants plus spécifique.
 
+  \subsection{Forme canonique de coplien}
+\begin{frame}[fragile]
+  \frametitle{Forme canonique de coplien}
+  \framesubtitle{Pourquoi}
 
-      \end{frame}
-    \subsection{Classe Complexe}
-      \begin{frame}
-        classe complexe ...
-      \end{frame}
-    \subsection{Classe Abstraite}
-      \begin{frame}
-        classe abstraite ...
-      \end{frame}
+  Il est interressant dans la conception de \emph{container} comme des listes, des sets ... qu'ils puissent s'affecter entre eux, se construire à partir d'un modèle déjà existant.\\
+
+  C'est pourquoi nous intégrons ce modèle dans quelques classes comme :
+  \begin{enumerate}
+    \item list.h
+    \item abstractmesureunite.h
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Forme canonique de coplien}
+  \framesubtitle{code 1}
+
+  \begin{minted}{cpp}
+class AbstractMesureUnite{
+protected:
+  double _value;
+public:
+  AbstractMesureUnite();
+  AbstractMesureUnite(double);
+  AbstractMesureUnite(const AbstractMesureUnite&);
+  ~AbstractMesureUnite();
+  AbstractMesureUnite &operator=(const AbstractMesureUnite&);
+  ...
+};
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Forme canonique de coplien}
+  \framesubtitle{code 2}
+
+  \begin{minted}{cpp}
+template <class T>
+class List{
+protected:
+    struct cellule{
+        cellule *suivant;
+        T valeur;
+    };
+    typedef cellule* liste;
+    liste _l;
+public:
+    List();
+    ~List();
+    List(const List<T> &l);
+    List<T> operator=(const List<T>);
+    ...
+};
+  \end{minted}
+\end{frame}
+
+  \subsection{Heritage}
+\begin{frame}
+  \frametitle{Heritage}
+  \framesubtitle{QT}
+  \structure{Dérivation des composants :}
+
+  \begin{enumerate}
+    \item Chaque composant du framework QT est une classe
+    \item Créer un composant spécifique se fait en dérivant un composant général
+  \end{enumerate}
+  \begin{block}{tips}
+    Il est courant que les classes les plus généralistes ne soient pas instanciables, ce sont des classes \emph{abstraites}.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Heritage}
+  \framesubtitle{Hériter un composant QT}
+
+  \begin{minted}[breaklines]{cpp}
+#include <QWidget>
+
+class Module : public QWidget{
+    Q_OBJECT
+protected:
+  //méthodes protégées.
+public:
+  explicit Module(QWidget *parent = 0,double h = 300, double w = 400);
+  //méthodes publiques
+
+signals:
+  //signals
+public slots:
+  //slots
+};
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Heritage}
+  \framesubtitle{En dehors de QT}
+  \begin{center}
+    \begin{figure}
+      \includegraphics[scale=0.4]{img/Diagrammedeclasses.png}
+    \end{figure}
+  \end{center}
+\end{frame}
+
+  \subsection{Classe Complexe}
+\begin{frame}
+  classe complexe ...
+\end{frame}
+  \subsection{Classe Abstraite}
+\begin{frame}
+  classe abstraite ...
+\end{frame}
 \end{document}
