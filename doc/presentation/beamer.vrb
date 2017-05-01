@@ -1,7 +1,17 @@
-\frametitle{Heritage}
-  \framesubtitle{En dehors de QT}
-  \begin{center}
-    \begin{figure}
-      \includegraphics[scale=0.4]{img/Diagrammedeclasses.png}
-    \end{figure}
-  \end{center}
+\frametitle{Classe Complexe}
+  \framesubtitle{code}
+  \begin{minted}[breaklines]{cpp}
+class MeteoJour : public QWidget{
+    Q_OBJECT
+protected:
+    ...
+    //model
+    MeteoData *_data;
+public:
+    explicit MeteoJour(int j,MeteoData *data,QWidget *parent = 0);
+signals:
+    ...
+public slots:
+    ...
+};
+  \end{minted}

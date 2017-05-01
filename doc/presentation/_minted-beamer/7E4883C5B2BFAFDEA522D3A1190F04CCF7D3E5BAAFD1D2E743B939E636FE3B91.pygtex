@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{k}{class} \PYGtango{n+nc}{MeteoJour} \PYGtango{o}{:} \PYGtango{k}{public} \PYGtango{n}{QWidget}\PYGtango{p}{\PYGtangoZob{}}
+    \PYGtango{n}{Q\PYGtangoZus{}OBJECT}
+\PYGtango{k}{protected}\PYGtango{o}{:}
+    \PYGtango{p}{...}
+    \PYGtango{c+c1}{//model}
+    \PYGtango{n}{MeteoData} \PYGtango{o}{*}\PYGtango{n}{\PYGtangoZus{}data}\PYGtango{p}{;}
+\PYGtango{k}{public}\PYGtango{o}{:}
+    \PYGtango{k}{explicit} \PYGtango{n}{MeteoJour}\PYGtango{p}{(}\PYGtango{k+kt}{int} \PYGtango{n}{j}\PYGtango{p}{,}\PYGtango{n}{MeteoData} \PYGtango{o}{*}\PYGtango{n}{data}\PYGtango{p}{,}\PYGtango{n}{QWidget} \PYGtango{o}{*}\PYGtango{n}{parent} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{);}
+\PYGtango{n+nl}{signals}\PYGtango{p}{:}
+    \PYGtango{p}{...}
+\PYGtango{k}{public} \PYGtango{n+nl}{slots}\PYGtango{p}{:}
+    \PYGtango{p}{...}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

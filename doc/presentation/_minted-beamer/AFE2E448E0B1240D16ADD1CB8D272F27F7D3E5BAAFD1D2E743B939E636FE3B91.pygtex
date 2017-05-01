@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{k}{class} \PYGtango{n+nc}{Temperature} \PYGtango{o}{:} \PYGtango{k}{public} \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{\PYGtangoZob{}}
+\PYGtango{k}{public}\PYGtango{o}{:}
+  \PYGtango{n}{Temperature}\PYGtango{p}{();}
+  \PYGtango{n}{Temperature}\PYGtango{p}{(}\PYGtango{k+kt}{double}\PYGtango{p}{);}
+  \PYGtango{k}{virtual} \PYGtango{k+kt}{void} \PYGtango{n}{afficher}\PYGtango{p}{(}\PYGtango{n}{ostream} \PYGtango{o}{\PYGtangoZam{}}\PYGtango{n}{flux}\PYGtango{p}{)} \PYGtango{k}{const} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{;}
+  \PYGtango{k}{virtual} \PYGtango{k+kt}{double} \PYGtango{n}{getCelsius}\PYGtango{p}{()}\PYGtango{k}{const} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{;}
+  \PYGtango{k}{virtual} \PYGtango{k+kt}{double} \PYGtango{n}{getFahrenheit}\PYGtango{p}{()}\PYGtango{k}{const} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{;}
+  \PYGtango{k}{virtual} \PYGtango{k+kt}{double} \PYGtango{n}{getKelvin}\PYGtango{p}{()}\PYGtango{k}{const} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{;}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

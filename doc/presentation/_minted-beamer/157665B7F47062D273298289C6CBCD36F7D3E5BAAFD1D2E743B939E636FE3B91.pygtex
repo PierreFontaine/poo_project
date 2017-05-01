@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGtango{k}{class} \PYGtango{n+nc}{AbstractMesureUnite}\PYGtango{p}{\PYGtangoZob{}}
+\PYGtango{k}{protected}\PYGtango{o}{:}
+  \PYGtango{k+kt}{double} \PYGtango{n}{\PYGtangoZus{}value}\PYGtango{p}{;}
+\PYGtango{k}{public}\PYGtango{o}{:}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{();}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{(}\PYGtango{k+kt}{double}\PYGtango{p}{);}
+  \PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{AbstractMesureUnite}\PYGtango{o}{\PYGtangoZam{}}\PYGtango{p}{);}
+  \PYGtango{o}{\PYGtangoZti{}}\PYGtango{n}{AbstractMesureUnite}\PYGtango{p}{();}
+  \PYGtango{n}{AbstractMesureUnite} \PYGtango{o}{\PYGtangoZam{}}\PYGtango{k}{operator}\PYGtango{o}{=}\PYGtango{p}{(}\PYGtango{k}{const} \PYGtango{n}{AbstractMesureUnite}\PYGtango{o}{\PYGtangoZam{}}\PYGtango{p}{);}
+  \PYGtango{p}{...}
+  \PYGtango{k}{virtual} \PYGtango{k+kt}{void} \PYGtango{n}{afficher}\PYGtango{p}{(}\PYGtango{n}{ostream} \PYGtango{o}{\PYGtangoZam{}}\PYGtango{n}{flux}\PYGtango{p}{)} \PYGtango{k}{const} \PYGtango{o}{=} \PYGtango{l+m+mi}{0}\PYGtango{p}{;}
+
+  \PYGtango{k}{friend} \PYGtango{n}{ostream}\PYGtango{o}{\PYGtangoZam{}} \PYGtango{k}{operator}\PYGtango{o}{\PYGtangoZlt{}\PYGtangoZlt{}}\PYGtango{p}{(}\PYGtango{n}{ostream}\PYGtango{o}{\PYGtangoZam{}} \PYGtango{n}{flux}\PYGtango{p}{,}\PYGtango{k}{const} \PYGtango{n}{AbstractMesureUnite}\PYGtango{o}{\PYGtangoZam{}} \PYGtango{n}{u}\PYGtango{p}{)\PYGtangoZob{}}
+    \PYGtango{n}{u}\PYGtango{p}{.}\PYGtango{n}{afficher}\PYGtango{p}{(}\PYGtango{n}{flux}\PYGtango{p}{);}
+    \PYGtango{k}{return} \PYGtango{n}{flux}\PYGtango{p}{;}
+  \PYGtango{p}{\PYGtangoZcb{}}
+\PYGtango{p}{\PYGtangoZcb{};}
+\end{Verbatim}

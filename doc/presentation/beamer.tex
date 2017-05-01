@@ -4,7 +4,7 @@
 \usepackage[french]{babel}
 \usepackage{amsmath,minted,amsfonts,amssymb,tikz,graphicx,geometry,tkz-tab,pgfplots,float}
 \usemintedstyle{tango}
-\usetheme{UPPA2014}
+\usetheme[hideallsubsections]{UPPA2014}
 \title{Projet POO, Dashboard}
 \author{Romane Sallio \and Pierre Fontaine}
 \institute{UPPA, Licence, Informatique}
@@ -51,6 +51,8 @@
 \begin{frame}
   \frametitle{Template}
   \framesubtitle{Utilité ?}
+  La technique consiste à paramétrer le Type. Ainsi l'utilisateur de la classe pourra utiliser le type \emph{int, shorting, string ...}.\\
+
   Utilisé dans \emph{List.h}\\
 
   Pourquoi ?
@@ -58,6 +60,10 @@
     \item Créer une liste de n'importe quoi
     \item Container important
   \end{enumerate}
+
+  \begin{alertblock}{attention}
+    L'implémentation ne peut être séparée de la signature.
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -126,6 +132,73 @@ public:
   \end{minted}
 \end{frame}
 
+\subsection{Classe Abstraite}
+\begin{frame}
+  \frametitle{Classe Abstraite}
+  \framesubtitle{Interet}
+  \structure{Factorisation du code :}
+
+  L'un des objectifs majeur lorsque l'on developpe du code c'est de s'assurer qu'on ne se répetera pas.\\
+
+  \structure{Creer une signature que l'on implémente pas :}
+
+  \begin{enumerate}
+    \item les sous classes fourniront l'implémenteront forcément
+    \item les sous classes auront chacune une implémentation différente.
+    \item cette classe abstraite ne sera jamais instancié.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Classe Abstraite}
+  \framesubtitle{QT}
+  \begin{center}
+    \begin{figure}
+      \includegraphics[scale=0.3]{img/qtUml.png}
+      \caption{Qt Diagram openclassroom}
+    \end{figure}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Classe Abstraite}
+  \framesubtitle{Code 1}
+  \begin{minted}[breaklines]{cpp}
+class AbstractMesureUnite{
+protected:
+  double _value;
+public:
+  AbstractMesureUnite();
+  AbstractMesureUnite(double);
+  AbstractMesureUnite(const AbstractMesureUnite&);
+  ~AbstractMesureUnite();
+  AbstractMesureUnite &operator=(const AbstractMesureUnite&);
+  ...
+  virtual void afficher(ostream &flux) const = 0;
+
+  friend ostream& operator<<(ostream& flux,const AbstractMesureUnite& u){
+    u.afficher(flux);
+    return flux;
+  }
+};
+  \end{minted}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Classe Abstraite}
+  \framesubtitle{Code 2}
+  \begin{minted}[breaklines]{cpp}
+class Temperature : public AbstractMesureUnite{
+public:
+  Temperature();
+  Temperature(double);
+  virtual void afficher(ostream &flux) const = 0;
+  virtual double getCelsius()const = 0;
+  virtual double getFahrenheit()const = 0;
+  virtual double getKelvin()const = 0;
+};
+  \end{minted}
+\end{frame}
+
   \subsection{Heritage}
 \begin{frame}
   \frametitle{Heritage}
@@ -176,10 +249,47 @@ public slots:
 
   \subsection{Classe Complexe}
 \begin{frame}
-  classe complexe ...
+  \frametitle{Classe Complexe}
+  \framesubtitle{interet ?}
+  \structure{Concept :}
+
+  Une classe peut utiliser l'instance d'une autre classe.\\
+  \structure{Exemple d'une vue :}
+
+  Prenons pour exemple notre \emph{widget Météo}. Celui ci a besoin d'afficher des informations, donc qui fournit l'information ?
+
+  On instancie une classe \emph{Meteodata} qui va servir d'intermediaire entre la vue et le modèle.
 \end{frame}
-  \subsection{Classe Abstraite}
+
+\begin{frame}[fragile]
+  \frametitle{Classe Complexe}
+  \framesubtitle{code}
+  \begin{minted}[breaklines]{cpp}
+class MeteoJour : public QWidget{
+    Q_OBJECT
+protected:
+    ...
+    //model
+    MeteoData *_data;
+public:
+    explicit MeteoJour(int j,MeteoData *data,QWidget *parent = 0);
+signals:
+    ...
+public slots:
+    ...
+};
+  \end{minted}
+\end{frame}
+
+\section{conclusion}
 \begin{frame}
-  classe abstraite ...
+\frametitle{Conclusion}
+  \begin{itemize}
+    \item code plus facile à gérer en collaboration
+    \item code plus facile à maintenir
+    \item évolution envisageable
+    \item ré-utilisation de code
+    \item plus efficace pour IHM
+  \end{itemize}
 \end{frame}
 \end{document}
